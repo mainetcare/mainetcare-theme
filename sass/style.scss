@@ -14,14 +14,6 @@ $color_dunkelblau:#0e2c40;
 $color_text_white: #fbfbfb;
 
 
-.mi-logo {
-  img {
-    background-color: #FFF;
-    // max-width: 130px;
-    // border: 10px solid #FFF;
-  }
-}
-
 .mi-slogan {
   // color:darken($color_text_white, 20%);
   font-size:13px;
@@ -30,6 +22,22 @@ $color_text_white: #fbfbfb;
   @include bp(mobile) {
     text-align: center;
   }
+}
+
+.fl-page-bar {
+  position: absolute;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+}
+
+.fl-page-header, .fl-page-header-wrap {
+  background-color: transparent;
+  border-bottom-style: none; /* Removes the 1px border below the menu */
+  position: absolute;
+  top: 80px; /* Height of top bar */
+  width: 100%;
+  z-index: 10;
 }
 
 

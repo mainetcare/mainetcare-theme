@@ -6,7 +6,6 @@ define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 
 // Classes
 require_once 'classes/class-fl-child-theme.php';
-require_once 'classes/MIHTML.class.php';
 
 // Actions
 add_action( 'fl_head', 'FLChildTheme::stylesheet' );
@@ -22,7 +21,10 @@ function theme_enqueue_styles() {
 //}
 //
 //add_action( 'wp_enqueue_scripts', 'mi_script' );
-
+function favicon4admin() {
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo('wpurl') . '/wp-content/uploads/2019/06/favicon.svg" />';
+}
+add_action( 'admin_head', 'favicon4admin' );
 
 
 function load_template_part( $template_name, $part_name = null ) {
