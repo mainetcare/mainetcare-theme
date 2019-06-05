@@ -1,0 +1,35 @@
+/*
+Theme Name: MaiNetCare
+Description: Special built theme for beaver-builder
+Version: 1.0
+Author: MaiNetCare GmbH
+Author URI: https://mainetcare.de
+Template: bb-theme
+*/
+@import "mi_mixins";
+
+$color_grau_dunkel:#666666;
+$color_gruen_logo:#9AC447;
+$color_mi_gruen_text:#8ab82e;
+$color_text_white: #fbfbfb;
+
+
+.mi-logo {
+  img {
+    background-color: #FFF;
+    // max-width: 130px;
+    // border: 10px solid #FFF;
+  }
+}
+
+.mi-slogan {
+  // color:darken($color_text_white, 20%);
+  font-size:13px;
+  line-height:1.5em;
+  font-family: sans-serif;
+  @include bp(mobile) {
+    text-align: center;
+  }
+}
+
+

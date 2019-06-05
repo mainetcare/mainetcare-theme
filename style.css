@@ -1,0 +1,27 @@
+/*
+Theme Name: Mai-Internet
+Description: Special built theme for beaver-builder
+Version: 1.0
+Author: mmai
+Author URI: http://www.mai-internet.de
+Template: bb-theme
+*/
+/**
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... } */
+.mi-logo img { background-color: #FFF; }
+
+.mi-slogan { font-size: 13px; line-height: 1.5em; font-family: sans-serif; }
+@media (max-width: 767px) { .mi-slogan { text-align: center; } }
