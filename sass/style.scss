@@ -8,16 +8,21 @@ Template: bb-theme
 */
 @import "mi_mixins";
 
-$color_grau_dunkel:#666666;
-$color_gruen_logo:#87a133;
-$color_dunkelblau:#0e2c40;
+$color_grau_dunkel: #666666;
+$color_gruen_logo: #87a133;
+$color_dunkelblau: #0e2c40;
 $color_text_white: #fbfbfb;
+
+
+a:hover, .fl-builder a:hover {
+  text-decoration: underline;
+}
 
 
 .mi-slogan {
   // color:darken($color_text_white, 20%);
-  font-size:13px;
-  line-height:1.5em;
+  font-size: 13px;
+  line-height: 1.5em;
   font-family: sans-serif;
   @include bp(mobile) {
     text-align: center;
@@ -33,11 +38,62 @@ $color_text_white: #fbfbfb;
 
 .fl-page-header, .fl-page-header-wrap {
   background-color: transparent;
-  border-bottom-style: none; /* Removes the 1px border below the menu */
+  border-bottom-style: none !important; /* Removes the 1px border below the menu */
   position: absolute;
-  top: 80px; /* Height of top bar */
+  // top: 80px; /* Height of top bar */
   width: 100%;
   z-index: 10;
 }
 
+.mi-firstrow {
+  .fl-row-content-wrap {
+    padding-top: 300px;
+  }
+}
+
+.mi-mainmenu {
+  .fl-has-submenu-container > a, #menu-main > li > a {
+    text-transform: uppercase;
+    &:hover {
+      background-color: $color_gruen_logo;
+    }
+  }
+  .sub-menu {
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+
+      text-transform: none;
+    }
+  }
+}
+
+.fl-theme-builder-header-shrink, .fl-theme-builder-header-scrolled {
+  background-color: $color_dunkelblau;
+  .mi-mainmenu {
+    ul.sub-menu {
+      background-color:rgba(153,153,153,0.88);
+    }
+  }
+}
+
+.fl-theme-builder-header-shrink {
+  padding: 0 0 10px 0;
+}
+
+.fl-has-submenu:hover {
+  .fl-has-submenu-container {
+    background-color: $color_gruen_logo;
+  }
+}
+
+.mi-ul ul, .mi-ul.ul {
+  padding-left:calc(1.4em + .7vw);
+  list-style: none url("/wp-content/themes/mainetcare/assets/mi-lp.svg");
+}
+
+.mi-small-font {
+  font-size: 16px;
+}
 

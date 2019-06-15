@@ -57,6 +57,10 @@ add_shortcode( 'mi_akz', function ( $atts ) {
 	}
 } );
 
+add_shortcode('mi_year', function () {
+	return date('Y');
+});
+
 add_shortcode( 'mi_bank', function ( $atts ) {
 	$atts   = shortcode_atts( array(
 		'format' => 'block',
