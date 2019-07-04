@@ -14,6 +14,19 @@ function theme_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
+add_filter( 'widget_text', 'do_shortcode' );
+
+add_filter( 'upload_mimes', function ( $mime_types ) {
+	$mime_types['svg'] = 'image/svg+xml'; //.svg hinzufügen
+
+	return $mime_types;
+}, 1, 1 );
+
+// add Groteske Font from adobe in header:
+//add_action( 'wp_head', function () {
+//
+//} );
+
 
 //function mi_script() {
 //	wp_register_script( 'mi', FL_CHILD_THEME_URL . '/js/mi.js', array( 'jquery' ), false, true );
@@ -79,6 +92,21 @@ add_shortcode( 'mi_bank', function ( $atts ) {
 	}
 } );
 
+add_shortcode( 'skiptomain', function ( $atts ) {
+	return '<a class="skip-main" href="#main">Zum Hauptinhalt</a>';
+} );
+
+add_shortcode( 'mi_year', function ( $atts ) {
+	return date('Y');
+} );
+
+add_shortcode( 'mi_email', function ( $atts ) {
+	return '<a href="mailto:info@mainetcare.com">E-Mail:&nbsp;info@mainetcare.com</a>';
+} );
+
+add_shortcode( 'copyright', function ( $atts ) {
+	return sprintf( '<span>© %s MaiNetCare GmbH</span>', date( 'Y' ) );
+} );
 
 
 
