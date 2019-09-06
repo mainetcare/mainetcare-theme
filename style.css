@@ -1,10 +1,14 @@
-/*
-Theme Name: MaiNetCare
-Description: Special built theme for beaver-builder
-Version: 1.0
+@charset "UTF-8";
+/**
+Theme Name: MaiNetCare Theme
 Author: MaiNetCare GmbH
 Author URI: https://mainetcare.de
-Template: bb-theme
+Description: Theme für MaiNetCare Website basierend auf Astra Pro Theme 2.x
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mainetcare-theme
+Template: astra
 */
 /**
 // Extra small devices (portrait phones, less than 576px)
@@ -48,6 +52,6 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 
 .fl-has-submenu:hover .fl-has-submenu-container { background-color: #87a133; }
 
-.mi-ul ul, .mi-ul.ul { padding-left: calc(1.4em + .7vw); list-style: none url("/wp-content/themes/mainetcare/assets/mi-lp.svg"); }
+.mi-ul ul, .mi-ul.ul { padding-left: calc(1.4em + .7vw); list-style: none url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg"); }
 
 .mi-small-font { font-size: 16px; }

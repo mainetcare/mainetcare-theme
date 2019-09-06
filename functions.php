@@ -1,18 +1,24 @@
 <?php
 
-// Defines
-define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
-define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
+/**
+ * Define Constants
+ */
+define( 'CHILD_THEME_MAINETCARE_THEME_VERSION', '1.0.0' );
 
-// Classes
-require_once 'classes/class-fl-child-theme.php';
-
-// Actions
-add_action( 'fl_head', 'FLChildTheme::stylesheet' );
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-function theme_enqueue_styles() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+/**
+ * Enqueue styles
+ */
+function child_enqueue_styles() {
+	wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array( 'astra-theme-css' ), CHILD_THEME_MAINETCARE_THEME_VERSION, 'all' );
 }
+
+// Load Google Fonts:
+function custom_add_google_fonts() {
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,900|Slabo+27px&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
+
+add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 add_filter( 'widget_text', 'do_shortcode' );
 
@@ -34,10 +40,10 @@ add_filter( 'upload_mimes', function ( $mime_types ) {
 //}
 //
 //add_action( 'wp_enqueue_scripts', 'mi_script' );
-function favicon4admin() {
-	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo('wpurl') . '/wp-content/uploads/2019/06/favicon.svg" />';
-}
-add_action( 'admin_head', 'favicon4admin' );
+
+add_action( 'admin_head', function () {
+	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo( 'wpurl' ) . '/wp-content/uploads/2019/06/favicon.svg" />';
+} );
 
 
 function load_template_part( $template_name, $part_name = null ) {
@@ -57,10 +63,10 @@ add_shortcode( 'mi_akz', function ( $atts ) {
 	$format = $atts['format'];
 	$a[]    = 'MaiNetCare GmbH';
 	// $a[]    = '';
-	$a[]    = 'Tile-Wardenberg-Str. 13';
-	$a[]    = 'D-10555 Berlin';
-	$a[]    = '<a href="tel:+491795026607">Tel:&nbsp;+49&nbsp;(179)&nbsp;502.6607</a>';
-	$a[]    = '<a href="mailto:info@mainetcare.com">E-Mail:&nbsp;info@mainetcare.com</a>';
+	$a[] = 'Tile-Wardenberg-Str. 13';
+	$a[] = 'D-10555 Berlin';
+	$a[] = '<a href="tel:+491795026607">Tel:&nbsp;+49&nbsp;(179)&nbsp;502.6607</a>';
+	$a[] = '<a href="mailto:info@mainetcare.com">E-Mail:&nbsp;info@mainetcare.com</a>';
 	if ( $format == 'inline' ) {
 		return implode( ', ', $a );
 	} elseif ( $format == 'block' ) {
@@ -70,9 +76,9 @@ add_shortcode( 'mi_akz', function ( $atts ) {
 	}
 } );
 
-add_shortcode('mi_year', function () {
-	return date('Y');
-});
+add_shortcode( 'mi_year', function () {
+	return date( 'Y' );
+} );
 
 add_shortcode( 'mi_bank', function ( $atts ) {
 	$atts   = shortcode_atts( array(
@@ -97,7 +103,7 @@ add_shortcode( 'skiptomain', function ( $atts ) {
 } );
 
 add_shortcode( 'mi_year', function ( $atts ) {
-	return date('Y');
+	return date( 'Y' );
 } );
 
 add_shortcode( 'mi_email', function ( $atts ) {

@@ -1,10 +1,13 @@
-/*
-Theme Name: MaiNetCare
-Description: Special built theme for beaver-builder
-Version: 1.0
+/**
+Theme Name: MaiNetCare Theme
 Author: MaiNetCare GmbH
 Author URI: https://mainetcare.de
-Template: bb-theme
+Description: Theme für MaiNetCare Website basierend auf Astra Pro Theme 2.x
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mainetcare-theme
+Template: astra
 */
 @import "mi_mixins";
 @import "accessibility";
@@ -13,6 +16,9 @@ $color_grau_dunkel: #666666;
 $color_gruen_logo: #87a133;
 $color_dunkelblau: #0e2c40;
 $color_text_white: #fbfbfb;
+
+$fam_copy:'Roboto', sans-serif;
+$fam_header: 'Slabo 27px', serif;
 
 
 a:hover, .fl-builder a:hover {
