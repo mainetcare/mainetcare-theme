@@ -9,16 +9,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mainetcare-theme
 Template: astra
 */
+@import "_mi_variables";
 @import "mi_mixins";
 @import "accessibility";
+@import "pricetabs";
 
-$color_grau_dunkel: #666666;
-$color_gruen_logo: #87a133;
-$color_dunkelblau: #0e2c40;
-$color_text_white: #fbfbfb;
-
-$fam_copy:'Roboto', sans-serif;
-$fam_header: 'Slabo 27px', serif;
 
 //body {
 //  font-family: $fam_copy;
