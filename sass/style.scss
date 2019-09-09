@@ -20,6 +20,14 @@ $color_text_white: #fbfbfb;
 $fam_copy:'Roboto', sans-serif;
 $fam_header: 'Slabo 27px', serif;
 
+//body {
+//  font-family: $fam_copy;
+//}
+//
+//h1,h2,h3,h4,h5,h6 {
+//  font-family: $fam_header;
+//}
+
 
 a:hover, .fl-builder a:hover {
   text-decoration: underline;
@@ -95,9 +103,29 @@ a:hover, .fl-builder a:hover {
   }
 }
 
-.mi-ul ul, .mi-ul.ul {
-  padding-left:calc(1.4em + .7vw);
-  list-style: none url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
+#main ul, .mi-ul.ul {
+  // padding-left:calc(1.4em + .7vw);
+  // list-style: none url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
+  & > li {
+    background-image:url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
+    background-repeat: no-repeat;
+    background-size:6px;
+    background-position: 0 12px;
+    padding: 3px 0 3px 15px;
+    /* reset styles (optional): */
+    list-style: none;
+    margin: 0;
+  }
+}
+
+.mi-no-li li {
+  background-image: none !important;
+  list-style-type: none !important;
+  padding:initial !important;
+}
+
+.mi-400 {
+  font-weight:400 !important;
 }
 
 .mi-small-font {

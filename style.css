@@ -52,6 +52,10 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 
 .fl-has-submenu:hover .fl-has-submenu-container { background-color: #87a133; }
 
-.mi-ul ul, .mi-ul.ul { padding-left: calc(1.4em + .7vw); list-style: none url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg"); }
+#main ul > li, .mi-ul.ul > li { background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg"); background-repeat: no-repeat; background-size: 6px; background-position: 0 12px; padding: 3px 0 3px 15px; /* reset styles (optional): */ list-style: none; margin: 0; }
+
+.mi-no-li li { background-image: none !important; list-style-type: none !important; padding: initial !important; }
+
+.mi-400 { font-weight: 400 !important; }
 
 .mi-small-font { font-size: 16px; }
