@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mainetcare-theme
 Template: astra
 */
-@import "_mi_variables";
+@import "mi_variables";
 @import "mi_mixins";
 @import "accessibility";
 @import "pricetabs";
@@ -64,10 +64,12 @@ a:hover, .fl-builder a:hover {
 .mi-mainmenu {
   .fl-has-submenu-container > a, #menu-main > li > a {
     text-transform: uppercase;
+
     &:hover {
       background-color: $color_gruen_logo;
     }
   }
+
   .sub-menu {
     a {
       &:hover {
@@ -81,9 +83,10 @@ a:hover, .fl-builder a:hover {
 
 .fl-theme-builder-header-shrink, .fl-theme-builder-header-scrolled {
   background-color: $color_dunkelblau;
+
   .mi-mainmenu {
     ul.sub-menu {
-      background-color:rgba(153,153,153,0.88);
+      background-color: rgba(153, 153, 153, 0.88);
     }
   }
 }
@@ -99,12 +102,10 @@ a:hover, .fl-builder a:hover {
 }
 
 #main ul, .mi-ul.ul {
-  // padding-left:calc(1.4em + .7vw);
-  // list-style: none url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
   & > li {
-    background-image:url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
+    background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
     background-repeat: no-repeat;
-    background-size:6px;
+    background-size: 6px;
     background-position: 0 12px;
     padding: 3px 0 3px 15px;
     /* reset styles (optional): */
@@ -113,14 +114,36 @@ a:hover, .fl-builder a:hover {
   }
 }
 
+#main ul.mi-ticks {
+  & > li {
+    background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg");
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: 0 12px;
+    padding: 3px 0 3px 20px;
+    /* reset styles (optional): */
+    list-style: none;
+    margin: 0;
+  }
+}
+
+.mi-smaller {
+  font-size:16px;
+  line-height:1.6em;
+}
+
+.mi-med {
+  font-weight:400;
+}
+
 .mi-no-li li {
   background-image: none !important;
   list-style-type: none !important;
-  padding:initial !important;
+  padding: initial !important;
 }
 
 .mi-400 {
-  font-weight:400 !important;
+  font-weight: 400 !important;
 }
 
 .mi-small-font {

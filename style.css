@@ -33,51 +33,55 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 ================================== */
 /* Tables
 ================================== */
-.Rtable { display: flex; flex-wrap: wrap; margin: 0 0 3em 0; padding: 0; }
+.mi-pricetable { display: flex; flex-wrap: wrap; margin: 0 0 3em 0; padding: 0; }
 
-.Rtable-cell { box-sizing: border-box; flex-grow: 1; width: 100%; padding: 0.8em 1.2em; overflow: hidden; list-style: none; border: solid 1px white; background: #fbfbfb; }
-.Rtable-cell > h1, .Rtable-cell > h2, .Rtable-cell > h3, .Rtable-cell > h4, .Rtable-cell > h5, .Rtable-cell > h6 { margin: 0; }
+.mi-pricetable-cell { display: flex; box-sizing: border-box; flex-grow: 1; width: 100%; padding: 0.8em 1.2em; overflow: hidden; list-style: none; border: solid 1px white; background-color: #fbfbfb; }
+.mi-pricetable-cell > h1, .mi-pricetable-cell > h2, .mi-pricetable-cell > h3, .mi-pricetable-cell > h4, .mi-pricetable-cell > h5, .mi-pricetable-cell > h6 { margin: 0; }
+.mi-pricetable-cell img { margin-top: auto; }
 
 /* Table column sizing
 ================================== */
-.Rtable--2cols > .Rtable-cell { width: 50%; }
+.mi-pricetable--2cols > .mi-pricetable-cell { width: 50%; }
 
-.Rtable--3cols > .Rtable-cell { width: 33.33%; }
+.mi-pricetable--3cols > .mi-pricetable-cell { width: 33.33%; }
 
-.Rtable--4cols > .Rtable-cell { width: 25%; }
+.mi-pricetable--4cols > .mi-pricetable-cell { width: 25%; }
 
-.Rtable--5cols > .Rtable-cell { width: 20%; }
+.mi-pricetable--5cols > .mi-pricetable-cell { width: 20%; }
 
-.Rtable--6cols > .Rtable-cell { width: 16.6%; }
+.mi-pricetable--6cols > .mi-pricetable-cell { width: 16.6%; }
 
 /* Responsive
 ==================================== */
-@media all and (max-width: 500px) { .Rtable--collapse { display: block; }
-  .Rtable--collapse > .Rtable-cell { width: 100% !important; }
-  .Rtable--collapse > .Rtable-cell--foot { margin-bottom: 1em; } }
-.no-flexbox .Rtable { display: block; }
-.no-flexbox .Rtable > .Rtable-cell { width: 100%; }
-.no-flexbox .Rtable > .Rtable-cell--foot { margin-bottom: 1em; }
+@media all and (max-width: 500px) { .mi-pricetable--collapse { display: block; }
+  .mi-pricetable--collapse > .mi-pricetable-cell { width: 100% !important; }
+  .mi-pricetable--collapse > .mi-pricetable-cell--foot { margin-bottom: 1em; } }
+.no-flexbox .mi-pricetable { display: block; }
+.no-flexbox .mi-pricetable > .mi-pricetable-cell { width: 100%; }
+.no-flexbox .mi-pricetable > .mi-pricetable-cell--foot { margin-bottom: 1em; }
 
 /* Apply styles
 ================================== */
-.Rtable { position: relative; top: 1px; left: 1px; }
+.mi-pricetable { position: relative; top: 1px; left: 1px; }
 
 /* Cell styles
 ================================== */
-.Rtable-cell--medium { background-color: #b8c0c8; border-color: #a9b3bc; }
+.mi-pricetable-cell--medium { background-color: #b8c0c8; border-color: #a9b3bc; }
 
-.Rtable-cell--light, .Rtable-cell { background-color: white; border-color: #e2e6e9; }
+.mi-pricetable-cell--light, .mi-pricetable-cell { background-color: white; border-color: #e2e6e9; }
 
-.Rtable-cell--highlight { background-color: lightgreen; border-color: #64e764; }
+.mi-pricetable-cell--highlight { background-color: lightgreen; border-color: #64e764; }
 
-.Rtable-cell--alert { background-color: darkorange; border-color: #cc7000; color: white; }
-.Rtable-cell--alert > h1, .Rtable-cell--alert > h2, .Rtable-cell--alert > h3, .Rtable-cell--alert > h4, .Rtable-cell--alert > h5, .Rtable-cell--alert > h6 { color: white; }
+.mi-pricetable-cell--alert { background-color: darkorange; border-color: #cc7000; color: white; }
+.mi-pricetable-cell--alert > h1, .mi-pricetable-cell--alert > h2, .mi-pricetable-cell--alert > h3, .mi-pricetable-cell--alert > h4, .mi-pricetable-cell--alert > h5, .mi-pricetable-cell--alert > h6 { color: white; }
 
-.Rtable-cell { margin: -1px 0 -1px; }
+.mi-pricetable-cell { margin: -1px 0 -1px; }
+.mi-pricetable-cell ul { margin-left: 5px; }
 
-.Rtable-cell--head { background-color: #0e2c40; border-color: #5a6773; color: white; }
-.Rtable-cell--head > h1, .Rtable-cell--head > h2, .Rtable-cell--head > h3, .Rtable-cell--head > h4, .Rtable-cell--head > h5, .Rtable-cell--head > h6 { color: white; }
+.mi-description { font-size: 11px; }
+
+.mi-pricetable-cell--head { text-align: center; background-color: #0e2c40; border-color: #5a6773; color: white; }
+.mi-pricetable-cell--head > h1, .mi-pricetable-cell--head > h2, .mi-pricetable-cell--head > h3, .mi-pricetable-cell--head > h4, .mi-pricetable-cell--head > h5, .mi-pricetable-cell--head > h6 { color: white; }
 
 @media all and (max-width: 500px) { .hiddenSmall { display: none; } }
 /* Tab Styling
@@ -90,9 +94,17 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 .Tab[aria-selected="false"]:active { margin-top: 0.2em; padding-bottom: 0.4em; }
 .Tab[aria-selected="true"] { color: #666666; background: #f3f6eb; cursor: default; }
 
-/* Accordion Styling
-==================================== */
-.js-RtableTabs, .js-RtableAccordions { min-width: 240px; }
+.mi-no-border { border: 0; }
+
+.btopf { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/blumentopf.svg"); background-position: 6px 2px; }
+
+.wachstum { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/pflanze_target.svg"); background-position: 6px 2px; }
+
+.individuell { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/gartenschaufel.svg"); background-position: 6px 2px; }
+
+.mi-header-icon { background-color: #fbfbfb; width: 50px; height: 50px; border-radius: 25px; position: absolute; top: 7px; left: 10px; background-repeat: no-repeat; }
+
+.js-mi-pricetableTabs { min-width: 240px; }
 
 a:hover, .fl-builder a:hover { text-decoration: underline; }
 
@@ -118,6 +130,12 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .fl-has-submenu:hover .fl-has-submenu-container { background-color: #87a133; }
 
 #main ul > li, .mi-ul.ul > li { background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg"); background-repeat: no-repeat; background-size: 6px; background-position: 0 12px; padding: 3px 0 3px 15px; /* reset styles (optional): */ list-style: none; margin: 0; }
+
+#main ul.mi-ticks > li { background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg"); background-repeat: no-repeat; background-size: 12px; background-position: 0 12px; padding: 3px 0 3px 20px; /* reset styles (optional): */ list-style: none; margin: 0; }
+
+.mi-smaller { font-size: 16px; line-height: 1.6em; }
+
+.mi-med { font-weight: 400; }
 
 .mi-no-li li { background-image: none !important; list-style-type: none !important; padding: initial !important; }
 

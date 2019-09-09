@@ -1,17 +1,19 @@
 /* Variables
 ================================== */
 $bw: 1px;  // border width
+$breakpoint: 500px;
 
 
 /* Tables
 ================================== */
-.Rtable {
+.mi-pricetable {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 3em 0;
   padding: 0;
 }
-.Rtable-cell {
+.mi-pricetable-cell {
+  display:flex;
   box-sizing: border-box;
   flex-grow: 1;
   width: 100%;  // Default to full width
@@ -19,78 +21,90 @@ $bw: 1px;  // border width
   overflow: hidden; // Or flex might break
   list-style: none;
   border: solid $bw white;
-  background: $color_text_white;
+  background-color:$color_text_white;
   > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+  img {
+    margin-top:auto;
+  }
 }
 
 /* Table column sizing
 ================================== */
-.Rtable--2cols > .Rtable-cell  { width: 50%; }
-.Rtable--3cols > .Rtable-cell  { width: 33.33%; }
-.Rtable--4cols > .Rtable-cell  { width: 25%; }
-.Rtable--5cols > .Rtable-cell  { width: 20%; }
-.Rtable--6cols > .Rtable-cell  { width: 16.6%; }
+.mi-pricetable--2cols > .mi-pricetable-cell  { width: 50%; }
+.mi-pricetable--3cols > .mi-pricetable-cell  { width: 33.33%; }
+.mi-pricetable--4cols > .mi-pricetable-cell  { width: 25%; }
+.mi-pricetable--5cols > .mi-pricetable-cell  { width: 20%; }
+.mi-pricetable--6cols > .mi-pricetable-cell  { width: 16.6%; }
 
-$breakpoint: 500px;
+
 
 /* Responsive
 ==================================== */
 @media all and (max-width: $breakpoint) {
-  .Rtable--collapse  {
+  .mi-pricetable--collapse  {
     display: block;
-    > .Rtable-cell { width: 100% !important; }
-    > .Rtable-cell--foot { margin-bottom: 1em; }
+    > .mi-pricetable-cell { width: 100% !important; }
+    > .mi-pricetable-cell--foot { margin-bottom: 1em; }
   }
 }
 
 // Non-Flex modernizer fallback
-.no-flexbox .Rtable {
+.no-flexbox .mi-pricetable {
   display: block;
-  > .Rtable-cell { width: 100%; }
-  > .Rtable-cell--foot { margin-bottom: 1em; }
+  > .mi-pricetable-cell { width: 100%; }
+  > .mi-pricetable-cell--foot { margin-bottom: 1em; }
 }
 
 $tableColour: slategrey;
 
 /* Apply styles
 ================================== */
-.Rtable {
+.mi-pricetable {
   position: relative; top: $bw; left: $bw; //compensate for border offset
 }
 
 /* Cell styles
 ================================== */
-@mixin Rtable-cell--dark {
+@mixin mi-pricetable-cell--dark {
   background-color:$color_dunkelblau;
   border-color: darken($tableColour,10%);
   color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
 }
-.Rtable-cell--medium {
+.mi-pricetable-cell--medium {
   background-color: mix(white,$tableColour,50%);
   border-color: mix(white,$tableColour,40%);
 }
-.Rtable-cell--light {
+.mi-pricetable-cell--light {
   background-color: white;
   border-color: mix(white,$tableColour,80%);
 }
-.Rtable-cell--highlight {
+.mi-pricetable-cell--highlight {
   background-color: lightgreen;
   border-color: darken(lightgreen,10%);
 }
-.Rtable-cell--alert {
+.mi-pricetable-cell--alert {
   background-color: darkorange;
   border-color: darken(darkorange,10%);
   color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
 }
 
-.Rtable-cell {
+.mi-pricetable-cell {
   margin: -$bw 0 0 -$bw;  //border collapse offset
-  @extend .Rtable-cell--light;
+  @extend .mi-pricetable-cell--light;
+  ul {
+    margin-left:5px;
+  }
+}
+
+.mi-description {
+  font-size:11px;
 }
 
 // Inherit header and footer styles
-.Rtable-cell--head { @include Rtable-cell--dark; }
-// .Rtable-cell--foot { @extend .Rtable-cell--medium; }
+.mi-pricetable-cell--head {
+  text-align: center;
+  @include mi-pricetable-cell--dark;
+}
 
 @media all and (max-width: $breakpoint) {
   .hiddenSmall {display: none; }
@@ -135,14 +149,42 @@ $tabColour: $color_gruen_logo;
   }
 }
 
+.mi-no-border {
+  border:0;
+}
 
-/* Accordion Styling
-==================================== */
-$accordionColour: darkcyan;
-$iconSize: 2em;
+@mixin mi-icon($size) {
+  background-color:$color_text_white;
+  width:$size;
+  height:$size;
+  border-radius:$size/2;
+  position:absolute;
+  top:57-$size;
+  left:10px;
+  background-repeat:no-repeat;
+}
+
+.btopf {
+  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/blumentopf.svg');
+  background-position:6px 2px;
+}
+
+.wachstum {
+  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/pflanze_target.svg');
+  background-position:6px 2px;
+}
+
+.individuell {
+  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/gartenschaufel.svg');
+  background-position:6px 2px;
+}
+
+.mi-header-icon {
+  @include mi-icon(50px);
+}
 
 
 
-.js-RtableTabs, .js-RtableAccordions {
+.js-mi-pricetableTabs {
   min-width: 240px;
 }
