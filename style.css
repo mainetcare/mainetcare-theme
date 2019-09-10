@@ -80,8 +80,12 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 
 .mi-description { font-size: 11px; }
 
-.mi-pricetable-cell--head { text-align: center; background-color: #0e2c40; border-color: #5a6773; color: white; }
+.mi-pricetable-cell--head { justify-content: center; background-color: #0e2c40; border-color: #5a6773; color: white; }
 .mi-pricetable-cell--head > h1, .mi-pricetable-cell--head > h2, .mi-pricetable-cell--head > h3, .mi-pricetable-cell--head > h4, .mi-pricetable-cell--head > h5, .mi-pricetable-cell--head > h6 { color: white; }
+
+.mi-price, .mi-cta { justify-content: center; }
+
+.mi-cta button { font-weight: 400; }
 
 @media all and (max-width: 500px) { .hiddenSmall { display: none; } }
 /* Tab Styling
@@ -95,12 +99,6 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 .Tab[aria-selected="true"] { color: #666666; background: #f3f6eb; cursor: default; }
 
 .mi-no-border { border: 0; }
-
-.btopf { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/blumentopf.svg"); background-position: 6px 2px; }
-
-.wachstum { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/pflanze_target.svg"); background-position: 6px 2px; }
-
-.individuell { background-image: url("https://dev.mainetcare.de/wp-content/uploads/2019/06/gartenschaufel.svg"); background-position: 6px 2px; }
 
 .mi-header-icon { background-color: #fbfbfb; width: 50px; height: 50px; border-radius: 25px; position: absolute; top: 7px; left: 10px; background-repeat: no-repeat; }
 

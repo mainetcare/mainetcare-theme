@@ -102,8 +102,17 @@ $tableColour: slategrey;
 
 // Inherit header and footer styles
 .mi-pricetable-cell--head {
-  text-align: center;
+  justify-content: center;
   @include mi-pricetable-cell--dark;
+}
+
+.mi-price, .mi-cta {
+  justify-content: center;
+}
+.mi-cta {
+  button {
+    font-weight: 400;
+  }
 }
 
 @media all and (max-width: $breakpoint) {
@@ -164,20 +173,20 @@ $tabColour: $color_gruen_logo;
   background-repeat:no-repeat;
 }
 
-.btopf {
-  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/blumentopf.svg');
-  background-position:6px 2px;
-}
-
-.wachstum {
-  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/pflanze_target.svg');
-  background-position:6px 2px;
-}
-
-.individuell {
-  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/gartenschaufel.svg');
-  background-position:6px 2px;
-}
+//.btopf {
+//  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/blumentopf.svg');
+//  background-position:6px 2px;
+//}
+//
+//.wachstum {
+//  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/pflanze_target.svg');
+//  background-position:6px 2px;
+//}
+//
+//.individuell {
+//  background-image:url('https://dev.mainetcare.de/wp-content/uploads/2019/06/gartenschaufel.svg');
+//  background-position:6px 2px;
+//}
 
 .mi-header-icon {
   @include mi-icon(50px);
