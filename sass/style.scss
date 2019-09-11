@@ -13,6 +13,7 @@ Template: astra
 @import "mi_mixins";
 @import "accessibility";
 @import "pricetabs";
+@import "pricetable";
 
 
 //body {
@@ -150,3 +151,6 @@ a:hover, .fl-builder a:hover {
   font-size: 16px;
 }
 
+.mi-nobreak {
+  white-space: nowrap;
+}

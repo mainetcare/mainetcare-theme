@@ -104,6 +104,23 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 
 .js-mi-pricetableTabs { min-width: 240px; }
 
+.mi-table-prices, .stacktable { border: none; }
+.mi-table-prices th, .mi-table-prices td, .stacktable th, .stacktable td { text-align: center; font-size: 14px; }
+.mi-table-prices .emph, .stacktable .emph { font-weight: 900; font-size: inherit; }
+.mi-table-prices img, .stacktable img { max-width: 20px; }
+.mi-table-prices img.cross, .stacktable img.cross { max-width: 13px; }
+.mi-table-prices tr td:first-of-type, .stacktable tr td:first-of-type { text-align: right; border-left: none !important; border-top: none !important; border-bottom: none !important; }
+.mi-table-prices td.mi-table-subtitle, .stacktable td.mi-table-subtitle { text-align: center !important; padding: 15px; }
+.mi-table-prices th, .stacktable th { background-color: #0e2c40; border-color: #fbfbfb; color: #fbfbfb; font-weight: 900; }
+.mi-table-prices th:first-of-type, .stacktable th:first-of-type { background-color: transparent; border: 0; }
+
+/* RESPONSIVE EXAMPLE */
+.stacktable.large-only { display: table; }
+
+.stacktable.small-only { display: none; }
+
+@media (max-width: 800px) { .stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; } }
 a:hover, .fl-builder a:hover { text-decoration: underline; }
 
 .mi-slogan { font-size: 13px; line-height: 1.5em; font-family: sans-serif; }
@@ -140,3 +157,5 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .mi-400 { font-weight: 400 !important; }
 
 .mi-small-font { font-size: 16px; }
+
+.mi-nobreak { white-space: nowrap; }

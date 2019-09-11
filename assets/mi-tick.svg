@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 8"><defs><style>.a{fill:#8b9c4e;}</style></defs><title>tick</title><path class="a" d="M0,5.05l1-1,2,2,6-6,1,1-7,7Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 8">
+    <defs>
+        <style>.a{fill:#8b9c4e;}</style>
+    </defs>
+    <title>tick</title>
+    <path class="a" d="M0,5.05l1-1,2,2,6-6,1,1-7,7Z"/>
+</svg>

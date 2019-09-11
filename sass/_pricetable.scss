@@ -1,0 +1,57 @@
+.mi-table-prices, .stacktable {
+  border:none;
+  th, td {
+    //border:none;
+  }
+  th, td {
+    text-align: center;
+    font-size:14px;
+  }
+  .emph {
+    font-weight:900;
+    font-size:inherit;
+  }
+  img {
+    max-width:20px;
+  }
+  img.cross {
+    max-width:13px;
+  }
+  tr td:first-of-type {
+    text-align:right;
+    border-left:none !important;
+    border-top:none !important;
+    border-bottom:none !important;
+  }
+  td.mi-table-subtitle {
+    text-align: center !important;
+    padding:15px;
+  }
+  th {
+    background-color: $color_dunkelblau;
+    border-color: $color_text_white;
+    color:$color_text_white;
+    font-weight:900;
+  }
+  th:first-of-type {
+    background-color:transparent;
+    border:0;
+  }
+}
+
+//.stacktable { width: 100%; }
+//.st-head-row { padding-top: 1em; }
+//.st-head-row.st-head-row-main { font-size: 1.5em; padding-top: 0; }
+//.st-key { width: 49%; text-align: right; padding-right: 1%; }
+//.st-val { width: 49%; padding-left: 1%; }
+
+
+/* RESPONSIVE EXAMPLE */
+
+.stacktable.large-only { display: table; }
+.stacktable.small-only { display: none; }
+
+@media (max-width: 800px) {
+  .stacktable.large-only { display: none; }
+  .stacktable.small-only { display: table; }
+}
