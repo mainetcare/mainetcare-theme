@@ -115,6 +115,10 @@ a:hover, .fl-builder a:hover {
   }
 }
 
+#main ul.mi-no-ml {
+  margin-left:5px;
+}
+
 #main ul.mi-ticks {
   & > li {
     background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg");
@@ -129,12 +133,12 @@ a:hover, .fl-builder a:hover {
 }
 
 .mi-smaller {
-  font-size:16px;
-  line-height:1.6em;
+  font-size: 16px;
+  line-height: 1.6em;
 }
 
 .mi-med {
-  font-weight:400;
+  font-weight: 400;
 }
 
 .mi-no-li li {
@@ -156,24 +160,38 @@ a:hover, .fl-builder a:hover {
 }
 
 .mi-price-headline {
-  background-color:$color_dunkelblau;
-  color:$color_text_white;
+  background-color: $color_dunkelblau;
+  color: $color_text_white;
   text-align: center;
 }
 
 .mi-price {
-  text-align:center;
+  text-align: center;
+
   strong {
-    font-size:2.5em;
-    font-weight:300;
+    font-size: 2.5em;
+    font-weight: 300;
   }
+
   p {
-    margin-top:20px;
+    margin-top: 20px;
   }
 }
+
 .mi-cta {
   text-align: center;
+
   button {
     font-weight: 400;
+  }
+}
+
+.mi-price-desc {
+  min-height: 180px;
+}
+
+.wpcf7-checkbox {
+  .wpcf7-list-item {
+    display:block;
   }
 }

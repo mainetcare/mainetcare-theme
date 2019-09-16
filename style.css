@@ -143,6 +143,8 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 
 #main ul > li, .mi-ul.ul > li { background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg"); background-repeat: no-repeat; background-size: 6px; background-position: 0 12px; padding: 3px 0 3px 15px; /* reset styles (optional): */ list-style: none; margin: 0; }
 
+#main ul.mi-no-ml { margin-left: 5px; }
+
 #main ul.mi-ticks > li { background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg"); background-repeat: no-repeat; background-size: 12px; background-position: 0 12px; padding: 3px 0 3px 20px; /* reset styles (optional): */ list-style: none; margin: 0; }
 
 .mi-smaller { font-size: 16px; line-height: 1.6em; }
@@ -165,3 +167,7 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 
 .mi-cta { text-align: center; }
 .mi-cta button { font-weight: 400; }
+
+.mi-price-desc { min-height: 180px; }
+
+.wpcf7-checkbox .wpcf7-list-item { display: block; }
