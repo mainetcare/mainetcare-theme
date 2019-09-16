@@ -13,7 +13,7 @@ $breakpoint: 500px;
   padding: 0;
 }
 .mi-pricetable-cell {
-  display:flex;
+  // display:flex;
   box-sizing: border-box;
   flex-grow: 1;
   width: 100%;  // Default to full width
@@ -25,6 +25,9 @@ $breakpoint: 500px;
   > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
   img {
     margin-top:auto;
+  }
+  h2, h3 {
+    text-align: center;
   }
 }
 
@@ -107,7 +110,15 @@ $tableColour: slategrey;
 }
 
 .mi-price, .mi-cta {
-  justify-content: center;
+  text-align:center;
+  strong {
+    font-size:2.5em;
+    font-weight:300;
+  }
+  p {
+    margin-top:20px;
+    // line-height:4em;
+  }
 }
 .mi-cta {
   button {
@@ -182,3 +193,4 @@ $tabColour: $color_gruen_logo;
 .js-mi-pricetableTabs {
   min-width: 240px;
 }
+
