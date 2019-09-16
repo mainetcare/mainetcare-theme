@@ -109,22 +109,7 @@ $tableColour: slategrey;
   @include mi-pricetable-cell--dark;
 }
 
-.mi-price, .mi-cta {
-  text-align:center;
-  strong {
-    font-size:2.5em;
-    font-weight:300;
-  }
-  p {
-    margin-top:20px;
-    // line-height:4em;
-  }
-}
-.mi-cta {
-  button {
-    font-weight: 400;
-  }
-}
+
 
 @media all and (max-width: $breakpoint) {
   .hiddenSmall {display: none; }
