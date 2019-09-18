@@ -120,7 +120,7 @@ add_action( 'wp_enqueue_scripts', function () {
 	$load_scripts = false;
 	if ( is_singular() ) {
 		$post = get_post();
-		if ( $post->ID = 568 ) {
+		if ( $post->ID == 568 ) {
 			$load_scripts = true;
 		}
 	}
