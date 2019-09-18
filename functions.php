@@ -11,6 +11,7 @@ define( 'CHILD_THEME_MAINETCARE_THEME_VERSION', '1.0.0' );
 function child_enqueue_styles() {
 	wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array( 'astra-theme-css' ), CHILD_THEME_MAINETCARE_THEME_VERSION, 'all' );
 }
+
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 // Load Google Fonts:
@@ -113,6 +114,22 @@ add_shortcode( 'mi_email', function ( $atts ) {
 add_shortcode( 'copyright', function ( $atts ) {
 	return sprintf( '<span>© %s MaiNetCare GmbH</span>', date( 'Y' ) );
 } );
+
+
+add_action( 'wp_enqueue_scripts', function () {
+	$load_scripts = false;
+	if ( is_singular() ) {
+		$post = get_post();
+		if ( $post->ID = 568 ) {
+			$load_scripts = true;
+		}
+	}
+	if ( ! $load_scripts ) {
+		wp_dequeue_script( 'contact-form-7' );
+		wp_dequeue_script( 'google-recaptcha' );
+		wp_dequeue_style( 'contact-form-7' );
+	}
+}, 99 );
 
 
 
