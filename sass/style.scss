@@ -30,6 +30,11 @@ a:hover, .fl-builder a:hover {
 }
 
 
+.d-inline-block {
+  display:inline-block;
+}
+
+
 .mi-slogan {
   // color:darken($color_text_white, 20%);
   font-size: 13px;
@@ -169,8 +174,9 @@ a:hover, .fl-builder a:hover {
   text-align: center;
 
   strong {
-    font-size: 2.5em;
-    font-weight: 300;
+    font-size:2.5em;
+    font-weight:300;
+    line-height:1em;
   }
 
   p {
@@ -193,5 +199,11 @@ a:hover, .fl-builder a:hover {
 .wpcf7-checkbox {
   .wpcf7-list-item {
     display:block;
+  }
+}
+
+.mi-products {
+  label {
+    cursor: pointer;
   }
 }
