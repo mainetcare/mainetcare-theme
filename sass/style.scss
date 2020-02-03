@@ -107,7 +107,7 @@ a:hover, .fl-builder a:hover {
   }
 }
 
-#main ul, .mi-ul.ul {
+.mi-ul ul, .mi-ul.ul {
   & > li {
     background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-lp.svg");
     background-repeat: no-repeat;
@@ -124,7 +124,7 @@ a:hover, .fl-builder a:hover {
   margin-left:5px;
 }
 
-#main ul.mi-ticks {
+ul.mi-ticks, .mi-ticks ul {
   & > li {
     background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg");
     background-repeat: no-repeat;
