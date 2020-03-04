@@ -116,20 +116,20 @@ add_shortcode( 'copyright', function ( $atts ) {
 } );
 
 
-add_action( 'wp_enqueue_scripts', function () {
-	$load_scripts = false;
-	if ( is_singular() ) {
-		$post = get_post();
-		if ( $post->ID == 568 ) {
-			$load_scripts = true;
-		}
-	}
-	if ( ! $load_scripts ) {
-		wp_dequeue_script( 'contact-form-7' );
-		wp_dequeue_script( 'google-recaptcha' );
-		wp_dequeue_style( 'contact-form-7' );
-	}
-}, 99 );
+//add_action( 'wp_enqueue_scripts', function () {
+//	$load_scripts = false;
+//	if ( is_singular() ) {
+//		$post = get_post();
+//		if ( $post->ID == 568 ) {
+//			$load_scripts = true;
+//		}
+//	}
+//	if ( ! $load_scripts ) {
+//		wp_dequeue_script( 'contact-form-7' );
+//		wp_dequeue_script( 'google-recaptcha' );
+//		wp_dequeue_style( 'contact-form-7' );
+//	}
+//}, 99 );
 
 
 
