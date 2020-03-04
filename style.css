@@ -176,4 +176,4 @@ ul.mi-ticks > li, .mi-ticks ul > li { background-image: url("/wp-content/themes/
 
 .mi-products label { cursor: pointer; }
 
-.wpcf7-mail-sent-ok { border: 3px solid #87a133; background-color: #e2eac4; }
+.wpcf7-mail-sent-ok, .screen-reader-response { border: 3px solid #87a133; background-color: #e2eac4; }
