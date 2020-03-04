@@ -175,3 +175,5 @@ ul.mi-ticks > li, .mi-ticks ul > li { background-image: url("/wp-content/themes/
 .wpcf7-checkbox .wpcf7-list-item { display: block; }
 
 .mi-products label { cursor: pointer; }
+
+.wpcf7-mail-sent-ok { border: 3px solid #87a133; background-color: #e2eac4; }
