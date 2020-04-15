@@ -1,3 +1,11 @@
+@mixin nth-children($points...) {
+  @each $point in $points {
+    &:nth-child(#{$point}) {
+      @content;
+    }
+  }
+}
+
 @mixin hide_from_dom {
   display: none !important;
   visibility: hidden;

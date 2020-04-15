@@ -179,3 +179,25 @@ ul.mi-ticks > li, .mi-ticks ul > li { background-image: url("/wp-content/themes/
 .wpcf7-mail-sent-ok, .screen-reader-response { border: 3px solid #87a133; background-color: #e2eac4; }
 
 .wpcf7-validation-errors { border: 3px solid #0e2c40; background-color: #b5cade; }
+
+.uabb-pricing-table-column-0 { border: 1px solid #c1c1c1; }
+
+.uabb-pricing-table-column-1, .uabb-pricing-table-column-2, .uabb-pricing-table-column-3 { border-right: 1px solid #c1c1c1; border-top: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; }
+
+.uabb-pricing-table-column-0 .uabb-pricing-table-price, .uabb-pricing-table-column-0 .uabb-pricing-table-title { background-color: #FFF; }
+
+.uabb-pricing-table .uabb-pricing-table-features li:first-child { margin-top: 0 !important; }
+
+.uabb-pricing-table .uabb-pricing-table-features li { padding: 6px 30px; }
+
+.yes { font-size: 0; }
+.yes::after { content: " "; height: 16px; width: 16px; overflow: hidden; display: inline-block; background-image: url("/wp-content/themes/mainetcare-theme/assets/mi-tick.svg"); background-repeat: no-repeat; background-size: contain; background-position: center; }
+
+@media (max-width: 767px) { .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(1) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(3) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(5) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(9) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(10) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(11) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(12) { background-color: red !important; }
+  .uabb-pricing-table-column-1 .uabb-pricing-table-features li:nth-child(13) { background-color: red !important; } }
