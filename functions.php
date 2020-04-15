@@ -30,7 +30,7 @@ add_action( 'admin_head', function () {
 //}
 //add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
 
-
+require get_stylesheet_directory() . '/inc/custom-navbar.php';
 
 function load_template_part( $template_name, $part_name = null ) {
 	ob_start();
