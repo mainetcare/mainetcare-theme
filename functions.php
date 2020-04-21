@@ -41,6 +41,10 @@ function load_template_part( $template_name, $part_name = null ) {
 	return $var;
 }
 
+add_shortcode('yoastbc', function() {
+	return yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+});
+
 
 add_shortcode( 'mi_akz', function ( $atts ) {
 	$atts   = shortcode_atts( array(
@@ -99,6 +103,47 @@ add_shortcode( 'mi_email', function ( $atts ) {
 add_shortcode( 'copyright', function ( $atts ) {
 	return sprintf( '<span>© %s MaiNetCare GmbH</span>', date( 'Y' ) );
 } );
+
+add_shortcode( 'check', function ( $atts ) {
+	return check();
+} );
+
+
+function check( $content = '' ) {
+	if ( $content == '' ) {
+		return '<span>' . get_icon( 'check' ) . '</span>';
+	}
+
+	return '<span>' . get_icon( 'check' ) . '</span><span class="ml-2">' . $content . '</span>';
+}
+
+function mute( $content = '' ) {
+	if ( $content == '' ) {
+		return '<span>' . get_icon( 'clear' ) . '</span>';
+	}
+
+	return '<span>' . get_icon( 'clear' ) . '</span><span class="ml-2">' . $content . '</span>';
+}
+
+function get_icon( $icon_key ) {
+	$prefix = wp_upload_dir()['basedir'] . '/svg/';
+	// $prefix  = '/wp-content/uploads/svg/';
+	$map  = [
+		'email'    => 'email-24px.svg',
+		'location' => 'room-24px.svg',
+		'phone'    => 'call-24px.svg',
+		'check'    => 'check-circle.svg',
+//		'check'    => 'done-24px.svg',
+		'clear'    => 'clear-24px.svg'
+	];
+	$path = $prefix . $map[ $icon_key ];
+	if ( ! file_exists( $path ) ) {
+		return 'Icon not found: ' . $path;
+	}
+	$icon = file_get_contents( $path );
+
+	return str_replace( 'class=""', 'class="mnc-icon mnc-icon-' . $icon_key . '"', $icon );
+}
 
 
 
