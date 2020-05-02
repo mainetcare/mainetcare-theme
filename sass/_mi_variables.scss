@@ -1,8 +1,18 @@
+
+
+$color_mnc_gruen: #87a133;
+$color_mnc_blau: #0e2c40;
+
+$icon_default_color: $color_mnc_gruen;
+$icon_default_height: 1rem;
+
+$gray-600: #6c757d !default;
+$gray-100: #f8f9fa !default;
+
 $color_grau_dunkel: #666666;
 $color_gruen_logo: #87a133;
 $color_gruen_hell: #e2eac4;
-$color_dunkelblau: #0e2c40;
-$color_text_white: #fbfbfb;
-
-$fam_copy: 'Roboto', sans-serif;
-$fam_header: 'Slabo 27px', serif;
+$color_dunkelblau: $color_mnc_blau; // legacy
+$color_text_white: #FFFFFF; // legacy
+$black: #000 !default;
+$spacer:20px;

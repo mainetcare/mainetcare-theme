@@ -1,0 +1,31 @@
+$icon_default_height: 20px;
+.mnc-icon {
+  height: $icon_default_height;
+  width: $icon_default_height;
+  fill: $color_mnc_gruen;
+}
+
+.mnc-icon-size-2 {
+  .mnc-icon {
+    height: $icon_default_height * 1.3;
+    width: $icon_default_height *1.3;
+  }
+}
+
+.mnc-checklist {
+  li {
+    background-repeat: no-repeat;
+    background-image: url("/wp-content/uploads/svg/check-circle-green.svg");
+    background-size: 1rem;
+    background-position: 0 12px;
+    padding: 3px 0 3px 40px;
+    list-style: none;
+    margin: 0;
+    @include bp(mobile) {
+      background-size:0.8em;
+      background-position: 0 10px;
+      padding: 3px 0 3px 20px;
+    }
+  }
+
+}
