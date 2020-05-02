@@ -29,4 +29,6 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 
 .mnc-form2col .wpcf7 .wpcf7-form-control-wrap { width: 96%; }
 
+.mnc-upper, #primary-menu > li > a > .menu-text { text-transform: uppercase !important; letter-spacing: 0.1em; }
+
 .mnc-nofocus a:focus { border: none; }

@@ -17,3 +17,12 @@
     width:96%;
   }
 }
+
+.mnc-upper {
+  text-transform:uppercase !important;
+  letter-spacing:0.1em;
+}
+
+#primary-menu > li > a > .menu-text {
+  @extend .mnc-upper;
+}
