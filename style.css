@@ -20,8 +20,11 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 
 .mnc-icon-size-2 .mnc-icon { height: 26px; width: 26px; }
 
-.mnc-checklist li { background-repeat: no-repeat; background-image: url("/wp-content/uploads/svg/check-circle-green.svg"); background-size: 1rem; background-position: 0 8px; padding: 3px 0 3px 40px; list-style: none; margin: 0; }
-@media (max-width: 767px) { .mnc-checklist li { background-size: 0.8em; background-position: 0 10px; padding: 3px 0 3px 20px; } }
+.mnc-checklist li, .mnc-infolist li { background-repeat: no-repeat; background-size: 1rem; background-position: 0 8px; padding: 3px 0 3px 40px; list-style: none; margin: 0; }
+@media (max-width: 767px) { .mnc-checklist li, .mnc-infolist li { background-size: 0.8em; background-position: 0 10px; padding: 3px 0 3px 20px; } }
+.mnc-checklist li, .mnc-infolist li { background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/check-circle-green.svg"); }
+
+.mnc-infolist li { background-size: 1.1rem; background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important; }
 
 .mnc-row { display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; }
 
@@ -39,3 +42,5 @@ a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; lef
 .fl-builder-content a.fl-button span, .fl-builder-content a.fl-button:visited span { color: white; }
 
 .mnc-nofocus a:focus { border: none; }
+
+.wpcf7-form .screen-reader-response { padding: 10px; border-left: 5px solid #f6dca7; color: #c09853; background-color: #fcf8e3; }

@@ -12,10 +12,9 @@ $icon_default_height: 20px;
   }
 }
 
-.mnc-checklist {
+@mixin mnc-li-icons {
   li {
     background-repeat: no-repeat;
-    background-image: url("/wp-content/uploads/svg/check-circle-green.svg");
     background-size: 1rem;
     background-position: 0 8px;
     padding: 3px 0 3px 40px;
@@ -27,5 +26,17 @@ $icon_default_height: 20px;
       padding: 3px 0 3px 20px;
     }
   }
+}
 
+.mnc-checklist, .mnc-infolist {
+  @include mnc-li-icons;
+  li {
+    background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/check-circle-green.svg");
+  }
+}
+.mnc-infolist {
+  li {
+    background-size:1.1rem;
+    background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important;
+  }
 }
