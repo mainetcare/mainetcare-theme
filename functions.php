@@ -4,153 +4,20 @@
  * Define Constants
  */
 define( 'CHILD_THEME_MAINETCARE_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
+define( 'CHILD_THEME_URL', get_stylesheet_directory_uri() );
 
-/**
- * Enqueue styles
- */
-function child_enqueue_styles() {
+add_action( 'wp_enqueue_scripts', function() {
 	wp_enqueue_style( 'mnc-css', get_stylesheet_directory_uri() . '/style.css', array( 'astra-theme-css' ), CHILD_THEME_MAINETCARE_THEME_VERSION, 'all' );
-}
+	wp_scripts()->add_data( 'jquery', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+}, 15 );
 
-add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
-add_filter( 'widget_text', 'do_shortcode' );
-add_filter( 'upload_mimes', function ( $mime_types ) {
-	$mime_types['svg'] = 'image/svg+xml'; //.svg hinzufügen
-
-	return $mime_types;
-}, 1, 1 );
-
-add_action( 'admin_head', function () {
-	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo( 'wpurl' ) . '/wp-content/uploads/2019/06/favicon.svg" />';
-} );
-
-// Load Google Fonts:
-//function custom_add_google_fonts() {
-//	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,900|Slabo+27px&display=swap', false );
-//}
-//add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts' );
-
-require get_stylesheet_directory() . '/inc/custom-navbar.php';
-
-function load_template_part( $template_name, $part_name = null ) {
-	ob_start();
-	get_template_part( $template_name, $part_name );
-	$var = ob_get_contents();
-	ob_end_clean();
-
-	return $var;
-}
-
-add_shortcode('yoastbc', function() {
-	return yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-});
-
-
-add_shortcode( 'mi_akz', function ( $atts ) {
-	$atts   = shortcode_atts( array(
-		'format' => 'inline',
-	), $atts );
-	$format = $atts['format'];
-	$a[]    = 'MaiNetCare GmbH';
-	// $a[]    = '';
-	$a[] = 'Tile-Wardenberg-Str. 13';
-	$a[] = 'D-10555 Berlin';
-	$a[] = '<a href="tel:+491795026607">Tel:&nbsp;+49&nbsp;(179)&nbsp;502.6607</a>';
-	$a[] = '<a href="mailto:info@mainetcare.com">E-Mail:&nbsp;info@mainetcare.com</a>';
-	if ( $format == 'inline' ) {
-		return implode( ', ', $a );
-	} elseif ( $format == 'block' ) {
-		return implode( '<br>', $a );
-	} else {
-		return implode( ' ', $a );
-	}
-} );
-
-add_shortcode( 'mi_year', function () {
-	return date( 'Y' );
-} );
-
-add_shortcode( 'mi_bank', function ( $atts ) {
-	$atts   = shortcode_atts( array(
-		'format' => 'block',
-	), $atts );
-	$format = $atts['format'];
-	$a[]    = 'MaiNetCare';
-	$a[]    = 'Volks- und Raiffeisenbank Rendsburg';
-	$a[]    = 'IBAN ';
-	$a[]    = 'BIC ';
-	if ( $format == 'inline' ) {
-		return implode( ', ', $a );
-	} elseif ( $format == 'block' ) {
-		return implode( '<br>', $a );
-	} else {
-		return implode( ' ', $a );
-	}
-} );
-
-add_shortcode( 'skiptomain', function ( $atts ) {
-	return '<a class="skip-main" href="#main">Zum Hauptinhalt</a>';
-} );
-
-add_shortcode( 'mi_year', function ( $atts ) {
-	return date( 'Y' );
-} );
-
-add_shortcode( 'mi_email', function ( $atts ) {
-	return '<a href="mailto:info@mainetcare.com">E-Mail:&nbsp;info@mainetcare.com</a>';
-} );
-
-add_shortcode( 'copyright', function ( $atts ) {
-	return sprintf( '<span>© %s MaiNetCare GmbH</span>', date( 'Y' ) );
-} );
-
-add_shortcode( 'check', function ( $atts ) {
-	return check();
-} );
-
-
-function check( $content = '' ) {
-	if ( $content == '' ) {
-		return '<span>' . get_icon( 'check' ) . '</span>';
-	}
-
-	return '<span>' . get_icon( 'check' ) . '</span><span class="ml-2">' . $content . '</span>';
-}
-
-function mute( $content = '' ) {
-	if ( $content == '' ) {
-		return '<span>' . get_icon( 'clear' ) . '</span>';
-	}
-
-	return '<span>' . get_icon( 'clear' ) . '</span><span class="ml-2">' . $content . '</span>';
-}
-
-function get_icon( $icon_key ) {
-	$prefix = wp_upload_dir()['basedir'] . '/svg/';
-	// $prefix  = '/wp-content/uploads/svg/';
-	$map  = [
-		'email'    => 'email-24px.svg',
-		'location' => 'room-24px.svg',
-		'phone'    => 'call-24px.svg',
-		'check'    => 'check-circle.svg',
-//		'check'    => 'done-24px.svg',
-		'clear'    => 'clear-24px.svg'
-	];
-	$path = $prefix . $map[ $icon_key ];
-	if ( ! file_exists( $path ) ) {
-		return 'Icon not found: ' . $path;
-	}
-	$icon = file_get_contents( $path );
-
-	return str_replace( 'class=""', 'class="mnc-icon mnc-icon-' . $icon_key . '"', $icon );
-}
-
-
-
-
-
-
-
+require_once CHILD_THEME_DIR . '/vendor/autoload.php';
+include_once CHILD_THEME_DIR . '/includes/register_image_sizes.php';
+include_once CHILD_THEME_DIR . '/includes/register_shortcodes.php';
+include_once CHILD_THEME_DIR . '/includes/misc.php';
 
 
 

@@ -7,4 +7,6 @@ Thumbs.db
 *.komodoproject
 
 *.scssc
+vendor
+node-modules/
 .sass-cache/

@@ -1,0 +1,36 @@
+// Sammeln von Stilangaben, die man zunächst im Customizer in der "Custom CSS" Sektion hinterlegt hat.
+
+
+.site-description {
+  letter-spacing:0.9px;
+}
+
+div.wpcf7 .screen-reader-response {
+  position: relative;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 10px;
+  border: 0;
+  color:#8b9c4e;
+}
+
+.mnc-button {
+  .uabb-button {
+    background-color:#87a133 !important;
+    color:#FFF;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    font-size:16px !important;
+    font-weight:600 !important;
+  }
+  .uabb-button:hover {
+    background-color:#172B3F !important;
+  }
+}
+
+.ast-author-box {
+  display:none;
+  visibility:hidden;
+}
