@@ -10,37 +10,203 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mainetcare-theme
 Template: astra
 */
-a.skip-main { left: -999px; position: absolute; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+a.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
 
-a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; left: auto; top: auto; width: 30%; height: auto; overflow: auto; margin: 10px 35%; padding: 5px; border-radius: 15px; border: 3px solid #c13523; text-align: center; font-size: 1.2em; z-index: 999; }
+a.skip-main:focus, a.skip-main:active {
+  color: #000;
+  background-color: #FFF;
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 3px solid #c13523;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
+}
 
-.mnc-nolist ul { margin-left: 0; list-style: none; }
+.mnc-nolist ul {
+  margin-left: 0;
+  list-style: none;
+}
 
-.mnc-icon { height: 20px; width: 20px; fill: #87a133; }
+.mnc-icon {
+  height: 20px;
+  width: 20px;
+  fill: #87a133;
+}
 
-.mnc-icon-size-2 .mnc-icon { height: 26px; width: 26px; }
+.mnc-icon-size-2 .mnc-icon {
+  height: 26px;
+  width: 26px;
+}
 
-.mnc-checklist li, .mnc-infolist li { background-repeat: no-repeat; background-size: 1rem; background-position: 0 8px; padding: 3px 0 3px 40px; list-style: none; margin: 0; }
-@media (max-width: 767px) { .mnc-checklist li, .mnc-infolist li { background-size: 0.8em; background-position: 0 10px; padding: 3px 0 3px 20px; } }
-.mnc-checklist li, .mnc-infolist li { background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/check-circle-green.svg"); }
+.mnc-checklist li, .mnc-infolist li {
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 0 8px;
+  padding: 3px 0 3px 40px;
+  list-style: none;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .mnc-checklist li, .mnc-infolist li {
+    background-size: 0.8em;
+    background-position: 0 10px;
+    padding: 3px 0 3px 20px;
+  }
+}
+.mnc-checklist li, .mnc-infolist li {
+  background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/check-circle-green.svg");
+}
 
-.mnc-infolist li { background-size: 1.1rem; background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important; }
+.mnc-infolist li {
+  background-size: 1.1rem;
+  background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important;
+}
 
-.mnc-row { display: flex; flex-direction: row; flex-wrap: wrap; width: 100%; }
+a.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
 
-.mnc-col { display: flex; flex-direction: column; flex-basis: 100%; flex: 1; }
+a.skip-main:focus, a.skip-main:active {
+  color: #000;
+  background-color: #FFF;
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 3px solid #c13523;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
+}
 
-.mnc-form2col .wpcf7 .wpcf7-form-control-wrap { width: 96%; }
+.mnc-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-.mnc-upper, #primary-menu > li > a > .menu-text, .fl-builder-content .fl-button-wrap a.fl-button { text-transform: uppercase !important; letter-spacing: 0.1em; }
+.mnc-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
-.fl-builder-content .fl-button-wrap a.fl-button { background-color: #87a133; color: white; }
-@media (max-width: 767px) { .fl-builder-content .fl-button-wrap a.fl-button { text-align: center; } }
+.mnc-form2col .wpcf7 .wpcf7-form-control-wrap {
+  width: 96%;
+}
 
-.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited { background-color: #87a133; color: white; }
-.fl-builder-content a.fl-button:hover, .fl-builder-content a.fl-button:visited:hover { background-color: #0e2c40; }
-.fl-builder-content a.fl-button span, .fl-builder-content a.fl-button:visited span { color: white; }
+.mnc-upper, .fl-builder-content .fl-button-wrap a.fl-button, #primary-menu > li > a > .menu-text {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em;
+}
 
-.mnc-nofocus a:focus { border: none; }
+.fl-builder-content .fl-button-wrap a.fl-button {
+  background-color: #87a133;
+  color: white;
+}
+@media (max-width: 767px) {
+  .fl-builder-content .fl-button-wrap a.fl-button {
+    text-align: center;
+  }
+}
 
-.wpcf7-form .screen-reader-response { padding: 10px; border-left: 5px solid #f6dca7; color: #c09853; background-color: #fcf8e3; }
+.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited {
+  background-color: #87a133;
+  color: white;
+}
+.fl-builder-content a.fl-button:hover, .fl-builder-content a.fl-button:visited:hover {
+  background-color: #0e2c40;
+}
+.fl-builder-content a.fl-button span, .fl-builder-content a.fl-button:visited span {
+  color: white;
+}
+
+.site-description {
+  letter-spacing: 0.9px;
+}
+
+div.wpcf7 .screen-reader-response {
+  position: relative;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 10px;
+  border: 0;
+  color: #8b9c4e;
+}
+
+.wpcf7-form .screen-reader-response {
+  padding: 10px;
+  border-left: 5px solid #f6dca7;
+  color: #c09853;
+  background-color: #fcf8e3;
+}
+
+.mnc-button .uabb-button {
+  background-color: #87a133 !important;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+.mnc-button .uabb-button:hover {
+  background-color: #172B3F !important;
+}
+
+.ast-author-box {
+  display: none;
+  visibility: hidden;
+}
+
+.mnc-nofocus a:focus {
+  border: none;
+}
+
+.mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap {
+  margin-top: 1rem;
+}
+.mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap a {
+  text-decoration: underline;
+}
+.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button {
+  background-color: #0e2c40;
+  color: white;
+}
+.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button span {
+  color: white;
+}
+.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button:hover {
+  background-color: #0d3147;
+  color: white;
+  border: 1px solid #FFFFFF;
+}
+
+/*# sourceMappingURL=style.css.map */

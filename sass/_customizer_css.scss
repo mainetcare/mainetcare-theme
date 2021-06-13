@@ -16,6 +16,13 @@ div.wpcf7 .screen-reader-response {
   color:#8b9c4e;
 }
 
+.wpcf7-form .screen-reader-response {
+  padding:10px;
+  border-left: 5px solid #f6dca7;
+  color: #c09853;
+  background-color: #fcf8e3;
+}
+
 .mnc-button {
   .uabb-button {
     background-color:#87a133 !important;
@@ -34,3 +41,10 @@ div.wpcf7 .screen-reader-response {
   display:none;
   visibility:hidden;
 }
+
+.mnc-nofocus {
+  a:focus {
+    border:none;
+  }
+}
+

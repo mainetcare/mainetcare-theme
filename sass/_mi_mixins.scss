@@ -1,8 +1,24 @@
-@mixin nth-children($points...) {
-  @each $point in $points {
-    &:nth-child(#{$point}) {
-      @content;
-    }
+@mixin button-green {
+  &:hover {
+    background-color: $color_mnc_blau;
+  }
+  background-color: $color_mnc_gruen;
+  color:white;
+  span {
+    color:white;
+  }
+}
+
+@mixin button-blue {
+  background-color: $color_mnc_blau;
+    color:white;
+  span {
+    color:white;
+  }
+  &:hover {
+    background-color: #0d3147;
+    color:white;
+    border:1px solid #FFFFFF;
   }
 }
 

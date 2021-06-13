@@ -1,0 +1,11 @@
+.mnc-newsletter-anmeldeform {
+  .fl-terms-checkbox-wrap{
+        margin-top:1rem;
+      a {
+        text-decoration: underline;
+      }
+  }
+  .fl-button-wrap a.fl-button {
+    @include button-blue;
+  }
+}
