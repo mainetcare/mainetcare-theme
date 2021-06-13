@@ -8,4 +8,7 @@ Theme for MaiNetCare Website
 3. clone Repository into existing theme mainetcare-theme
 4. For compiling style.css you need scss compiler e.g. homebrew sass. scss files are located in sass folder.
 
+## Important Notice:
 
+Everything you push into main branch will be deployed immediatley on production server! 
+Test changes in other branches.
