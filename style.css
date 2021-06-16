@@ -196,17 +196,5 @@ div.wpcf7 .screen-reader-response {
 .mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap a {
   text-decoration: underline;
 }
-.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button {
-  background-color: #0e2c40;
-  color: white;
-}
-.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button span {
-  color: white;
-}
-.mnc-newsletter-anmeldeform .fl-button-wrap a.fl-button:hover {
-  background-color: #0d3147;
-  color: white;
-  border: 1px solid #FFFFFF;
-}
 
 /*# sourceMappingURL=style.css.map */
