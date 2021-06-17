@@ -10,6 +10,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mainetcare-theme
 Template: astra
 */
+:root {
+  --color-mnc-gruen: #87a133;
+  --color-mnc-blau: #0e2c40;
+  --color-mnc-hellblau: #D1E7E5;
+  --color-mnc-infoblau: #427adc;
+  --color-mnc-bg_orange: #FEFBF7;
+  --color-mnc-bg_blassblau: #F6FAFA;
+}
+
 a.skip-main {
   left: -999px;
   position: absolute;
@@ -195,6 +204,10 @@ div.wpcf7 .screen-reader-response {
 }
 .mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap a {
   text-decoration: underline;
+}
+.mnc-newsletter-anmeldeform .rc-anchor-dark {
+  background: var(--color-mnc-blau);
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

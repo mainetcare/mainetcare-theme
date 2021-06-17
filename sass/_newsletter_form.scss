@@ -8,4 +8,23 @@
   .fl-button-wrap a.fl-button {
     // @include button-blue;
   }
+
+  //.recaptcha-checkbox-border {
+  //  -webkit-border-radius: 2px;
+  //  -moz-border-radius: 2px;
+  //  border-radius: 2px;
+  //  background-color: var(--color-mnc-gruen);
+  //  border: 1px solid var(--color-mnc-gruen);
+  //  font-size: 1px;
+  //  height: 24px;
+  //  position: absolute;
+  //  width: 24px;
+  //  z-index: 1;
+  //}
+
+  .rc-anchor-dark {
+    background: var(--color-mnc-blau);
+    color: #fff;
+  }
+
 }
