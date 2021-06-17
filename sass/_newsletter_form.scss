@@ -1,10 +1,12 @@
 .mnc-newsletter-anmeldeform {
-  .fl-terms-checkbox-wrap{
-        margin-top:1rem;
-      a {
-        text-decoration: underline;
-      }
+  .fl-terms-checkbox-wrap {
+    margin-top: 1rem;
+
+    a {
+      text-decoration: underline;
+    }
   }
+
   .fl-button-wrap a.fl-button {
     // @include button-blue;
   }
@@ -22,9 +24,10 @@
   //  z-index: 1;
   //}
 
-  .rc-anchor-dark {
-    background: var(--color-mnc-blau);
-    color: #fff;
-  }
 
+}
+
+.rc-anchor-dark {
+  background: var(--color-mnc-blau) !important;
+  color: #fff;
 }
