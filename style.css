@@ -205,8 +205,8 @@ div.wpcf7 .screen-reader-response {
 .mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap a {
   text-decoration: underline;
 }
-.mnc-newsletter-anmeldeform .rc-anchor-dark {
-  background: var(--color-mnc-blau);
+.rc-anchor-dark {
+  background: var(--color-mnc-blau) !important;
   color: #fff;
 }
 
