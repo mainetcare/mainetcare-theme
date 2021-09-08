@@ -386,6 +386,9 @@ div.wpcf7 .screen-reader-response {
   }
 }
 
+.mnc-terms {
+  margin-bottom: 0.5rem;
+}
 .mnc-terms a {
   color: var(--color-mnc-text);
 }
