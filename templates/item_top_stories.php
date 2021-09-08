@@ -1,16 +1,14 @@
 <?php
 global $post;
+
 ?>
 <article class="mnc-item-top-stories">
 
-    <div>
-			<?= get_the_post_thumbnail( $post, 'large' ); ?>
-    </div>
 
     <div class="mnc-item-content">
 
         <div class="mnc-terms">
-            [wpbb post:terms_list taxonomy='category' separator=' ' linked='yes']
+            [wpbb post:terms_list taxonomy='category' separator=', ' linked='yes']
         </div>
 
         <div class="mnc-title">
@@ -24,5 +22,8 @@ global $post;
         </div>
     </div>
 
+    <div>
+			<?= get_the_post_thumbnail( $post, 'large' ); ?>
+    </div>
 
 </article>

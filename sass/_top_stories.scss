@@ -2,7 +2,7 @@
 
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   @include mobile {
     grid-template-columns: 1fr;
@@ -12,7 +12,6 @@
     overflow: hidden;
 
     img {
-      border-radius: 1rem;
       object-fit: cover;
       min-height: 200px;
     }
@@ -21,105 +20,32 @@
   .mnc-title {
     a, h3 {
       text-decoration: none !important;
-      color: var(--color-mnc-text);
+      color: var(--color-mnc-blau);
 
       &:hover {
-        color: var(--color-mnc-orange);
+        color: var(--color-mnc-gruen);
         text-decoration: underline !important;
       }
     }
-
-    h3 {
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-      line-height: 1.25rem;
-    }
-  }
-
-  .more {
-    font-weight: 600;
-    display: inline-block;
-    margin-left: 0.75rem;
   }
 
   .mnc-excerpt {
+    margin-top:1rem;
     line-height: 1.5rem;
   }
 
-
-}
-
-.mnc-terms {
-  display: flex;
-  gap: 0.5rem;
-
-  a {
-    @include badge;
-  }
-}
-
-
-// Grid Display for Rezepte
-
-.mnc-list-grid .fl-post-feed {
-
-  --item-height:250px;
-  --img-height:190px;
-  --title-height:60px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--item-height), 1fr));
-  @include mobile {
-    grid-template-columns: repeat(auto-fill, 1fr);
-  }
-  grid-gap: 2rem;
-  object-fit: cover;
-
-  .fl-post-feed-post {
-    display: flex;
-
-    & > a {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none !important;
-    }
-  }
-
-  .mnc-item-grid {
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: var(--img-height) var(--title-height);
-    figure {
-      border-radius: 1rem;
-      background-color: white;
-      overflow: hidden;
-    }
-    img {
-      background-color: grey;
-      height:100%;
-      transition: all 300ms ease-in;
-      object-fit: cover;
-    }
-    h3 {
-      text-decoration: none !important;
-      color: var(--color-mnc-text);
-      line-height: 1.2rem;
-      margin: 0 auto;
-      display: inline-block;
-      padding: 0.5rem;
-      font-size: 1.1rem;
-      text-align: center;
-    }
+  .more {
+    display: inline-block;
     &:hover {
-      h3 {
-        text-decoration: underline !important;
-      }
-      img {
-        transform: scale(1.15);
-      }
+      text-decoration: underline;
     }
+    margin-left: 0.75rem;
   }
 
+
 }
+
+
+
+
 
