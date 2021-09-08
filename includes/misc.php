@@ -42,3 +42,34 @@ add_filter( 'upload_mimes', function ( $mime_types ) {
 	$mime_types['svg'] = 'image/svg+xml'; //.svg hinzufügen
 	return $mime_types;
 }, 1, 1 );
+
+
+
+//function mnc_icon_check( $content = '' ) {
+//	if ( $content == '' ) {
+//		return '<span>' . mnc_get_icon( 'check' ) . '</span>';
+//	}
+//
+//	return '<span>' . mnc_get_icon( 'check' ) . '</span><span class="ml-2">' . $content . '</span>';
+//}
+//
+//if(! function_exists( 'mnc_get_icon' )) {
+//	function mnc_get_icon( $icon_key ) {
+//		$prefix = wp_upload_dir()['basedir'] . '/svg/';
+//		// $prefix  = '/wp-content/uploads/svg/';
+//		$map  = [
+//			'email'    => 'email-24px.svg',
+//			'location' => 'room-24px.svg',
+//			'phone'    => 'call-24px.svg',
+//			'check'    => 'check-circle.svg',
+//			'clear'    => 'clear-24px.svg'
+//		];
+//		$path = $prefix . $map[ $icon_key ];
+//		if ( ! file_exists( $path ) ) {
+//			return 'Icon not found: ' . $path;
+//		}
+//		$icon = file_get_contents( $path );
+//
+//		return str_replace( 'class=""', 'class="mnc-icon mnc-icon-' . $icon_key . '"', $icon );
+//	}
+//}

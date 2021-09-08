@@ -1,0 +1,19 @@
+.fl-builder-content .fl-button-wrap  a.fl-button {
+  background-color: $color_mnc_gruen;
+  color:white;
+  @extend .mnc-upper;
+  @include bp(mobile) {
+    text-align: center;
+  }
+}
+
+.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited {
+  &:hover {
+    background-color: $color_mnc_blau;
+  }
+  background-color: $color_mnc_gruen;
+  color:white;
+  span {
+    color:white;
+  }
+}

@@ -1,3 +1,39 @@
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tv {
+  @media only screen and (min-width: 1900px) {
+    @content;
+  }
+}
+
+@mixin hutgroesse($y) {
+  $x: 2.6 * $y;
+  height: $y;
+  width: $x;
+}
+
+@mixin blumengroesse($y) {
+  height: $y;
+  width: $y;
+}
+
+
 @mixin button-green {
   &:hover {
     background-color: $color_mnc_blau;
@@ -19,6 +55,45 @@
     background-color: #0d3147;
     color:white;
     border:1px solid #FFFFFF;
+  }
+}
+
+@mixin badge {
+  text-decoration: none !important;
+  line-height: 1rem;
+  display: inline-block;
+  background-color: var(--color-mnc-gruen);
+  color: white;
+  font-weight: 600;
+  font-size:0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+
+@mixin list-square {
+  list-style-position: inside;
+  position: relative;
+  & > li {
+    margin-top:0.5rem;
+    position: relative;
+    list-style: none;
+    padding-left:1rem;
+  }
+  & > li:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-mnc-blau);
+    border-radius: 0;
+    left: 0;
+    top: 10px;
   }
 }
 
@@ -79,44 +154,9 @@
   }
 }
 
-@mixin holy_grail($layout_left_width, $layout_right_width) {
-  body {
-    min-width: 2*$layout_left_width + $layout_right_width; /* 2x LC width + RC width */
-  }
-  #container {
-    padding-left: $layout_left_width; /* LC width */
-    padding-right: $layout_right_width; /* RC width */
-  }
-  #main, #left, #right {
-    position: relative;
-    float: left;
-  }
-  #main {
-    width: 100%;
-  }
-  #left {
-    width: $layout_left_width; /* LC width */
-    right: $layout_left_width; /* LC width */
-    margin-left: -100%;
-  }
-  #right {
-    width: $layout_right_width; /* RC width */
-    margin-right: $layout_right_width; /* RC width */
-  }
-  #footer {
-    clear: both;
-  }
-  /*** IE6 Fix ***/
-  * html #left {
-    left: $layout_right_width; /* RC width */
-  }
-}
-
 $screen-lg-min: 1200px;
-
 $screen-md-min: 1024px;
 $screen-md-max: $screen-lg-min - 1;
-
 $screen-sm-min: 768px;
 $screen-sm-max: 991px;
 
