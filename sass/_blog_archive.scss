@@ -23,6 +23,7 @@
       text-decoration: underline;
     }
   }
+
   margin-bottom: 0.5rem;
 }
 
@@ -30,6 +31,7 @@
   ul {
     @include no-list;
   }
+
   .mnc-item-top-stories {
 
     margin-top: 2rem;
@@ -68,16 +70,17 @@
 
     .more {
       display: inline-block;
+
       &:hover {
         text-decoration: underline;
       }
+
       margin-left: 0.75rem;
     }
 
   }
 
 }
-
 
 
 .mnc-custom-post {

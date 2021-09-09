@@ -397,69 +397,6 @@ div.wpcf7 .screen-reader-response {
   text-decoration: underline;
 }
 
-.mnc-custom-post {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-}
-@media screen and (max-width: 768px) {
-  .mnc-custom-post {
-    grid-template-columns: 1fr;
-  }
-}
-.mnc-custom-post .mnc-scale-img-hover {
-  overflow: hidden;
-}
-.mnc-custom-post .mnc-scale-img-hover img {
-  border-radius: 1rem;
-  object-fit: cover;
-  min-height: 200px;
-}
-.mnc-custom-post .mnc-title a, .mnc-custom-post .mnc-title h3 {
-  text-decoration: none !important;
-  color: var(--color-mnc-text);
-}
-.mnc-custom-post .mnc-title a:hover, .mnc-custom-post .mnc-title h3:hover {
-  text-decoration: underline !important;
-}
-.mnc-custom-post .mnc-title h3 {
-  margin-top: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-}
-.mnc-custom-post .more:hover {
-  text-decoration: underline;
-}
-.mnc-custom-post .mnc-excerpt {
-  line-height: 1.5rem;
-}
-
-.fl-post-feed-post {
-  border: 0;
-}
-
-.fl-post-feed > .fl-post-feed-post:first-child article:first-of-type {
-  margin-top: 0 !important;
-}
-
-@media screen and (max-width: 768px) {
-  .fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
-    max-width: initial;
-  }
-}
-
-.mnc-terms {
-  margin-bottom: 0.5rem;
-}
-.mnc-terms a {
-  color: var(--color-mnc-text);
-}
-.mnc-terms a:hover {
-  color: var(--color-mnc-gruen);
-  text-decoration: underline;
-}
-
 .mnc_list_top_stories ul {
   list-style-type: none;
   margin: 0;
@@ -501,6 +438,44 @@ div.wpcf7 .screen-reader-response {
 }
 .mnc_list_top_stories .mnc-item-top-stories .more:hover {
   text-decoration: underline;
+}
+
+.mnc-custom-post {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .mnc-custom-post {
+    grid-template-columns: 1fr;
+  }
+}
+.mnc-custom-post .mnc-scale-img-hover {
+  overflow: hidden;
+}
+.mnc-custom-post .mnc-scale-img-hover img {
+  border-radius: 1rem;
+  object-fit: cover;
+  min-height: 200px;
+}
+.mnc-custom-post .mnc-title a, .mnc-custom-post .mnc-title h3 {
+  text-decoration: none !important;
+  color: var(--color-mnc-text);
+}
+.mnc-custom-post .mnc-title a:hover, .mnc-custom-post .mnc-title h3:hover {
+  text-decoration: underline !important;
+}
+.mnc-custom-post .mnc-title h3 {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+.mnc-custom-post .more:hover {
+  text-decoration: underline;
+}
+.mnc-custom-post .mnc-excerpt {
+  line-height: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
