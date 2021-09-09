@@ -97,6 +97,12 @@
   }
 }
 
+@mixin no-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 @mixin hide_from_dom {
   display: none !important;
   visibility: hidden;
@@ -123,36 +129,6 @@
   }
 }
 
-@mixin clearfix {
-  &:before {
-    content: "";
-    display: table;
-  }
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  zoom: 1;
-}
-
-@mixin placeholder {
-  &:-webkit-placeholder {
-    @content;
-  }
-  &:-moz-placeholder {
-    @content;
-  }
-  &:-ms-placeholder {
-    @content;
-  }
-  &:-o-placeholder {
-    @content;
-  }
-  &:placeholder {
-    @content;
-  }
-}
 
 $screen-lg-min: 1200px;
 $screen-md-min: 1024px;

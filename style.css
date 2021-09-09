@@ -435,41 +435,71 @@ div.wpcf7 .screen-reader-response {
   line-height: 1.5rem;
 }
 
-.mnc-item-top-stories {
+.fl-post-feed-post {
+  border: 0;
+}
+
+.fl-post-feed > .fl-post-feed-post:first-child article:first-of-type {
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
+    max-width: initial;
+  }
+}
+
+.mnc-terms {
+  margin-bottom: 0.5rem;
+}
+.mnc-terms a {
+  color: var(--color-mnc-text);
+}
+.mnc-terms a:hover {
+  color: var(--color-mnc-gruen);
+  text-decoration: underline;
+}
+
+.mnc_list_top_stories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.mnc_list_top_stories .mnc-item-top-stories {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 @media screen and (max-width: 768px) {
-  .mnc-item-top-stories {
+  .mnc_list_top_stories .mnc-item-top-stories {
     grid-template-columns: 1fr;
   }
 }
-.mnc-item-top-stories .mnc-scale-img-hover {
+.mnc_list_top_stories .mnc-item-top-stories .mnc-scale-img-hover {
   overflow: hidden;
 }
-.mnc-item-top-stories .mnc-scale-img-hover img {
+.mnc_list_top_stories .mnc-item-top-stories .mnc-scale-img-hover img {
   object-fit: cover;
   min-height: 200px;
 }
-.mnc-item-top-stories .mnc-title a, .mnc-item-top-stories .mnc-title h3 {
+.mnc_list_top_stories .mnc-item-top-stories .mnc-title a, .mnc_list_top_stories .mnc-item-top-stories .mnc-title h3 {
   text-decoration: none !important;
   color: var(--color-mnc-blau);
 }
-.mnc-item-top-stories .mnc-title a:hover, .mnc-item-top-stories .mnc-title h3:hover {
+.mnc_list_top_stories .mnc-item-top-stories .mnc-title a:hover, .mnc_list_top_stories .mnc-item-top-stories .mnc-title h3:hover {
   color: var(--color-mnc-gruen);
   text-decoration: underline !important;
 }
-.mnc-item-top-stories .mnc-excerpt {
+.mnc_list_top_stories .mnc-item-top-stories .mnc-excerpt {
   margin-top: 1rem;
   line-height: 1.5rem;
 }
-.mnc-item-top-stories .more {
+.mnc_list_top_stories .mnc-item-top-stories .more {
   display: inline-block;
   margin-left: 0.75rem;
 }
-.mnc-item-top-stories .more:hover {
+.mnc_list_top_stories .mnc-item-top-stories .more:hover {
   text-decoration: underline;
 }
 

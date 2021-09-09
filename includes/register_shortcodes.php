@@ -56,6 +56,16 @@ add_shortcode( 'mnc_item_top_stories', function () {
 	return $html;
 } );
 
+add_shortcode( 'mnc_browse_categories', function () {
+	$template = CHILD_THEME_DIR . '/templates/browse_categories.php';
+	ob_start();
+	require $template;
+	$html = ob_get_contents();
+	ob_end_clean();
+	return $html;
+} );
+
+
 add_shortcode( 'mnc_custom_post', function () {
 	$template = CHILD_THEME_DIR . '/templates/custom_post.php';
 	ob_start();
