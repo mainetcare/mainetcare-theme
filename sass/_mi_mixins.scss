@@ -39,22 +39,22 @@
     background-color: $color_mnc_blau;
   }
   background-color: $color_mnc_gruen;
-  color:white;
+  color: white;
   span {
-    color:white;
+    color: white;
   }
 }
 
 @mixin button-blue {
   background-color: $color_mnc_blau;
-    color:white;
+  color: white;
   span {
-    color:white;
+    color: white;
   }
   &:hover {
     background-color: #0d3147;
-    color:white;
-    border:1px solid #FFFFFF;
+    color: white;
+    border: 1px solid #FFFFFF;
   }
 }
 
@@ -65,7 +65,7 @@
   background-color: var(--color-mnc-gruen);
   color: white;
   font-weight: 600;
-  font-size:0.75rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   border-radius: 0.5rem;
@@ -80,10 +80,10 @@
   list-style-position: inside;
   position: relative;
   & > li {
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
     position: relative;
     list-style: none;
-    padding-left:1rem;
+    padding-left: 1rem;
   }
   & > li:before {
     content: '';
@@ -101,6 +101,11 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 @mixin hide_from_dom {

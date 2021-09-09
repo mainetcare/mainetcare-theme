@@ -132,6 +132,25 @@
 
 }
 
+.mnc-list-categories {
+  @include no-list;
+  display:grid;
+  gap:1rem;
+  grid-template-columns: 1fr 1fr;
+  li a {
+    display:block;
+    width:100%;
+    border:1px solid var(--color-mnc-gruen);
+    padding:1rem;
+    @include uppercase;
+    font-size: 0.8rem;
+    &:hover {
+      border:1px solid var(--color-mnc-blau);
+      text-decoration: underline;
+    }
+  }
+}
+
 
 
 

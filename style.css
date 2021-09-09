@@ -47,11 +47,6 @@ a.skip-main:focus, a.skip-main:active {
   z-index: 999;
 }
 
-.mnc-nolist ul {
-  margin-left: 0;
-  list-style: none;
-}
-
 .mnc-icon {
   height: 20px;
   width: 20px;
@@ -96,7 +91,6 @@ a.skip-main {
   overflow: hidden;
   z-index: -999;
 }
-
 a.skip-main:focus, a.skip-main:active {
   color: #000;
   background-color: #FFF;
@@ -131,7 +125,12 @@ a.skip-main:focus, a.skip-main:active {
   width: 96%;
 }
 
-.mnc-upper, .fl-builder-content .fl-button-wrap a.fl-button, #primary-menu > li > a > .menu-text {
+.mnc-upper, .fl-builder-content .fl-button-wrap a.fl-button {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em;
+}
+
+#primary-menu > li > a > .menu-text {
   text-transform: uppercase !important;
   letter-spacing: 0.1em;
 }
@@ -476,6 +475,37 @@ div.wpcf7 .screen-reader-response {
 }
 .mnc-custom-post .mnc-excerpt {
   line-height: 1.5rem;
+}
+
+.mnc-list-categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.mnc-list-categories li a {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--color-mnc-gruen);
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+}
+.mnc-list-categories li a:hover {
+  border: 1px solid var(--color-mnc-blau);
+  text-decoration: underline;
+}
+
+.mnc-nolist ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+.fl-accordion-button-label:focus {
+  border: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

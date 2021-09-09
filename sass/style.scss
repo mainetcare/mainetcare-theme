@@ -22,7 +22,6 @@ Template: astra
 @import "mi_variables";
 @import "mi_mixins";
 @import "accessibility";
-@import "lists";
 @import "icons";
 @import "mnc-layout";
 @import "customizer_css";
@@ -30,4 +29,18 @@ Template: astra
 @import "hut";
 @import "buttons";
 @import "blog_archive";
+
+.mnc-nolist {
+  ul {
+    margin-left:0;
+    list-style: none;
+  }
+
+}
+
+.fl-accordion-button-label {
+  &:focus {
+    border:none !important;
+  }
+}
 
