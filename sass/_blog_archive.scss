@@ -82,6 +82,55 @@
 
 
 
+.mnc-custom-post {
+
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .mnc-scale-img-hover {
+    overflow: hidden;
+
+    img {
+      border-radius: 1rem;
+      object-fit: cover;
+      min-height: 200px;
+    }
+  }
+
+  .mnc-title {
+    a, h3 {
+      text-decoration: none !important;
+      color: var(--color-mnc-text);
+
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+
+    h3 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  .more {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .mnc-excerpt {
+    line-height: 1.5rem;
+  }
+
+}
+
 
 
 
