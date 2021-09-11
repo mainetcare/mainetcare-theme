@@ -75,6 +75,35 @@
   }
 }
 
+@mixin error {
+  background-color: var(--color-mnc-error-bg);
+  border:2px solid var(--color-mnc-error-border);
+  color:var(--color-mnc-text);
+  font-size:0.9rem;
+}
+
+@mixin nicer-list($content, $size, $left) {
+  list-style: none;
+  margin: 0;
+  li {
+    margin-left: $size * 1.5;
+    position: relative;
+  }
+  li {
+    &:before {
+      content: $content;
+      font-size: $size;
+      position: absolute;
+      width: $size;
+      line-height: $size;
+      left: -$left;
+      top: 4px;
+      display: inline-block;
+      margin-left: -$size;
+    }
+  }
+}
+
 
 @mixin list-square {
   list-style-position: inside;

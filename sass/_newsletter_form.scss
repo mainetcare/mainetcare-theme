@@ -1,13 +1,14 @@
-.mnc-newsletter-anmeldeform {
-  .fl-terms-checkbox-wrap {
-    margin-top: 1rem;
-    a {
-      text-decoration: underline;
+.mailster-form-info.error {
+  @include error;
+  background-color: var(--color-mnc-error-bg) !important;
+  ul {
+    margin-top:1rem !important;
+    li {
+      margin-top:0.5rem !important;
     }
+    @include nicer-list("🤔", 1rem, 0.5rem);
   }
 }
-
-.rc-anchor-dark {
-  background: var(--color-mnc-blau) !important;
-  color: #fff;
+.mailster-_gdpr-wrapper {
+  font-size:0.8rem;
 }

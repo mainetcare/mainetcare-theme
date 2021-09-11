@@ -17,6 +17,8 @@ Template: astra
   --color-mnc-infoblau: #427adc;
   --color-mnc-bg_orange: #FEFBF7;
   --color-mnc-bg_blassblau: #F6FAFA;
+  --color-mnc-error-border: #bf4d4d;
+  --color-mnc-error-bg: #fcc;
 }
 
 @import "mi_variables";
@@ -25,15 +27,16 @@ Template: astra
 @import "icons";
 @import "mnc-layout";
 @import "customizer_css";
+@import "bb_tweaks";
 @import "newsletter_form";
 @import "hut";
 @import "buttons";
 @import "blog_archive";
 
 .mnc-nolist {
+  @include no-list;
   ul {
-    margin-left:0;
-    list-style: none;
+    @include no-list;
   }
 
 }

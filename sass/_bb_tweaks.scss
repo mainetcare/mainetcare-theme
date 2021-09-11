@@ -1,0 +1,22 @@
+// Archive Section
+.fl-post-feed-post {
+  border: 0;
+}
+
+.fl-post-feed > .fl-post-feed-post:first-child {
+  article:first-of-type {
+    margin-top: 0 !important;
+  }
+}
+
+.fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
+  @include mobile {
+    max-width: initial;
+  }
+}
+/* Layout  */
+.fl-row-content-wrap {
+  @include mobile {
+    padding-top:0;
+  }
+}

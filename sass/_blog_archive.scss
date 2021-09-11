@@ -1,18 +1,4 @@
-.fl-post-feed-post {
-  border: 0;
-}
 
-.fl-post-feed > .fl-post-feed-post:first-child {
-  article:first-of-type {
-    margin-top: 0 !important;
-  }
-}
-
-.fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
-  @include mobile {
-    max-width: initial;
-  }
-}
 
 .mnc-terms {
   a {
@@ -27,7 +13,7 @@
   margin-bottom: 0.5rem;
 }
 
-.mnc_list_top_stories {
+.mnc-list-top-stories {
   ul {
     @include no-list;
   }
@@ -151,7 +137,54 @@
   }
 }
 
+/*<<div class="mnc-item-weitere-stories">
+    <a class="more" href="<?= get_permalink( $post->ID ) ?>" title="Kompletten lesen für <?= get_the_title( $post->ID ) ?>">
+        <div class="mnc-terms">
+	        <?= get_the_term_list( $post->ID, 'category', '', ', ', '' ) ?>
+        </div>
+        <h4 class="uppercase"><?= get_the_title(); ?></h4>
+        <div class="mnc-excerpt"><?= get_the_excerpt( $post ); ?></div>
+    </a>
 
+</div>
+*/
+
+
+.mnc-list-weitere-stories {
+  ul {
+    @include no-list;
+  }
+  .mnc-item-weitere-stories {
+    display: block;
+    border-top:1px solid var(--color-mnc-blau);
+    margin-top: 2rem;
+    & > a {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:1rem;
+      justify-content: space-between;
+      align-items: center;
+      background-color: yellow;
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+      h4 {
+        text-decoration: none !important;
+        color: var(--color-mnc-blau);
+        font-size: 1rem;
+        line-height: 1rem;
+      }
+      .mnc-terms {
+        color:var(--color-mnc-text);
+        font-size:0.7rem;
+        margin:0 auto;
+      }
+
+    }
+
+  }
+
+}
 
 
 

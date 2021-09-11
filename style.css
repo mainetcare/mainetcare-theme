@@ -18,6 +18,8 @@ Template: astra
   --color-mnc-infoblau: #427adc;
   --color-mnc-bg_orange: #FEFBF7;
   --color-mnc-bg_blassblau: #F6FAFA;
+  --color-mnc-error-border: #bf4d4d;
+  --color-mnc-error-bg: #fcc;
 }
 
 a.skip-main {
@@ -157,18 +159,6 @@ div.wpcf7 .screen-reader-response {
   background-color: #fcf8e3;
 }
 
-.mnc-button .uabb-button {
-  background-color: #87a133 !important;
-  color: #FFF;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}
-.mnc-button .uabb-button:hover {
-  background-color: #172B3F !important;
-}
-
 .ast-author-box {
   display: none;
   visibility: hidden;
@@ -178,16 +168,60 @@ div.wpcf7 .screen-reader-response {
   border: none;
 }
 
-.mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap {
-  margin-top: 1rem;
-}
-.mnc-newsletter-anmeldeform .fl-terms-checkbox-wrap a {
-  text-decoration: underline;
+.fl-post-feed-post {
+  border: 0;
 }
 
-.rc-anchor-dark {
-  background: var(--color-mnc-blau) !important;
-  color: #fff;
+.fl-post-feed > .fl-post-feed-post:first-child article:first-of-type {
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
+    max-width: initial;
+  }
+}
+
+/* Layout  */
+@media screen and (max-width: 768px) {
+  .fl-row-content-wrap {
+    padding-top: 0;
+  }
+}
+
+.mailster-form-info.error {
+  background-color: var(--color-mnc-error-bg);
+  border: 2px solid var(--color-mnc-error-border);
+  color: var(--color-mnc-text);
+  font-size: 0.9rem;
+  background-color: var(--color-mnc-error-bg) !important;
+}
+.mailster-form-info.error ul {
+  margin-top: 1rem !important;
+  list-style: none;
+  margin: 0;
+}
+.mailster-form-info.error ul li {
+  margin-top: 0.5rem !important;
+}
+.mailster-form-info.error ul li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+.mailster-form-info.error ul li:before {
+  content: "🤔";
+  font-size: 1rem;
+  position: absolute;
+  width: 1rem;
+  line-height: 1rem;
+  left: -0.5rem;
+  top: 4px;
+  display: inline-block;
+  margin-left: -1rem;
+}
+
+.mailster-_gdpr-wrapper {
+  font-size: 0.8rem;
 }
 
 .mnc-headline {
@@ -371,18 +405,16 @@ div.wpcf7 .screen-reader-response {
   color: white;
 }
 
-.fl-post-feed-post {
-  border: 0;
+.mnc-button .uabb-button {
+  background-color: #87a133 !important;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 16px !important;
+  font-weight: 600 !important;
 }
-
-.fl-post-feed > .fl-post-feed-post:first-child article:first-of-type {
-  margin-top: 0 !important;
-}
-
-@media screen and (max-width: 768px) {
-  .fl-post-feed-post.fl-post-feed-image-beside, .fl-post-feed-post.fl-post-feed-image-beside-content, .fl-post-feed-post.fl-post-feed-image-beside-right, .fl-post-feed-post.fl-post-feed-image-beside-content-right {
-    max-width: initial;
-  }
+.mnc-button .uabb-button:hover {
+  background-color: #172B3F !important;
 }
 
 .mnc-terms {
@@ -396,46 +428,46 @@ div.wpcf7 .screen-reader-response {
   text-decoration: underline;
 }
 
-.mnc_list_top_stories ul {
+.mnc-list-top-stories ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.mnc_list_top_stories .mnc-item-top-stories {
+.mnc-list-top-stories .mnc-item-top-stories {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 @media screen and (max-width: 768px) {
-  .mnc_list_top_stories .mnc-item-top-stories {
+  .mnc-list-top-stories .mnc-item-top-stories {
     grid-template-columns: 1fr;
   }
 }
-.mnc_list_top_stories .mnc-item-top-stories .mnc-scale-img-hover {
+.mnc-list-top-stories .mnc-item-top-stories .mnc-scale-img-hover {
   overflow: hidden;
 }
-.mnc_list_top_stories .mnc-item-top-stories .mnc-scale-img-hover img {
+.mnc-list-top-stories .mnc-item-top-stories .mnc-scale-img-hover img {
   object-fit: cover;
   min-height: 200px;
 }
-.mnc_list_top_stories .mnc-item-top-stories .mnc-title a, .mnc_list_top_stories .mnc-item-top-stories .mnc-title h3 {
+.mnc-list-top-stories .mnc-item-top-stories .mnc-title a, .mnc-list-top-stories .mnc-item-top-stories .mnc-title h3 {
   text-decoration: none !important;
   color: var(--color-mnc-blau);
 }
-.mnc_list_top_stories .mnc-item-top-stories .mnc-title a:hover, .mnc_list_top_stories .mnc-item-top-stories .mnc-title h3:hover {
+.mnc-list-top-stories .mnc-item-top-stories .mnc-title a:hover, .mnc-list-top-stories .mnc-item-top-stories .mnc-title h3:hover {
   color: var(--color-mnc-gruen);
   text-decoration: underline !important;
 }
-.mnc_list_top_stories .mnc-item-top-stories .mnc-excerpt {
+.mnc-list-top-stories .mnc-item-top-stories .mnc-excerpt {
   margin-top: 1rem;
   line-height: 1.5rem;
 }
-.mnc_list_top_stories .mnc-item-top-stories .more {
+.mnc-list-top-stories .mnc-item-top-stories .more {
   display: inline-block;
   margin-left: 0.75rem;
 }
-.mnc_list_top_stories .mnc-item-top-stories .more:hover {
+.mnc-list-top-stories .mnc-item-top-stories .more:hover {
   text-decoration: underline;
 }
 
@@ -499,9 +531,61 @@ div.wpcf7 .screen-reader-response {
   text-decoration: underline;
 }
 
+/*<<div class="mnc-item-weitere-stories">
+    <a class="more" href="<?= get_permalink( $post->ID ) ?>" title="Kompletten lesen für <?= get_the_title( $post->ID ) ?>">
+        <div class="mnc-terms">
+	        <?= get_the_term_list( $post->ID, 'category', '', ', ', '' ) ?>
+        </div>
+        <h4 class="uppercase"><?= get_the_title(); ?></h4>
+        <div class="mnc-excerpt"><?= get_the_excerpt( $post ); ?></div>
+    </a>
+
+</div>
+*/
+.mnc-list-weitere-stories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.mnc-list-weitere-stories .mnc-item-weitere-stories {
+  display: block;
+  border-top: 1px solid var(--color-mnc-blau);
+  margin-top: 2rem;
+}
+.mnc-list-weitere-stories .mnc-item-weitere-stories > a {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: yellow;
+}
+@media screen and (max-width: 768px) {
+  .mnc-list-weitere-stories .mnc-item-weitere-stories > a {
+    grid-template-columns: 1fr;
+  }
+}
+.mnc-list-weitere-stories .mnc-item-weitere-stories > a h4 {
+  text-decoration: none !important;
+  color: var(--color-mnc-blau);
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.mnc-list-weitere-stories .mnc-item-weitere-stories > a .mnc-terms {
+  color: var(--color-mnc-text);
+  font-size: 0.7rem;
+  margin: 0 auto;
+}
+
+.mnc-nolist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 .mnc-nolist ul {
-  margin-left: 0;
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .fl-accordion-button-label:focus {
