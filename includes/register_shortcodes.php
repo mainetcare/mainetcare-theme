@@ -6,13 +6,22 @@ add_shortcode( 'mnc_matomo_opt_out', function () {
 	require $template;
 	$html = ob_get_contents();
 	ob_end_clean();
+
 	return $html;
 } );
 
+add_shortcode( 'mnc_jahreszeit', function () {
+	$s = \Mnc\Season::instance()->met();
+	if($s == 'Frühling') {
+		return 'Passend zur Jahreszeit.';
+	}
+	return 'Auch im '.$s. ' sehr sinnvoll.';
+} );
+
 // Use Yoast Breadcrumbs as Shortcode:
-add_shortcode('yoastbc', function() {
+add_shortcode( 'yoastbc', function () {
 	return yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-});
+} );
 
 add_shortcode( 'mi_year', function () {
 	return date( 'Y' );
@@ -44,6 +53,7 @@ add_shortcode( 'mnc_custom_post', function () {
 	require $template;
 	$html = ob_get_contents();
 	ob_end_clean();
+
 	return $html;
 } );
 
@@ -53,6 +63,7 @@ add_shortcode( 'mnc_item_top_stories', function () {
 	require $template;
 	$html = ob_get_contents();
 	ob_end_clean();
+
 	return $html;
 } );
 
@@ -62,11 +73,22 @@ add_shortcode( 'mnc_item_weitere_stories', function () {
 	require $template;
 	$html = ob_get_contents();
 	ob_end_clean();
+
 	return $html;
 } );
 
 add_shortcode( 'mnc_browse_categories', function () {
 	$template = CHILD_THEME_DIR . '/templates/browse_categories.php';
+	ob_start();
+	require $template;
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
+} );
+
+add_shortcode( 'mnc_anfrage', function () {
+	$template = CHILD_THEME_DIR . '/templates/anfrage.php';
 	ob_start();
 	require $template;
 	$html = ob_get_contents();
@@ -81,5 +103,6 @@ add_shortcode( 'mnc_custom_post', function () {
 	require $template;
 	$html = ob_get_contents();
 	ob_end_clean();
+
 	return $html;
 } );

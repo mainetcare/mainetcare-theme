@@ -17,7 +17,6 @@ add_action( 'wp_enqueue_scripts', function() {
 require_once CHILD_THEME_DIR . '/vendor/autoload.php';
 include_once CHILD_THEME_DIR . '/includes/register_image_sizes.php';
 include_once CHILD_THEME_DIR . '/includes/register_shortcodes.php';
-include_once CHILD_THEME_DIR . '/includes/exclude_sticky_posts.php';
 include_once CHILD_THEME_DIR . '/includes/misc.php';
 
 
