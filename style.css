@@ -15,9 +15,9 @@ Template: astra
   --color-mnc-text: #3a3a3a;
   --color-mnc-blau: #0e2c40;
   --color-mnc-hellblau: #D1E7E5;
+  --color-mnc-bg_blassblau: #F6FAFA;
   --color-mnc-infoblau: #427adc;
   --color-mnc-bg_orange: #FEFBF7;
-  --color-mnc-bg_blassblau: #F6FAFA;
   --color-mnc-error-border: #bf4d4d;
   --color-mnc-error-bg: #fcc;
 }
@@ -605,6 +605,69 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   color: var(--color-mnc-blau);
   font-size: 1.1rem;
   line-height: 1.1rem;
+}
+
+.mnc-errortext {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  background-color: var(--color-mnc-error-bg);
+  border: 2px solid var(--color-mnc-error-border);
+  color: var(--color-mnc-text);
+  font-size: 0.9rem;
+  background-color: var(--color-mnc-error-bg) !important;
+  padding: 1rem;
+}
+.mnc-errortext ul {
+  margin-top: 1rem !important;
+  list-style: none;
+  margin: 0;
+}
+.mnc-errortext ul li {
+  margin-top: 0.5rem !important;
+}
+.mnc-errortext ul li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+.mnc-errortext ul li:before {
+  content: "🤔";
+  font-size: 1rem;
+  position: absolute;
+  width: 1rem;
+  line-height: 1rem;
+  left: -0.5rem;
+  top: 4px;
+  display: inline-block;
+  margin-left: -1rem;
+}
+
+.mnc-form-anfrage fieldset {
+  margin-top: 1rem;
+}
+.mnc-form-anfrage label {
+  font-size: 0.8rem;
+}
+.mnc-form-anfrage input {
+  transition: none;
+}
+.mnc-form-anfrage input:focus {
+  outline: 2px solid var(--color-mnc-gruen);
+  background-color: var(--color-mnc-bg_blassblau) !important;
+}
+.mnc-form-anfrage .mnc-form-input {
+  margin-top: 1rem;
+}
+.mnc-form-anfrage .mnc-form-input label {
+  display: block;
+}
+.mnc-form-anfrage .mnc-form-input input[type=text], .mnc-form-anfrage .mnc-form-input input[type=email], .mnc-form-anfrage .mnc-form-input input[type=url] {
+  width: 100%;
+  padding: 0.5rem;
+}
+.mnc-form-anfrage .hlptext {
+  display: block;
+  font-size: 0.75rem;
+  color: #575757;
 }
 
 .mnc-nolist {

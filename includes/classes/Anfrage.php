@@ -10,7 +10,7 @@ class Anfrage {
 	public $request = [];
 	public $errortext = null;
 
-	protected $errors = [];
+	public  $errors = [];
 
 	/**
 	 * @var \string[][]
@@ -55,7 +55,7 @@ class Anfrage {
 			'name'        => [ 'isNotEmpty' => 'Bitte geben Sie Ihren Namen oder alternativ den Namen Ihres Unternehmens an.' ],
 			'email'       => [ 'isNotEmpty' => 'Bitte geben Sie eine E-Mail Adresse an, mit der wir Sie kontaktieren können.' ],
 			'datenschutz' => [
-				'isChecked' => 'Um die Anfrage absenden zu können ist es notwendig, dass Sie unsere Datenschutzbestimmungen akzeptieren. Wir verwenden die Daten Ihrer Anfrage ausschließlich zur Kontaktaufnahmen und geben diese keinesfalls an Dritte weiter.'
+				'isChecked' => 'Um die Anfrage absenden zu können ist es notwendig, dass Sie unsere Datenschutzbestimmungen akzeptieren. Wir verwenden Ihre Angaben ausschließlich zur Kontaktaufnahme und geben diese keinesfalls an Dritte weiter.'
 			]
 		];
 	}
@@ -154,8 +154,11 @@ class Anfrage {
 		return true;
 	}
 
-	public function hasNoErrors() {
-		return count($this->errors) == 0;
+	/**
+	 * @return bool
+	 */
+	public function hasErrors() {
+		return count($this->errors) > 0;
 	}
 
 

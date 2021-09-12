@@ -1,0 +1,47 @@
+.mnc-errortext {
+  margin-top:1rem;
+  font-size:0.75rem;
+  @include error;
+  background-color: var(--color-mnc-error-bg) !important;
+  padding:1rem;
+  ul {
+    margin-top:1rem !important;
+    li {
+      margin-top:0.5rem !important;
+    }
+    @include nicer-list("🤔", 1rem, 0.5rem);
+  }
+}
+
+.mnc-form-anfrage {
+  fieldset {
+    margin-top:1rem;
+  }
+  label {
+    font-size:0.8rem;
+  }
+
+  input {
+    transition: none;
+    &:focus {
+      outline: 2px solid var(--color-mnc-gruen);
+      background-color:var(--color-mnc-bg_blassblau) !important;
+    }
+  }
+
+  .mnc-form-input {
+    margin-top:1rem;
+    label {
+      display:block;
+    }
+    input[type="text"], input[type="email"], input[type="url"] {
+      width:100%;
+      padding:0.5rem;
+    }
+  }
+  .hlptext {
+    display:block;
+    font-size:0.75rem;
+    color: #575757;
+  }
+}
