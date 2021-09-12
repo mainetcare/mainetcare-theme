@@ -1,5 +1,5 @@
 .mnc-errortext {
-  margin-top:1rem;
+  margin:0.5rem 0;
   font-size:0.75rem;
   @include error;
   background-color: var(--color-mnc-error-bg) !important;
@@ -9,7 +9,7 @@
     li {
       margin-top:0.5rem !important;
     }
-    @include nicer-list("🤔", 1rem, 0.5rem);
+    @include nicer-list("🤓", 1rem, 0.5rem);
   }
 }
 
@@ -21,11 +21,23 @@
     font-size:0.8rem;
   }
 
-  input {
+  input[type="text"], input[type="email"], input[type="url"] {
     transition: none;
     &:focus {
       outline: 2px solid var(--color-mnc-gruen);
       background-color:var(--color-mnc-bg_blassblau) !important;
+    }
+  }
+
+  .mnc-has-error {
+    input[type="text"], input[type="email"], input[type="url"] {
+      outline: 2px solid var(--color-mnc-error-border);
+      background-color:var(--color-mnc-error-bg) !important;
+    }
+    .mnc-errormsg {
+      display:block;
+      font-size:0.75rem;
+      color:var(--color-mnc-error-border);
     }
   }
 

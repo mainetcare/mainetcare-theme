@@ -593,7 +593,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 }
 .mnc-list-weitere-stories .mnc-item-weitere-stories > a:hover {
   background-color: white;
-  transform: translateX(10px);
 }
 @media screen and (max-width: 768px) {
   .mnc-list-weitere-stories .mnc-item-weitere-stories > a {
@@ -608,7 +607,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 }
 
 .mnc-errortext {
-  margin-top: 1rem;
+  margin: 0.5rem 0;
   font-size: 0.75rem;
   background-color: var(--color-mnc-error-bg);
   border: 2px solid var(--color-mnc-error-border);
@@ -630,7 +629,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   position: relative;
 }
 .mnc-errortext ul li:before {
-  content: "🤔";
+  content: "🤓";
   font-size: 1rem;
   position: absolute;
   width: 1rem;
@@ -647,12 +646,21 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 .mnc-form-anfrage label {
   font-size: 0.8rem;
 }
-.mnc-form-anfrage input {
+.mnc-form-anfrage input[type=text], .mnc-form-anfrage input[type=email], .mnc-form-anfrage input[type=url] {
   transition: none;
 }
-.mnc-form-anfrage input:focus {
+.mnc-form-anfrage input[type=text]:focus, .mnc-form-anfrage input[type=email]:focus, .mnc-form-anfrage input[type=url]:focus {
   outline: 2px solid var(--color-mnc-gruen);
   background-color: var(--color-mnc-bg_blassblau) !important;
+}
+.mnc-form-anfrage .mnc-has-error input[type=text], .mnc-form-anfrage .mnc-has-error input[type=email], .mnc-form-anfrage .mnc-has-error input[type=url] {
+  outline: 2px solid var(--color-mnc-error-border);
+  background-color: var(--color-mnc-error-bg) !important;
+}
+.mnc-form-anfrage .mnc-has-error .mnc-errormsg {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-mnc-error-border);
 }
 .mnc-form-anfrage .mnc-form-input {
   margin-top: 1rem;

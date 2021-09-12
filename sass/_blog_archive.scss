@@ -181,7 +181,7 @@
       font-size:0.75rem;
       &:hover {
         background-color:white;
-        transform: translateX(10px);
+        // transform: translateX(10px);
       }
       @include mobile {
         grid-template-columns: 1fr;
