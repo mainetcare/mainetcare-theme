@@ -1,28 +1,5 @@
 <?php
-// Alternative
-// Fully Disable Gutenberg editor.
-add_filter('use_block_editor_for_post_type', '__return_false', 10);
-// Don't load Gutenberg-related stylesheets.
-add_action('wp_enqueue_scripts', function () {
-    wp_dequeue_style('wp-block-library'); // WordPress core
-    wp_dequeue_style('wp-block-library-theme'); // WordPress core
-    wp_dequeue_style('wc-block-style'); // WooCommerce
-    wp_dequeue_style('storefront-gutenberg-blocks'); // Storefront theme
-}, 100);
 
-
-add_filter('wp_default_scripts', function(&$scripts) {
-    if (!is_admin()) {
-        $scripts->remove('jquery');
-        $scripts->add('jquery', false, array('jquery-core'), '1.12.4');
-    }
-});
-
-add_action( 'wp_enqueue_scripts', function() {
-    wp_scripts()->add_data( 'jquery', 'group', 1 );
-    wp_scripts()->add_data( 'jquery-core', 'group', 1 );
-    wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
-} );
 
 add_filter( 'body_class',function ( $classes ) {
 	$classes[] = 'mnc-site';
@@ -37,13 +14,20 @@ add_action( 'admin_head', function () {
 // Allow Shortcodes in Widgets:
 add_filter( 'widget_text', 'do_shortcode' );
 
-// Allow SVG MIME TYPE (seems not to work, test please)
-add_filter( 'upload_mimes', function ( $mime_types ) {
-	$mime_types['svg'] = 'image/svg+xml'; //.svg hinzufügen
-	return $mime_types;
-}, 1, 1 );
 
+// Since WP 5.8 there is an annoying "load more" button after 40 Images. You can turn it off like so:
+add_filter( 'media_library_infinite_scrolling', '__return_true' );
 
+//estimated reading time
+function mnc_reading_time() {
+	global $post;
+	if(! $post) {
+		return null;
+	}
+	$content = get_post_field( 'post_content', $post->ID );
+	$word_count = str_word_count( strip_tags( $content ) );
+	return ceil( $word_count / 200);
+}
 
 //function mnc_icon_check( $content = '' ) {
 //	if ( $content == '' ) {

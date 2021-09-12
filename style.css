@@ -189,6 +189,20 @@ div.wpcf7 .screen-reader-response {
   }
 }
 
+input[type=email], input[type=number], input[type=password], input[type=reset], input[type=search], input[type=tel], input[type=text], input[type=url], select, textarea {
+  color: var(--color-mnc-text);
+  padding: 0.75rem;
+  height: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-mnc-text);
+  border-radius: 2px;
+  background: white;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
 .mailster-form-info.error {
   background-color: var(--color-mnc-error-bg);
   border: 2px solid var(--color-mnc-error-border);
@@ -222,6 +236,10 @@ div.wpcf7 .screen-reader-response {
 
 .mailster-_gdpr-wrapper {
   font-size: 0.8rem;
+}
+
+.mailster-form-fields > div {
+  margin: 1rem auto;
 }
 
 .mnc-headline {
@@ -417,6 +435,11 @@ div.wpcf7 .screen-reader-response {
   background-color: #172B3F !important;
 }
 
+.mnc-reading-time {
+  display: block;
+  font-size: 0.75rem;
+}
+
 .mnc-terms {
   margin-bottom: 0.5rem;
 }
@@ -518,17 +541,21 @@ div.wpcf7 .screen-reader-response {
   grid-template-columns: 1fr 1fr;
 }
 .mnc-list-categories li a {
+  transition: none;
   display: block;
   width: 100%;
-  border: 1px solid var(--color-mnc-gruen);
+  color: var(--color-mnc-text);
+  border: 1px solid var(--color-mnc-text);
   padding: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.8rem;
 }
 .mnc-list-categories li a:hover {
+  background-color: var(--color-mnc-blau);
+  color: white;
   border: 1px solid var(--color-mnc-blau);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /*<<div class="mnc-item-weitere-stories">
@@ -547,18 +574,26 @@ div.wpcf7 .screen-reader-response {
   margin: 0;
   padding: 0;
 }
+.mnc-list-weitere-stories li {
+  border-top: 1px solid var(--color-mnc-blau);
+}
 .mnc-list-weitere-stories .mnc-item-weitere-stories {
   display: block;
-  border-top: 1px solid var(--color-mnc-blau);
-  margin-top: 2rem;
+  margin: 0;
 }
 .mnc-list-weitere-stories .mnc-item-weitere-stories > a {
+  color: var(--color-mnc-text);
+  padding: 1rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr 2fr 3fr;
+  gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  background-color: yellow;
+  font-size: 0.75rem;
+}
+.mnc-list-weitere-stories .mnc-item-weitere-stories > a:hover {
+  background-color: white;
+  transform: translateX(10px);
 }
 @media screen and (max-width: 768px) {
   .mnc-list-weitere-stories .mnc-item-weitere-stories > a {
@@ -568,13 +603,8 @@ div.wpcf7 .screen-reader-response {
 .mnc-list-weitere-stories .mnc-item-weitere-stories > a h4 {
   text-decoration: none !important;
   color: var(--color-mnc-blau);
-  font-size: 1rem;
-  line-height: 1rem;
-}
-.mnc-list-weitere-stories .mnc-item-weitere-stories > a .mnc-terms {
-  color: var(--color-mnc-text);
-  font-size: 0.7rem;
-  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.1rem;
 }
 
 .mnc-nolist {

@@ -8,7 +8,7 @@ global $post;
     <div class="mnc-item-content">
 
         <div class="mnc-terms">
-            [wpbb post:terms_list taxonomy='category' separator=', ' linked='yes']
+            Top-Story, [wpbb post:terms_list taxonomy='category' separator=', ' linked='yes']
         </div>
 
         <div class="mnc-title">

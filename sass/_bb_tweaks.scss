@@ -20,3 +20,17 @@
     padding-top:0;
   }
 }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="reset"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], select, textarea {
+  color: var(--color-mnc-text);
+  padding: .75rem;
+  height: auto;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-mnc-text);
+  border-radius: 2px;
+  background: white;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: all .2s linear;
+}
