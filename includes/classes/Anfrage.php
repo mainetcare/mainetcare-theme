@@ -33,7 +33,7 @@ class Anfrage {
 			'Eigentlich will ich mich um gar nichts kümmern müssen 😇',
 			'Die Website muss schneller laden',
 			'Mehr Infos über meine Besucher',
-			'Google Anzeigen mit Landing Pages wären knorke',
+			'Google Anzeigen mit Landing Pages wären toll',
 			'Meine Website wird bei Google nicht gefunden',
 			'Ein Online-Shop',
 			'Ein Buchungssystem',
@@ -55,9 +55,9 @@ class Anfrage {
 			$this->map[] = new Checkitem( $label );
 		}
 		$this->validate = [
-			'mncname'     => [ 'isNotEmpty' => 'Bitte geben Sie Ihren Namen oder alternativ den Namen Ihres Unternehmens an.' ],
-			'email'       => [ 'isNotEmpty' => 'Bitte geben Sie eine E-Mail Adresse an, mit der wir Sie kontaktieren können.' ],
-			'datenschutz' => [
+			'contact_name'  => [ 'isNotEmpty' => 'Bitte geben Sie Ihren Namen oder alternativ den Namen Ihres Unternehmens an.' ],
+			'contact_email' => [ 'isNotEmpty' => 'Bitte geben Sie eine E-Mail Adresse an, mit der wir Sie kontaktieren können.' ],
+			'datenschutz'   => [
 				'isChecked' => 'Um die Anfrage absenden zu können ist es notwendig, dass Sie unsere Datenschutzbestimmungen akzeptieren. Wir verwenden Ihre Angaben ausschließlich zur Kontaktaufnahme und geben diese keinesfalls an Dritte weiter.'
 			]
 		];
@@ -119,11 +119,41 @@ class Anfrage {
 	}
 
 	public function sendAsMail() {
-		dump( $this->request );
+		$message = $this->buildMessage();
+		wp_mail( 'info@mainetcare.com', 'Anfrage von der Website. Interessent schickt Anliegen', $message );
+	}
+
+	protected function buildMessage() {
+		$message = [];
+		foreach ( $this->request as $field => $value ) {
+			$checkfield = $this->getCheckfield( $field );
+			if ( $checkfield && $checkfield->checked( $this->request ) ) {
+				$message[] = 'Kunde will: ' . $checkfield->label;
+			}
+		}
+		$message[] = 'Kunde will Sonstiges: ' . $this->request['sonstiges'];
+		$message[] = 'Name: ' . $this->request['contact_name'];
+		$message[] = 'Email: ' . $this->request['contact_email'];
+		$message[] = 'Telefon: ' . $this->request['contact_tel'];
+		$message[] = 'Website: ' . $this->request['contact_web'];
+		return implode( "\n", $message );
+	}
+
+	protected function getCheckfield( $fielname ) {
+		foreach ( $this->map as $checkfield ) {
+			/**
+			 * @var $checkfield Checkitem
+			 */
+			if ( $checkfield->name == $fielname ) {
+				return $checkfield;
+			}
+		}
+
+		return null;
 	}
 
 	public function redirect() {
-		dump( 'redirect to thank you page' );
+		wp_redirect(get_permalink( get_page_by_path( 'vielen-dank-fuer-ihre-anfrage' ) ), 303);
 	}
 
 	/**

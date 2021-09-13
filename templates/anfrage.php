@@ -2,7 +2,8 @@
 global $post;
 $anfrage = new \Mnc\Anfrage();
 if ( $anfrage->isSubmitted() && ! $anfrage->hasErrors() ) {
-	dump($_POST);
+	$anfrage->sendAsMail();
+    $anfrage->redirect();
 }
 ?>
 
@@ -30,31 +31,31 @@ if ( $anfrage->isSubmitted() && ! $anfrage->hasErrors() ) {
 		<?php endforeach; ?>
         <div class="mnc-form-input">
             <label for="sonstiges">Nein alles falsch, ich brauche:</label>
-            <textarea id="sonstiges" name="sonstiges"></textarea>
+            <textarea id="sonstiges" name="sonstiges"><?= $anfrage->getRequest('sonstiges') ?></textarea>
         </div>
         <hr>
         <fieldset class="mnc-kontaktangaben">
             <h3>Kontaktangaben:</h3>
-            <div class="mnc-form-input <?= $anfrage->getErrorClass( 'mncname' ) ?>">
-                <label for="mncname">Name:</label>
-                <input type="text" id="mncname" name="mncname" value="<?= $anfrage->getRequest('mncname') ?>"/>
-                <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'mncname' ) ?></span>
+            <div class="mnc-form-input <?= $anfrage->getErrorClass( 'contact_name' ) ?>">
+                <label for="contact_name">Name:</label>
+                <input type="text" id="contact_name" name="contact_name" value="<?= $anfrage->getRequest('contact_name') ?>"/>
+                <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'contact_name' ) ?></span>
             </div>
-            <div class="mnc-form-input <?= $anfrage->getErrorClass( 'email' ) ?>">
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" value="<?= $anfrage->getRequest('email') ?>"/>
-                <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'email' ) ?></span>
+            <div class="mnc-form-input <?= $anfrage->getErrorClass( 'contact_email' ) ?>">
+                <label for="contact_email">E-Mail:</label>
+                <input type="email" id="contact_email" name="contact_email" value="<?= $anfrage->getRequest('contact_email') ?>"/>
+                <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'contact_email' ) ?></span>
             </div>
             <div class="mnc-form-input">
-                <label for="tel">Telefon: </label>
+                <label for="contact_tel">Telefon: </label>
                 <span class="mnc-error"></span>
-                <input type="text" id="tel" name="tel" value="<?= $anfrage->getRequest('tel') ?>"/>
+                <input type="text" id="contact_tel" name="contact_tel" value="<?= $anfrage->getRequest('contact_tel') ?>"/>
                 <span class="hlptext">(optional)</span>
             </div>
             <div class="mnc-form-input">
-                <label for="web">Ihre derzeitige Website:</label>
+                <label for="contact_web">Ihre derzeitige Website:</label>
                 <span class="mnc-error"></span>
-                <input type="url" id="web" name="web" value="<?= $anfrage->getRequest('web') ?>"/>
+                <input type="url" id="contact_web" name="contact_web" value="<?= $anfrage->getRequest('contact_web') ?>"/>
                 <span class="hlptext">(optional)</span>
             </div>
             <div class="mnc-checkitem <?= $anfrage->getErrorClass( 'datenschutz' ) ?>">
