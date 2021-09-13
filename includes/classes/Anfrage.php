@@ -3,6 +3,7 @@
 namespace Mnc;
 
 use Carbon\Carbon;
+use Exception;
 
 class Anfrage {
 
@@ -11,6 +12,11 @@ class Anfrage {
 	public $errortext = null;
 
 	public $errors = [];
+
+	/**
+	 * @var null | Exception | AnfrageException | RequestException
+	 */
+	public $exception = null;
 
 	/**
 	 * @var \string[][]
@@ -31,23 +37,23 @@ class Anfrage {
 			'Regelmäßig neue Blogbeiträge oder Meldungen',
 			'Jemand, der mir den technischen Kram abnimmt',
 			'Eigentlich will ich mich um gar nichts kümmern müssen 😇',
-			'Die Website muss schneller laden',
+			'Meine Website wird bei Google nicht gefunden',
+			'Die Website soll besser gegen Angriffe geschützt werden',
+			'Die Website soll schneller laden',
 			'Mehr Infos über meine Besucher',
 			'Google Anzeigen mit Landing Pages wären toll',
-			'Meine Website wird bei Google nicht gefunden',
 			'Ein Online-Shop',
 			'Ein Buchungssystem',
 			'Ein Blog',
 			'Event-Planer / Kalender für Termine und Anmeldungen',
 			'Fotogalerien und Bilderverwaltung',
-			'Ich habe eine Datenbank randvoll mit "XYZ" und will diese online verfügbar machen',
+			'Ich habe eine Datenbank und will diese online stellen',
 			'Ein Kontaktformular / Assistent',
 			'Einen Newsletter',
 			'Intelligente Suche',
 			'Animationen, Visualisierungen, Filme',
-			'Erhöhung der Sicherheit',
 			'Technische Betreuung',
-			'Ein Digitalisierungsprojekt',
+			'Wir wollen ein Digitalisierungsprojekt umsetzen und benötigen Beratung',
 			'Gartenzwerge'
 		];
 		$this->map = [];
@@ -64,8 +70,11 @@ class Anfrage {
 	}
 
 	protected function initRequest() {
-
 		if ( $this->isSubmitted() ) {
+			$nonce = $_REQUEST['_wpnonce'] ?? '';
+			if ( ! wp_verify_nonce( $nonce, 'submit_anfrage' ) ) {
+				throw new RequestException('Die Sitzung ist abgelaufen.');
+			}
 			$this->request   = $_POST;
 			$this->errortext = null;
 			$this->errors    = [];
@@ -128,6 +137,7 @@ class Anfrage {
 	 */
 	public function sendAsMail() {
 		$message = $this->buildMessage();
+		// throw new AnfrageException('Beim Versand der E-Mail ist ein Fehler aufgetreten.');
 		$return = wp_mail( 'info@mainetcare.com', 'Anfrage von der Website. Interessent schickt Anliegen', $message );
 		if (! $return ) {
 			throw new AnfrageException('Beim Versand der E-Mail ist ein Fehler aufgetreten.');
@@ -219,6 +229,26 @@ class Anfrage {
 		}
 
 		return true;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function hasAnfrageException() {
+		if(!$this->exception) {
+			return false;
+		}
+		return $this->exception instanceof AnfrageException;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function hasRequestException() {
+		if(!$this->exception) {
+			return false;
+		}
+		return $this->exception instanceof RequestException;
 	}
 
 

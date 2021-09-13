@@ -1,10 +1,14 @@
 <?php
 global $post;
+global $anfrage;
+if(! $anfrage instanceof \Mnc\Anfrage) {
  $anfrage = new \Mnc\Anfrage();
+}
 ?>
 
 <div class="mnc-form-anfrage" xmlns="http://www.w3.org/1999/html">
     <form id="Anfrage" action="<?php the_permalink(); ?>" method="post">
+
 
         <?php if ( $anfrage->hasErrors() ): ?>
             <div class="mnc-errortext">
@@ -16,6 +20,25 @@ global $post;
                 </ul>
             </div>
         <?php endif; ?>
+
+	    <?php if ( $anfrage->hasAnfrageException()): ?>
+            <div class="mnc-errortext">
+                <p>Während des Versandes gabe es eine Fehlermeldung. Die Ursache könnte in einem
+                ausgefallenen Mailserver oder einem Netzwerkausfall liegen. Ihre Anfrage ist höchstwahrscheinlich nicht beim Empfänger angekommen!
+                    Das ist sehr bedauerlich. Was Sie jetzt tun können:</p>
+                <p>Versuchen Sie, die Anfrage erneut zu senden. Falls diese Fehlermeldung danach immer noch angezeigt wird,
+                wären wir Ihnen sehr dankbar, wenn Sie uns via Telefon unter 030 966 066 79 darüber informieren könnten.</p>
+            </div>
+	    <?php endif; ?>
+
+	    <?php if ( $anfrage->hasRequestException()): ?>
+            <div class="mnc-errortext">
+                <p><?= $anfrage->exception->getMessage(); ?></p>
+            </div>
+	    <?php endif; ?>
+
+
+	    <?php wp_nonce_field( 'submit_anfrage' ); ?>
 
 		<?php foreach ( $anfrage->map as $item ): /* @var $item \Mnc\Checkitem */ ?>
             <div class="mnc-checkitem">
@@ -51,7 +74,7 @@ global $post;
             <div class="mnc-form-input">
                 <label for="contact_web">Ihre derzeitige Website:</label>
                 <span class="mnc-error"></span>
-                <input type="url" id="contact_web" name="contact_web" value="<?= $anfrage->getRequest('contact_web') ?>"/>
+                <input type="text" id="contact_web" name="contact_web" value="<?= $anfrage->getRequest('contact_web') ?>"/>
                 <span class="hlptext">(optional)</span>
             </div>
             <div class="mnc-checkitem <?= $anfrage->getErrorClass( 'datenschutz' ) ?>">
