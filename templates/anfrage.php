@@ -1,10 +1,6 @@
 <?php
 global $post;
-$anfrage = new \Mnc\Anfrage();
-if ( $anfrage->isSubmitted() && ! $anfrage->hasErrors() ) {
-	$anfrage->sendAsMail();
-    $anfrage->redirect();
-}
+ $anfrage = new \Mnc\Anfrage();
 ?>
 
 <div class="mnc-form-anfrage" xmlns="http://www.w3.org/1999/html">
@@ -61,7 +57,7 @@ if ( $anfrage->isSubmitted() && ! $anfrage->hasErrors() ) {
             <div class="mnc-checkitem <?= $anfrage->getErrorClass( 'datenschutz' ) ?>">
                 <input type="hidden" name="datenschutz" value="">
                 <input type="checkbox" id="datenschutz"
-                       name="datenschutz" <?= (int) $anfrage->request['datenschutz'] == 1 ? 'checked' : '' ?> value="1">
+                       name="datenschutz" <?= (int) $anfrage->getRequest('datenschutz') == 1 ? 'checked' : '' ?> value="1">
                 <label for="datenschutz">Ich akzeptiere die <a href="/datenschutz/" target="_blank">Datenschutzbestimmungen</a>
                     von MaiNetCare.</label>
                     <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'datenschutz' ) ?></span>

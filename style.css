@@ -640,6 +640,10 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   margin-left: -1rem;
 }
 
+.mnc-checkitem {
+  margin-top: 0.25rem;
+}
+
 .mnc-form-anfrage fieldset {
   margin-top: 1rem;
 }

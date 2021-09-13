@@ -85,6 +85,11 @@ class Anfrage {
 		}
 	}
 
+	public function setErrors($errortext, $arrErrors) {
+		$this->errortext = $errortext;
+		$this->errors = $arrErrors;
+	}
+
 	public function isSubmitted() {
 		return isset( $_POST['anfrage_submitted'] ) && $_POST['anfrage_submitted'] == 1;
 	}
@@ -118,9 +123,15 @@ class Anfrage {
 		return $this->errors[ $name ];
 	}
 
+	/**
+	 * @throws AnfrageException
+	 */
 	public function sendAsMail() {
 		$message = $this->buildMessage();
-		wp_mail( 'info@mainetcare.com', 'Anfrage von der Website. Interessent schickt Anliegen', $message );
+		$return = wp_mail( 'info@mainetcare.com', 'Anfrage von der Website. Interessent schickt Anliegen', $message );
+		if (! $return ) {
+			throw new AnfrageException('Beim Versand der E-Mail ist ein Fehler aufgetreten.');
+		}
 	}
 
 	protected function buildMessage() {
@@ -128,10 +139,10 @@ class Anfrage {
 		foreach ( $this->request as $field => $value ) {
 			$checkfield = $this->getCheckfield( $field );
 			if ( $checkfield && $checkfield->checked( $this->request ) ) {
-				$message[] = 'Kunde will: ' . $checkfield->label;
+				$message[] = 'Interessent will: ' . $checkfield->label;
 			}
 		}
-		$message[] = 'Kunde will Sonstiges: ' . $this->request['sonstiges'];
+		$message[] = 'Interessent will Sonstiges: ' . $this->request['sonstiges'];
 		$message[] = 'Name: ' . $this->request['contact_name'];
 		$message[] = 'Email: ' . $this->request['contact_email'];
 		$message[] = 'Telefon: ' . $this->request['contact_tel'];
@@ -153,7 +164,9 @@ class Anfrage {
 	}
 
 	public function redirect() {
-		wp_redirect(get_permalink( get_page_by_path( 'vielen-dank-fuer-ihre-anfrage' ) ), 303);
+		$permalink = get_permalink( get_page_by_path( 'ihr-website-anliegen/vielen-dank-fuer-ihre-anfrage' ));
+		wp_redirect($permalink, 303);
+		exit;
 	}
 
 	/**
