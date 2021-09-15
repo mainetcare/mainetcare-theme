@@ -31,7 +31,7 @@ class Anfrage {
 	protected function initMap() {
 		$labels    = [
 			'Eine neue Website',
-			'Ich will meine alte Website ein wenig aufpeppen',
+			'Ich will meine alte Website aufpeppen',
 			'Jemand, der meine Website pflegt',
 			'Anleitung wie ich meine Seite selber pflege',
 			'Regelmäßig neue Blogbeiträge oder Meldungen',
