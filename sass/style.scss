@@ -25,7 +25,7 @@ Template: astra
 @import "mi_mixins";
 @import "accessibility";
 @import "icons";
-@import "mnc-layout";
+@import "mnc_layout";
 @import "customizer_css";
 @import "bb_tweaks";
 @import "newsletter_form";
@@ -33,6 +33,7 @@ Template: astra
 @import "buttons";
 @import "blog_archive";
 @import "anfrage";
+@import "slider";
 
 .mnc-nolist {
   @include no-list;
@@ -40,6 +41,15 @@ Template: astra
     @include no-list;
   }
 
+}
+
+.main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {
+  color:var(--color-mnc-gruen) !important;
+}
+
+.mnc-menu-icon {
+  width:1rem;
+  height:1rem;
 }
 
 .fl-accordion-button-label {

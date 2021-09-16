@@ -13,7 +13,7 @@ add_action( 'admin_head', function () {
 
 // Allow Shortcodes in Widgets:
 add_filter( 'widget_text', 'do_shortcode' );
-
+add_filter('wp_nav_menu_items', 'do_shortcode');
 
 // Since WP 5.8 there is an annoying "load more" button after 40 Images. You can turn it off like so:
 add_filter( 'media_library_infinite_scrolling', '__return_true' );

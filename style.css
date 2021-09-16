@@ -137,6 +137,10 @@ a.skip-main:focus, a.skip-main:active {
   letter-spacing: 0.1em;
 }
 
+.mnc-infobox h3 > a {
+  color: var(--color-mnc-blau);
+}
+
 .site-description {
   letter-spacing: 0.9px;
 }
@@ -682,6 +686,51 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   color: #575757;
 }
 
+#MncSliderHome .bx-wrapper .bx-pager {
+  color: var(--color-mnc-gruen);
+}
+#MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a.active, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:focus, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:hover {
+  background: var(--color-mnc-gruen);
+}
+@media screen and (min-width: 1024px) {
+  #MncSliderHome .fl-content-slider .fl-slide-bg-link {
+    z-index: 3;
+  }
+  #MncSliderHome .fl-slide-bg-photo {
+    border: 1px solid #EEE;
+  }
+  #MncSliderHome .fl-slide-foreground {
+    display: block;
+    position: absolute;
+    height: 100%;
+  }
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
+    margin: 0;
+    width: 100% !important;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
+    width: 100%;
+    margin: 0 !important;
+    line-height: 1rem;
+    display: block;
+    font-size: 1rem;
+    padding: 1rem !important;
+    background-color: rgba(14, 44, 64, 0.9);
+  }
+}
+
 .mnc-nolist {
   list-style-type: none;
   margin: 0;
@@ -691,6 +740,15 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {
+  color: var(--color-mnc-gruen) !important;
+}
+
+.mnc-menu-icon {
+  width: 1rem;
+  height: 1rem;
 }
 
 .fl-accordion-button-label:focus {

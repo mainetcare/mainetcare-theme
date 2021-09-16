@@ -23,7 +23,7 @@ class Season {
 		return new Season();
 	}
 
-	public function met() {
+	public function getMeteorologicalSeason() {
 		$m = $this->today->month;
 		if(in_array($m, [3,4,5])) {
 			return 'Frühling';

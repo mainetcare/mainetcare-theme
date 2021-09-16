@@ -52,3 +52,9 @@ a.skip-main {
   text-transform:uppercase !important;
   letter-spacing:0.1em;
 }
+
+.mnc-infobox {
+  h3 > a {
+    color:var(--color-mnc-blau);
+  }
+}

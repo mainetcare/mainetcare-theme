@@ -1,0 +1,62 @@
+
+#MncSliderHome {
+  .bx-wrapper .bx-pager {
+    color: var(--color-mnc-gruen);
+  }
+
+  .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus, .bx-wrapper .bx-pager.bx-default-pager a:hover {
+    background: var(--color-mnc-gruen);
+  }
+
+  //.bx-wrapper .bx-viewport {
+  //  border-radius: var(--mnc-border-radius);
+  //}
+
+  @include desktop {
+    .fl-content-slider .fl-slide-bg-link {
+      z-index: 3;
+    }
+
+    .fl-slide-bg-photo {
+      border:1px solid #EEE;
+    }
+
+    .fl-slide-foreground {
+      display: block;
+      position: absolute;
+      height: 100%;
+
+      .fl-slide-content-wrap {
+        margin:0;
+        width: 100% !important;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .fl-slide-content {
+          padding:0;
+          margin: 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          .fl-slide-title {
+            width:100%;
+            margin:0 !important;
+            line-height:1rem;
+            display:block;
+            //border-radius: 0.25rem;
+            font-size: 1rem;
+            padding: 1rem !important;
+            background-color: $color_mnc_bg_blau;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
