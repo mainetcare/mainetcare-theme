@@ -4,6 +4,7 @@ namespace Mnc;
 
 use Carbon\Carbon;
 use Exception;
+use WP_Post;
 
 class Anfrage {
 
@@ -23,43 +24,64 @@ class Anfrage {
 	 */
 	protected array $validate;
 
-	public function __construct() {
-		$this->initMap();
+	protected $default_labels  = [
+		'Eine neue Website',
+		'Ich will meine alte Website aufpeppen',
+		'Jemand, der meine Website pflegt',
+		'Anleitung wie ich meine Seite selber pflege',
+		'Regelmäßig neue Blogbeiträge oder Meldungen',
+		'Jemand, der mir den technischen Kram abnimmt',
+		'Eigentlich will ich mich um gar nichts kümmern müssen 😇',
+		'Meine Website wird bei Google nicht gefunden',
+		'Die Website soll besser gegen Angriffe geschützt werden',
+		'Die Website soll schneller laden',
+		'Mehr Infos über meine Besucher',
+		'Google Anzeigen mit Landing Pages wären toll',
+		'Ein Online-Shop',
+		'Ein Buchungssystem',
+		'Ein Blog',
+		'Event-Planer / Kalender für Termine und Anmeldungen',
+		'Fotogalerien und Bilderverwaltung',
+		'Ich habe eine Datenbank und will diese online stellen',
+		'Ein Kontaktformular / Assistent',
+		'Einen Newsletter',
+		'Intelligente Suche',
+		'Animationen, Visualisierungen, Filme',
+		'Technische Betreuung',
+		'Wir wollen ein Digitalisierungsprojekt umsetzen und benötigen Beratung',
+		'Gartenzwerge'
+	];
+
+	/**
+	 * @var null | WP_Post
+	 */
+	protected $post = null;
+
+	public function __construct( WP_Post  $post = null) {
+		$this->post = $post;
+		$this->initCheckitems();
 		$this->initRequest();
 	}
 
-	protected function initMap() {
-		$labels    = [
-			'Eine neue Website',
-			'Ich will meine alte Website aufpeppen',
-			'Jemand, der meine Website pflegt',
-			'Anleitung wie ich meine Seite selber pflege',
-			'Regelmäßig neue Blogbeiträge oder Meldungen',
-			'Jemand, der mir den technischen Kram abnimmt',
-			'Eigentlich will ich mich um gar nichts kümmern müssen 😇',
-			'Meine Website wird bei Google nicht gefunden',
-			'Die Website soll besser gegen Angriffe geschützt werden',
-			'Die Website soll schneller laden',
-			'Mehr Infos über meine Besucher',
-			'Google Anzeigen mit Landing Pages wären toll',
-			'Ein Online-Shop',
-			'Ein Buchungssystem',
-			'Ein Blog',
-			'Event-Planer / Kalender für Termine und Anmeldungen',
-			'Fotogalerien und Bilderverwaltung',
-			'Ich habe eine Datenbank und will diese online stellen',
-			'Ein Kontaktformular / Assistent',
-			'Einen Newsletter',
-			'Intelligente Suche',
-			'Animationen, Visualisierungen, Filme',
-			'Technische Betreuung',
-			'Wir wollen ein Digitalisierungsprojekt umsetzen und benötigen Beratung',
-			'Gartenzwerge'
-		];
+	protected function initCheckitems() {
 		$this->map = [];
-		foreach ( $labels as $label ) {
-			$this->map[] = new Checkitem( $label );
+
+		if(have_rows('anliegen_liste', $this->post)) {
+			while(have_rows('anliegen_liste', $this->post)) {
+				the_row();
+				$label = get_sub_field('anliegen');
+				$this->map[] = new Checkitem( $label );
+			}
+		} else {
+			foreach ( $this->default_labels as $label ) {
+				$this->map[] = new Checkitem( $label );
+			}
 		}
+
+	}
+
+	protected function initRequest() {
+
 		$this->validate = [
 			'contact_name'  => [ 'isNotEmpty' => 'Bitte geben Sie Ihren Namen oder alternativ den Namen Ihres Unternehmens an.' ],
 			'contact_email' => [ 'isNotEmpty' => 'Bitte geben Sie eine E-Mail Adresse an, mit der wir Sie kontaktieren können.' ],
@@ -67,9 +89,7 @@ class Anfrage {
 				'isChecked' => 'Um die Anfrage absenden zu können ist es notwendig, dass Sie unsere Datenschutzbestimmungen akzeptieren. Wir verwenden Ihre Angaben ausschließlich zur Kontaktaufnahme und geben diese keinesfalls an Dritte weiter.'
 			]
 		];
-	}
 
-	protected function initRequest() {
 		if ( $this->isSubmitted() ) {
 			$nonce = $_REQUEST['_wpnonce'] ?? '';
 			if ( ! wp_verify_nonce( $nonce, 'submit_anfrage' ) ) {

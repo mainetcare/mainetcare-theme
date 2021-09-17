@@ -9,9 +9,11 @@
  * @see https://codex.wordpress.org/Plugin_API/Action_Reference#Actions_Run_During_a_Typical_Request
  */
 
+use Mnc\Anfrage;
 use Mnc\AnfrageException;
 
-$anfrage = new \Mnc\Anfrage();
+global $post;
+$anfrage = new Anfrage($post);
 
 add_action( 'wp', function () {
 	global $anfrage;
@@ -19,7 +21,8 @@ add_action( 'wp', function () {
 	if ( ! $post ) {
 		return;
 	}
-	$correct_page_id = 586; // Ihr Website Anliegen
+	$anfrage = new Anfrage($post);
+	$correct_page_id = 3864; // Ihr Website Anliegen
 	if ( ! is_admin() && $post->ID == $correct_page_id ) {
 		try {
 			if ( $anfrage->isSubmitted() && ! $anfrage->hasErrors() ) {

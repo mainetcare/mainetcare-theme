@@ -127,7 +127,7 @@ a.skip-main:focus, a.skip-main:active {
   width: 96%;
 }
 
-.mnc-upper, .fl-builder-content .fl-button-wrap a.fl-button {
+.mnc-upper {
   text-transform: uppercase !important;
   letter-spacing: 0.1em;
 }
@@ -406,37 +406,23 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
     opacity: 1;
   }
 }
-.fl-builder-content .fl-button-wrap a.fl-button {
+.fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
   background-color: #87a133;
-  color: white;
+  border-color: #87a133;
 }
-@media (max-width: 767px) {
-  .fl-builder-content .fl-button-wrap a.fl-button {
-    text-align: center;
-  }
-}
-
-.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited {
-  background-color: #87a133;
-  color: white;
-}
-.fl-builder-content a.fl-button:hover, .fl-builder-content a.fl-button:visited:hover {
+.fl-button-wrap a.fl-button:hover, .fl-button-wrap a.fl-button:visited:hover {
   background-color: #0e2c40;
+  border-color: #0e2c40;
 }
-.fl-builder-content a.fl-button span, .fl-builder-content a.fl-button:visited span {
+.fl-button-wrap a.fl-button .fl-button-text, .fl-button-wrap a.fl-button:visited .fl-button-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: white;
 }
 
-.mnc-button .uabb-button {
-  background-color: #87a133 !important;
-  color: #FFF;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}
-.mnc-button .uabb-button:hover {
-  background-color: #172B3F !important;
+.mnc-button-dark .fl-button-wrap a.fl-button:hover, .mnc-button-dark .fl-button-wrap a.fl-button:visited:hover {
+  background-color: #87a133;
+  border-color: #87a133;
 }
 
 .mnc-reading-time {
@@ -652,7 +638,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   margin-top: 1rem;
 }
 .mnc-form-anfrage label {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .mnc-form-anfrage input[type=text], .mnc-form-anfrage input[type=email], .mnc-form-anfrage input[type=url] {
   transition: none;
@@ -667,7 +653,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 }
 .mnc-form-anfrage .mnc-has-error .mnc-errormsg {
   display: block;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--color-mnc-error-border);
 }
 .mnc-form-anfrage .mnc-form-input {
@@ -740,6 +726,10 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.uabb-subheading.uabb-text-editor {
+  margin-left: 3px;
 }
 
 .main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {

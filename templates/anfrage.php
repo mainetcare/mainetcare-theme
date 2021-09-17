@@ -2,7 +2,7 @@
 global $post;
 global $anfrage;
 if(! $anfrage instanceof \Mnc\Anfrage) {
- $anfrage = new \Mnc\Anfrage();
+ $anfrage = new \Mnc\Anfrage($post);
 }
 ?>
 

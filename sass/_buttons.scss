@@ -1,33 +1,42 @@
-.fl-builder-content .fl-button-wrap  a.fl-button {
-  background-color: $color_mnc_gruen;
-  color:white;
-  @extend .mnc-upper;
-  @include bp(mobile) {
-    text-align: center;
-  }
-}
+//.fl-builder-content .fl-button-wrap  a.fl-button {
+//  .fl-button-text {
+//    color:white;
+//  }
+//  background-color: $color_mnc_gruen;
+//  border-color: $color_mnc_gruen;
+//  @extend .mnc-upper;
+//  @include bp(mobile) {
+//    text-align: center;
+//  }
+//}
+//
+//.mnc-btn-blue {
+//  .fl-builder-content .fl-button-wrap  a.fl-button {
+//    color:white;
+//    background-color: $color_mnc_blau;
+//    border-color: $color_mnc_blau;
+//  }
+//}
 
-.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited {
+
+.fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
   &:hover {
     background-color: $color_mnc_blau;
+    border-color: $color_mnc_blau;
   }
   background-color: $color_mnc_gruen;
-  color:white;
-  span {
+  border-color: $color_mnc_gruen;
+  .fl-button-text {
+    @include uppercase;
     color:white;
   }
 }
 
-.mnc-button {
-  .uabb-button {
-    background-color:#87a133 !important;
-    color:#FFF;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    font-size:16px !important;
-    font-weight:600 !important;
-  }
-  .uabb-button:hover {
-    background-color:#172B3F !important;
+.mnc-button-dark {
+  .fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
+    &:hover {
+      background-color: $color_mnc_gruen;
+      border-color: $color_mnc_gruen;
+    }
   }
 }
