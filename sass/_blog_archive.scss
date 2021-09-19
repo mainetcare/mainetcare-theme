@@ -1,3 +1,85 @@
+.mnc-post-item-list {
+
+  --item-height:200px;
+
+  ul {
+    @include no-list;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap:1.5rem;
+    @include mobile {
+      display:block;
+    }
+    li {
+      display:flex;
+      flex-direction: column;
+      flex:1;
+    }
+  }
+
+  .mnc-post-item {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+
+    }
+
+    .mnc-featured-img {
+      min-height:200px;
+      background-color:var(--color-mnc-bg_blassblau);
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        height: 200px;
+      }
+    }
+
+    .mnc-cp-content {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .mnc-title {
+      margin-top:1rem;
+      height:70px;
+      a, h3 {
+        font-size:0.9rem;
+        line-height:1rem;
+        font-weight:600;
+        text-decoration: none !important;
+        color: var(--color-mnc-blau);
+
+        &:hover {
+          color: var(--color-mnc-gruen);
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    .mnc-excerpt {
+      color: #7a7a7a;
+      font-size:0.9rem;
+      margin-top: 1rem;
+      line-height: 1.3rem;
+    }
+
+    .more {
+      display: inline-block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      margin-left: 0.75rem;
+    }
+
+  }
+
+}
+
 .mnc-reading-time {
   display:block;
   font-size:0.75rem;
@@ -72,55 +154,6 @@
 }
 
 
-.mnc-custom-post {
-
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-  @include mobile {
-    grid-template-columns: 1fr;
-  }
-
-  .mnc-scale-img-hover {
-    overflow: hidden;
-
-    img {
-      border-radius: 1rem;
-      object-fit: cover;
-      min-height: 200px;
-    }
-  }
-
-  .mnc-title {
-    a, h3 {
-      text-decoration: none !important;
-      color: var(--color-mnc-text);
-
-      &:hover {
-        text-decoration: underline !important;
-      }
-    }
-
-    h3 {
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-      line-height: 1.25rem;
-    }
-  }
-
-  .more {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .mnc-excerpt {
-    line-height: 1.5rem;
-  }
-
-}
-
 .mnc-list-categories {
   @include no-list;
   display:grid;
@@ -143,18 +176,6 @@
     }
   }
 }
-
-/*<<div class="mnc-item-weitere-stories">
-    <a class="more" href="<?= get_permalink( $post->ID ) ?>" title="Kompletten lesen für <?= get_the_title( $post->ID ) ?>">
-        <div class="mnc-terms">
-	        <?= get_the_term_list( $post->ID, 'category', '', ', ', '' ) ?>
-        </div>
-        <h4 class="uppercase"><?= get_the_title(); ?></h4>
-        <div class="mnc-excerpt"><?= get_the_excerpt( $post ); ?></div>
-    </a>
-
-</div>
-*/
 
 
 .mnc-list-weitere-stories {
@@ -199,6 +220,26 @@
 
 }
 
+ul.page-numbers {
+  li {
+    border:none !important;
+    a.page-numbers {
+      border:1px solid var(--color-mnc-gruen);
+      color:var(--color-mnc-gruen);
+      background-color:transparent;
+      &:hover {
+        background-color:var(--color-mnc-blau);
+        border:1px solid var(--color-mnc-blau);
+        color:white;
+      }
+    }
+    span.page-numbers {
+      border:1px solid var(--color-mnc-blau);
+      color:var(--color-mnc-blau);
+      background-color:white;
+    }
+  }
+}
 
 
 

@@ -1,10 +1,14 @@
 .mailster-form-info.error {
   @include error;
   background-color: var(--color-mnc-error-bg) !important;
+  p {
+    color:var(--color-mnc-text) !important;
+  }
   ul {
     margin-top:1rem !important;
     li {
       margin-top:0.5rem !important;
+      color:var(--color-mnc-text);
     }
     @include nicer-list("🤔", 1rem, 0.5rem);
   }

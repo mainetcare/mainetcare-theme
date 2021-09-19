@@ -1,42 +1,17 @@
-//.fl-builder-content .fl-button-wrap  a.fl-button {
-//  .fl-button-text {
-//    color:white;
-//  }
-//  background-color: $color_mnc_gruen;
-//  border-color: $color_mnc_gruen;
-//  @extend .mnc-upper;
-//  @include bp(mobile) {
-//    text-align: center;
-//  }
-//}
-//
-//.mnc-btn-blue {
-//  .fl-builder-content .fl-button-wrap  a.fl-button {
-//    color:white;
-//    background-color: $color_mnc_blau;
-//    border-color: $color_mnc_blau;
-//  }
-//}
 
 
-.fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
-  &:hover {
-    background-color: $color_mnc_blau;
-    border-color: $color_mnc_blau;
-  }
-  background-color: $color_mnc_gruen;
-  border-color: $color_mnc_gruen;
-  .fl-button-text {
-    @include uppercase;
-    color:white;
-  }
+.mnc-button-greenblue {
+  @include button($color_mnc_gruen, $color_mnc_blau, $color_text_white);
 }
 
-.mnc-button-dark {
-  .fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
-    &:hover {
-      background-color: $color_mnc_gruen;
-      border-color: $color_mnc_gruen;
-    }
-  }
+.mnc-button-greenlightgreen {
+  @include button($color_mnc_gruen, $color_mnc_gruenheller, $color_text_white);
+}
+
+.mnc-button-bluegreen {
+  @include button($color_mnc_blau, $color_mnc_gruen, $color_text_white);
+}
+
+.mnc-button-bluelightblue {
+  @include button($color_mnc_blau, $color_mnc_blauheller, $color_text_white);
 }

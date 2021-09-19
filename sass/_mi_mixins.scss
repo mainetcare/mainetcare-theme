@@ -33,30 +33,24 @@
   width: $y;
 }
 
-
-@mixin button-green {
-  &:hover {
-    background-color: $color_mnc_blau;
-  }
-  background-color: $color_mnc_gruen;
-  color: white;
-  span {
-    color: white;
-  }
-}
-
-@mixin button-blue {
-  background-color: $color_mnc_blau;
-  color: white;
-  span {
-    color: white;
-  }
-  &:hover {
-    background-color: #0d3147;
-    color: white;
-    border: 1px solid #FFFFFF;
+@mixin button($color, $hover_color, $text_color) {
+  a[role="button"], input[type="submit"] {
+    @include uppercase;
+    transition: all 200ms ease-in;
+    background-color: $color !important;
+    border-color: $color !important;
+    color: $text_color !important;
+    &:hover {
+      background-color: $hover_color !important;
+      border-color: $hover_color !important;
+    }
+    span {
+      @include uppercase;
+      color: $text_color !important;
+    }
   }
 }
+
 
 @mixin badge {
   text-decoration: none !important;
@@ -134,7 +128,7 @@
 
 @mixin uppercase {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
 }
 
 @mixin hide_from_dom {

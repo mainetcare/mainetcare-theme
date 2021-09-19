@@ -1,3 +1,16 @@
+.mnc-bg-green {
+  a, p, div,h5,h3,h2,h1, {
+    color:white !important;
+  }
+  a:hover {
+    color:white !important;
+    text-decoration: underline;
+  }
+  input[type="text"],input[type="email"],input[type="password"] {
+    color:var(--color-mnc-text);
+  }
+}
+
 a.skip-main {
   left:-999px;
   position:absolute;

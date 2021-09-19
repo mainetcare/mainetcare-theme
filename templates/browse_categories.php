@@ -1,7 +1,7 @@
 <?php
 global $post;
 $list = get_terms( array( 'taxonomy' => 'category',
-	'hide_empty' => true,
+	'hide_empty' => false,
 ) );
 ?>
 

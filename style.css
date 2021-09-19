@@ -60,6 +60,33 @@ a.skip-main:focus, a.skip-main:active {
   width: 26px;
 }
 
+.mnc-scarelist {
+  list-style: none;
+  margin: 0;
+}
+.mnc-scarelist li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+.mnc-scarelist li:before {
+  content: "🙀";
+  font-size: 1rem;
+  position: absolute;
+  width: 1rem;
+  line-height: 1rem;
+  left: -0.5rem;
+  top: 4px;
+  display: inline-block;
+  margin-left: -1rem;
+}
+.mnc-scarelist ul {
+  margin-bottom: 1rem;
+}
+.mnc-scarelist li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mnc-checklist li, .mnc-infolist li {
   background-repeat: no-repeat;
   background-size: 1rem;
@@ -82,6 +109,17 @@ a.skip-main:focus, a.skip-main:active {
 .mnc-infolist li {
   background-size: 1.1rem;
   background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important;
+}
+
+.mnc-bg-green a, .mnc-bg-green p, .mnc-bg-green div, .mnc-bg-green h5, .mnc-bg-green h3, .mnc-bg-green h2, .mnc-bg-green h1 {
+  color: white !important;
+}
+.mnc-bg-green a:hover {
+  color: white !important;
+  text-decoration: underline;
+}
+.mnc-bg-green input[type=text], .mnc-bg-green input[type=email], .mnc-bg-green input[type=password] {
+  color: var(--color-mnc-text);
 }
 
 a.skip-main {
@@ -214,6 +252,9 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   font-size: 0.9rem;
   background-color: var(--color-mnc-error-bg) !important;
 }
+.mailster-form-info.error p {
+  color: var(--color-mnc-text) !important;
+}
 .mailster-form-info.error ul {
   margin-top: 1rem !important;
   list-style: none;
@@ -221,6 +262,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 }
 .mailster-form-info.error ul li {
   margin-top: 0.5rem !important;
+  color: var(--color-mnc-text);
 }
 .mailster-form-info.error ul li {
   margin-left: 1.5rem;
@@ -406,23 +448,146 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
     opacity: 1;
   }
 }
-.fl-button-wrap a.fl-button, .fl-button-wrap a.fl-button:visited {
-  background-color: #87a133;
-  border-color: #87a133;
-}
-.fl-button-wrap a.fl-button:hover, .fl-button-wrap a.fl-button:visited:hover {
-  background-color: #0e2c40;
-  border-color: #0e2c40;
-}
-.fl-button-wrap a.fl-button .fl-button-text, .fl-button-wrap a.fl-button:visited .fl-button-text {
+.mnc-button-greenblue a[role=button], .mnc-button-greenblue input[type=submit] {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: white;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-greenblue a[role=button]:hover, .mnc-button-greenblue input[type=submit]:hover {
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+}
+.mnc-button-greenblue a[role=button] span, .mnc-button-greenblue input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
 }
 
-.mnc-button-dark .fl-button-wrap a.fl-button:hover, .mnc-button-dark .fl-button-wrap a.fl-button:visited:hover {
-  background-color: #87a133;
-  border-color: #87a133;
+.mnc-button-greenlightgreen a[role=button], .mnc-button-greenlightgreen input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-greenlightgreen a[role=button]:hover, .mnc-button-greenlightgreen input[type=submit]:hover {
+  background-color: #a8be5d !important;
+  border-color: #a8be5d !important;
+}
+.mnc-button-greenlightgreen a[role=button] span, .mnc-button-greenlightgreen input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-button-bluegreen a[role=button], .mnc-button-bluegreen input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-bluegreen a[role=button]:hover, .mnc-button-bluegreen input[type=submit]:hover {
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+}
+.mnc-button-bluegreen a[role=button] span, .mnc-button-bluegreen input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-button-bluelightblue a[role=button], .mnc-button-bluelightblue input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-bluelightblue a[role=button]:hover, .mnc-button-bluelightblue input[type=submit]:hover {
+  background-color: #133b59 !important;
+  border-color: #133b59 !important;
+}
+.mnc-button-bluelightblue a[role=button] span, .mnc-button-bluelightblue input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-post-item-list {
+  --item-height:200px;
+}
+.mnc-post-item-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list ul {
+    display: block;
+  }
+}
+.mnc-post-item-list ul li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.mnc-post-item-list .mnc-post-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mnc-post-item-list .mnc-post-item .mnc-featured-img {
+  min-height: 200px;
+  background-color: var(--color-mnc-bg_blassblau);
+  overflow: hidden;
+}
+.mnc-post-item-list .mnc-post-item .mnc-featured-img img {
+  object-fit: cover;
+  height: 200px;
+}
+.mnc-post-item-list .mnc-post-item .mnc-cp-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.mnc-post-item-list .mnc-post-item .mnc-title {
+  margin-top: 1rem;
+  height: 70px;
+}
+.mnc-post-item-list .mnc-post-item .mnc-title a, .mnc-post-item-list .mnc-post-item .mnc-title h3 {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: var(--color-mnc-blau);
+}
+.mnc-post-item-list .mnc-post-item .mnc-title a:hover, .mnc-post-item-list .mnc-post-item .mnc-title h3:hover {
+  color: var(--color-mnc-gruen);
+  text-decoration: underline !important;
+}
+.mnc-post-item-list .mnc-post-item .mnc-excerpt {
+  color: #7a7a7a;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  line-height: 1.3rem;
+}
+.mnc-post-item-list .mnc-post-item .more {
+  display: inline-block;
+  margin-left: 0.75rem;
+}
+.mnc-post-item-list .mnc-post-item .more:hover {
+  text-decoration: underline;
 }
 
 .mnc-reading-time {
@@ -484,44 +649,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   text-decoration: underline;
 }
 
-.mnc-custom-post {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-}
-@media screen and (max-width: 768px) {
-  .mnc-custom-post {
-    grid-template-columns: 1fr;
-  }
-}
-.mnc-custom-post .mnc-scale-img-hover {
-  overflow: hidden;
-}
-.mnc-custom-post .mnc-scale-img-hover img {
-  border-radius: 1rem;
-  object-fit: cover;
-  min-height: 200px;
-}
-.mnc-custom-post .mnc-title a, .mnc-custom-post .mnc-title h3 {
-  text-decoration: none !important;
-  color: var(--color-mnc-text);
-}
-.mnc-custom-post .mnc-title a:hover, .mnc-custom-post .mnc-title h3:hover {
-  text-decoration: underline !important;
-}
-.mnc-custom-post .mnc-title h3 {
-  margin-top: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
-}
-.mnc-custom-post .more:hover {
-  text-decoration: underline;
-}
-.mnc-custom-post .mnc-excerpt {
-  line-height: 1.5rem;
-}
-
 .mnc-list-categories {
   list-style-type: none;
   margin: 0;
@@ -538,7 +665,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   border: 1px solid var(--color-mnc-text);
   padding: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 1px;
   font-size: 0.8rem;
 }
 .mnc-list-categories li a:hover {
@@ -548,17 +675,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   text-decoration: none;
 }
 
-/*<<div class="mnc-item-weitere-stories">
-    <a class="more" href="<?= get_permalink( $post->ID ) ?>" title="Kompletten lesen für <?= get_the_title( $post->ID ) ?>">
-        <div class="mnc-terms">
-	        <?= get_the_term_list( $post->ID, 'category', '', ', ', '' ) ?>
-        </div>
-        <h4 class="uppercase"><?= get_the_title(); ?></h4>
-        <div class="mnc-excerpt"><?= get_the_excerpt( $post ); ?></div>
-    </a>
-
-</div>
-*/
 .mnc-list-weitere-stories ul {
   list-style-type: none;
   margin: 0;
@@ -594,6 +710,25 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   color: var(--color-mnc-blau);
   font-size: 1.1rem;
   line-height: 1.1rem;
+}
+
+ul.page-numbers li {
+  border: none !important;
+}
+ul.page-numbers li a.page-numbers {
+  border: 1px solid var(--color-mnc-gruen);
+  color: var(--color-mnc-gruen);
+  background-color: transparent;
+}
+ul.page-numbers li a.page-numbers:hover {
+  background-color: var(--color-mnc-blau);
+  border: 1px solid var(--color-mnc-blau);
+  color: white;
+}
+ul.page-numbers li span.page-numbers {
+  border: 1px solid var(--color-mnc-blau);
+  color: var(--color-mnc-blau);
+  background-color: white;
 }
 
 .mnc-errortext {
