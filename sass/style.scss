@@ -25,26 +25,68 @@ Template: astra
 @import "mi_mixins";
 @import "accessibility";
 @import "icons";
-@import "mnc_layout";
 @import "customizer_css";
 @import "bb_tweaks";
 @import "newsletter_form";
-@import "hut";
 @import "buttons";
-@import "blog_archive";
 @import "anfrage";
 @import "slider";
+
+@import "mnc_col_row";
+@import "mnc_headline_animation";
+@import "mnc_stretch_infobox";
+
+// Blog Roll:
+@import "mnc_post_item_list";
+@import "mnc_list_weitere_stories";
+@import "mnc_terms_categories";
+@import "page_numbers";
+
+a.skip-main {
+  @include skip_main;
+}
+
+.fl-rich-text ol {
+  margin-left:1rem;
+  li {
+    margin-top:1rem;
+  }
+}
+
 
 .mnc-nolist {
   @include no-list;
   ul {
     @include no-list;
   }
+}
 
+#primary-menu > li > a > .menu-text {
+  text-transform:uppercase !important;
+  letter-spacing:0.1em;
+}
+
+.mnc-bg-green {
+  a, p, div,h5,h3,h2,h1, {
+    color:white !important;
+  }
+  a:hover {
+    color:white !important;
+    text-decoration: underline;
+  }
+  input[type="text"],input[type="email"],input[type="password"] {
+    color:var(--color-mnc-text);
+  }
+}
+
+
+
+.mnc-upper {
+  @include uppercase;
 }
 
 .uabb-subheading.uabb-text-editor {
-  margin-left:3px;
+  //margin-left:3px;
 }
 
 .main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {

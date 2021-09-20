@@ -12,7 +12,7 @@
   //  border-radius: var(--mnc-border-radius);
   //}
 
-  @include desktop {
+  //@include desktop {
     .fl-content-slider .fl-slide-bg-link {
       z-index: 3;
     }
@@ -25,6 +25,11 @@
       display: block;
       position: absolute;
       height: 100%;
+      width:100%;
+      @include mobile {
+        position: relative;
+        height:auto;
+      }
 
       .fl-slide-content-wrap {
         margin:0;
@@ -33,6 +38,9 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        @include mobile {
+          display:block;
+        }
 
         .fl-slide-content {
           padding:0;
@@ -41,6 +49,9 @@
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
+          @include mobile {
+            display:block;
+          }
 
           .fl-slide-title {
             width:100%;
@@ -51,12 +62,16 @@
             font-size: 1rem;
             padding: 1rem !important;
             background-color: $color_mnc_bg_blau;
+            @include mobile {
+              font-size:0.8rem !important;
+                padding: 0.5rem !important;
+            }
           }
         }
       }
     }
 
-  }
+  //}
 
 }
 

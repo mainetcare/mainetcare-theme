@@ -1,0 +1,45 @@
+
+.mnc-list-weitere-stories {
+  ul {
+    @include no-list;
+  }
+
+  li {
+    border-top:1px solid var(--color-mnc-blau);
+    // padding:1rem 0;
+  }
+
+  .mnc-item-weitere-stories {
+    display: block;
+    margin:0;
+    & > a {
+      color:var(--color-mnc-text);
+      padding:1rem 0;
+      display: grid;
+      grid-template-columns:1fr 1fr 2fr 3fr;
+      gap:2rem;
+      @include mobile {
+        display:block;
+      }
+      justify-content: space-between;
+      align-items: center;
+      font-size:0.75rem;
+      &:hover {
+        background-color:white;
+        // transform: translateX(10px);
+      }
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+      h4 {
+        text-decoration: none !important;
+        color: var(--color-mnc-blau);
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+      }
+
+    }
+
+  }
+
+}

@@ -95,7 +95,7 @@ a.skip-main:focus, a.skip-main:active {
   list-style: none;
   margin: 0;
 }
-@media (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .mnc-checklist li, .mnc-infolist li {
     background-size: 0.8em;
     background-position: 0 10px;
@@ -109,74 +109,6 @@ a.skip-main:focus, a.skip-main:active {
 .mnc-infolist li {
   background-size: 1.1rem;
   background-image: url("/wp-content/themes/mainetcare-theme/assets/svg/info-24px-blau.svg") !important;
-}
-
-.mnc-bg-green a, .mnc-bg-green p, .mnc-bg-green div, .mnc-bg-green h5, .mnc-bg-green h3, .mnc-bg-green h2, .mnc-bg-green h1 {
-  color: white !important;
-}
-.mnc-bg-green a:hover {
-  color: white !important;
-  text-decoration: underline;
-}
-.mnc-bg-green input[type=text], .mnc-bg-green input[type=email], .mnc-bg-green input[type=password] {
-  color: var(--color-mnc-text);
-}
-
-a.skip-main {
-  left: -999px;
-  position: absolute;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: -999;
-}
-a.skip-main:focus, a.skip-main:active {
-  color: #000;
-  background-color: #FFF;
-  left: auto;
-  top: auto;
-  width: 30%;
-  height: auto;
-  overflow: auto;
-  margin: 10px 35%;
-  padding: 5px;
-  border-radius: 15px;
-  border: 3px solid #c13523;
-  text-align: center;
-  font-size: 1.2em;
-  z-index: 999;
-}
-
-.mnc-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.mnc-col {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.mnc-form2col .wpcf7 .wpcf7-form-control-wrap {
-  width: 96%;
-}
-
-.mnc-upper {
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em;
-}
-
-#primary-menu > li > a > .menu-text {
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em;
-}
-
-.mnc-infobox h3 > a {
-  color: var(--color-mnc-blau);
 }
 
 .site-description {
@@ -286,6 +218,243 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 
 .mailster-form-fields > div {
   margin: 1rem auto;
+}
+
+.mnc-button-greenblue a[role=button], .mnc-button-greenblue input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-greenblue a[role=button]:hover, .mnc-button-greenblue input[type=submit]:hover {
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+}
+.mnc-button-greenblue a[role=button] span, .mnc-button-greenblue input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-button-greenlightgreen a[role=button], .mnc-button-greenlightgreen input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-greenlightgreen a[role=button]:hover, .mnc-button-greenlightgreen input[type=submit]:hover {
+  background-color: #a8be5d !important;
+  border-color: #a8be5d !important;
+}
+.mnc-button-greenlightgreen a[role=button] span, .mnc-button-greenlightgreen input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-button-bluegreen a[role=button], .mnc-button-bluegreen input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-bluegreen a[role=button]:hover, .mnc-button-bluegreen input[type=submit]:hover {
+  background-color: #87a133 !important;
+  border-color: #87a133 !important;
+}
+.mnc-button-bluegreen a[role=button] span, .mnc-button-bluegreen input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-button-bluelightblue a[role=button], .mnc-button-bluelightblue input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 200ms ease-in;
+  background-color: #0e2c40 !important;
+  border-color: #0e2c40 !important;
+  color: #FFFFFF !important;
+}
+.mnc-button-bluelightblue a[role=button]:hover, .mnc-button-bluelightblue input[type=submit]:hover {
+  background-color: #133b59 !important;
+  border-color: #133b59 !important;
+}
+.mnc-button-bluelightblue a[role=button] span, .mnc-button-bluelightblue input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF !important;
+}
+
+.mnc-errortext {
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+  background-color: var(--color-mnc-error-bg);
+  border: 2px solid var(--color-mnc-error-border);
+  color: var(--color-mnc-text);
+  font-size: 0.9rem;
+  background-color: var(--color-mnc-error-bg) !important;
+  padding: 1rem;
+}
+.mnc-errortext ul {
+  margin-top: 1rem !important;
+  list-style: none;
+  margin: 0;
+}
+.mnc-errortext ul li {
+  margin-top: 0.5rem !important;
+}
+.mnc-errortext ul li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+.mnc-errortext ul li:before {
+  content: "🤓";
+  font-size: 1rem;
+  position: absolute;
+  width: 1rem;
+  line-height: 1rem;
+  left: -0.5rem;
+  top: 4px;
+  display: inline-block;
+  margin-left: -1rem;
+}
+
+.mnc-checkitem {
+  margin-top: 0.25rem;
+}
+
+.mnc-form-anfrage fieldset {
+  margin-top: 1rem;
+}
+.mnc-form-anfrage label {
+  font-size: 1rem;
+}
+.mnc-form-anfrage input[type=text], .mnc-form-anfrage input[type=email], .mnc-form-anfrage input[type=url] {
+  transition: none;
+}
+.mnc-form-anfrage input[type=text]:focus, .mnc-form-anfrage input[type=email]:focus, .mnc-form-anfrage input[type=url]:focus {
+  outline: 2px solid var(--color-mnc-gruen);
+  background-color: var(--color-mnc-bg_blassblau) !important;
+}
+.mnc-form-anfrage .mnc-has-error input[type=text], .mnc-form-anfrage .mnc-has-error input[type=email], .mnc-form-anfrage .mnc-has-error input[type=url] {
+  outline: 2px solid var(--color-mnc-error-border);
+  background-color: var(--color-mnc-error-bg) !important;
+}
+.mnc-form-anfrage .mnc-has-error .mnc-errormsg {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-mnc-error-border);
+}
+.mnc-form-anfrage .mnc-form-input {
+  margin-top: 1rem;
+}
+.mnc-form-anfrage .mnc-form-input label {
+  display: block;
+}
+.mnc-form-anfrage .mnc-form-input input[type=text], .mnc-form-anfrage .mnc-form-input input[type=email], .mnc-form-anfrage .mnc-form-input input[type=url] {
+  width: 100%;
+  padding: 0.5rem;
+}
+.mnc-form-anfrage .hlptext {
+  display: block;
+  font-size: 0.75rem;
+  color: #575757;
+}
+
+#MncSliderHome .bx-wrapper .bx-pager {
+  color: var(--color-mnc-gruen);
+}
+#MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a.active, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:focus, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:hover {
+  background: var(--color-mnc-gruen);
+}
+#MncSliderHome .fl-content-slider .fl-slide-bg-link {
+  z-index: 3;
+}
+#MncSliderHome .fl-slide-bg-photo {
+  border: 1px solid #EEE;
+}
+#MncSliderHome .fl-slide-foreground {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #MncSliderHome .fl-slide-foreground {
+    position: relative;
+    height: auto;
+  }
+}
+#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
+  margin: 0;
+  width: 100% !important;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
+    display: block;
+  }
+}
+#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 768px) {
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
+    display: block;
+  }
+}
+#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
+  width: 100%;
+  margin: 0 !important;
+  line-height: 1rem;
+  display: block;
+  font-size: 1rem;
+  padding: 1rem !important;
+  background-color: rgba(14, 44, 64, 0.9);
+}
+@media screen and (max-width: 768px) {
+  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
+    font-size: 0.8rem !important;
+    padding: 0.5rem !important;
+  }
+}
+
+.mnc-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .mnc-row {
+    display: block;
+    margin-bottom: 0 !important;
+  }
+}
+
+.mnc-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.mnc-form2col .wpcf7 .wpcf7-form-control-wrap {
+  width: 96%;
 }
 
 .mnc-headline {
@@ -448,80 +617,75 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
     opacity: 1;
   }
 }
-.mnc-button-greenblue a[role=button], .mnc-button-greenblue input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .fl-module-callout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-.mnc-button-greenblue a[role=button]:hover, .mnc-button-greenblue input[type=submit]:hover {
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-.mnc-button-greenblue a[role=button] span, .mnc-button-greenblue input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content .fl-callout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-
-.mnc-button-greenlightgreen a[role=button], .mnc-button-greenlightgreen input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content .fl-callout-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
-.mnc-button-greenlightgreen a[role=button]:hover, .mnc-button-greenlightgreen input[type=submit]:hover {
-  background-color: #a8be5d !important;
-  border-color: #a8be5d !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content .fl-callout-content .fl-callout-title {
+  padding: 0 1rem;
 }
-.mnc-button-greenlightgreen a[role=button] span, .mnc-button-greenlightgreen input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content .fl-callout-content .fl-callout-text-wrap {
+  padding: 0 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
-.mnc-button-bluegreen a[role=button], .mnc-button-bluegreen input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .fl-module-callout .fl-module-content .fl-callout-content .fl-callout-text-wrap .fl-callout-button {
+  margin-top: auto;
 }
-.mnc-button-bluegreen a[role=button]:hover, .mnc-button-bluegreen input[type=submit]:hover {
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
+.mnc-stretch-infoboxes .mnc-infobox-leistung h3 {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
-.mnc-button-bluegreen a[role=button] span, .mnc-button-bluegreen input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .mnc-infobox-leistung h3 a {
+  color: var(--color-mnc-text) !important;
 }
-
-.mnc-button-bluelightblue a[role=button], .mnc-button-bluelightblue input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content {
+  overflow: visible;
 }
-.mnc-button-bluelightblue a[role=button]:hover, .mnc-button-bluelightblue input[type=submit]:hover {
-  background-color: #133b59 !important;
-  border-color: #133b59 !important;
+.mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content {
+  position: relative;
 }
-.mnc-button-bluelightblue a[role=button] span, .mnc-button-bluelightblue input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
+.mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-icon, .mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-photo {
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  margin-left: -50px;
+  z-index: 10;
+}
+.mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-icon i, .mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-icon img, .mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-photo i, .mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-photo img {
+  background-color: white;
+  border: 3px solid var(--color-mnc-gruen) !important;
+  border-radius: 50% !important;
+}
+.mnc-stretch-infoboxes .mnc-infobox-icon-top .fl-module-content .fl-callout-content .fl-callout-title {
+  padding-top: 2.25rem;
 }
 
 .mnc-post-item-list {
   --item-height:200px;
+}
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list {
+    --item-height:150px;
+  }
 }
 .mnc-post-item-list ul {
   list-style-type: none;
@@ -542,28 +706,50 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   flex-direction: column;
   flex: 1;
 }
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list ul li {
+    display: block;
+    margin-top: 1.6rem !important;
+  }
+}
 .mnc-post-item-list .mnc-post-item {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list .mnc-post-item {
+    background-color: #EEE;
+  }
+}
 .mnc-post-item-list .mnc-post-item .mnc-featured-img {
-  min-height: 200px;
+  min-height: var(--item-height);
   background-color: var(--color-mnc-bg_blassblau);
   overflow: hidden;
 }
 .mnc-post-item-list .mnc-post-item .mnc-featured-img img {
   object-fit: cover;
-  height: 200px;
+  height: var(--item-height);
 }
 .mnc-post-item-list .mnc-post-item .mnc-cp-content {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list .mnc-post-item .mnc-cp-content {
+    display: block;
+    padding: 0.5rem;
+  }
+}
 .mnc-post-item-list .mnc-post-item .mnc-title {
   margin-top: 1rem;
   height: 70px;
+}
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list .mnc-post-item .mnc-title {
+    height: auto;
+  }
 }
 .mnc-post-item-list .mnc-post-item .mnc-title a, .mnc-post-item-list .mnc-post-item .mnc-title h3 {
   font-size: 0.9rem;
@@ -582,97 +768,19 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   margin-top: 1rem;
   line-height: 1.3rem;
 }
+@media screen and (max-width: 768px) {
+  .mnc-post-item-list .mnc-post-item .mnc-excerpt {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+}
 .mnc-post-item-list .mnc-post-item .more {
   display: inline-block;
   margin-left: 0.75rem;
 }
 .mnc-post-item-list .mnc-post-item .more:hover {
   text-decoration: underline;
-}
-
-.mnc-reading-time {
-  display: block;
-  font-size: 0.75rem;
-}
-
-.mnc-terms {
-  margin-bottom: 0.5rem;
-}
-.mnc-terms a {
-  color: var(--color-mnc-text);
-}
-.mnc-terms a:hover {
-  color: var(--color-mnc-gruen);
-  text-decoration: underline;
-}
-
-.mnc-list-top-stories ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.mnc-list-top-stories .mnc-item-top-stories {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-@media screen and (max-width: 768px) {
-  .mnc-list-top-stories .mnc-item-top-stories {
-    grid-template-columns: 1fr;
-  }
-}
-.mnc-list-top-stories .mnc-item-top-stories .mnc-scale-img-hover {
-  overflow: hidden;
-}
-.mnc-list-top-stories .mnc-item-top-stories .mnc-scale-img-hover img {
-  object-fit: cover;
-  min-height: 200px;
-}
-.mnc-list-top-stories .mnc-item-top-stories .mnc-title a, .mnc-list-top-stories .mnc-item-top-stories .mnc-title h3 {
-  text-decoration: none !important;
-  color: var(--color-mnc-blau);
-}
-.mnc-list-top-stories .mnc-item-top-stories .mnc-title a:hover, .mnc-list-top-stories .mnc-item-top-stories .mnc-title h3:hover {
-  color: var(--color-mnc-gruen);
-  text-decoration: underline !important;
-}
-.mnc-list-top-stories .mnc-item-top-stories .mnc-excerpt {
-  margin-top: 1rem;
-  line-height: 1.5rem;
-}
-.mnc-list-top-stories .mnc-item-top-stories .more {
-  display: inline-block;
-  margin-left: 0.75rem;
-}
-.mnc-list-top-stories .mnc-item-top-stories .more:hover {
-  text-decoration: underline;
-}
-
-.mnc-list-categories {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-}
-.mnc-list-categories li a {
-  transition: none;
-  display: block;
-  width: 100%;
-  color: var(--color-mnc-text);
-  border: 1px solid var(--color-mnc-text);
-  padding: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-.mnc-list-categories li a:hover {
-  background-color: var(--color-mnc-blau);
-  color: white;
-  border: 1px solid var(--color-mnc-blau);
-  text-decoration: none;
 }
 
 .mnc-list-weitere-stories ul {
@@ -697,6 +805,11 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   align-items: center;
   font-size: 0.75rem;
 }
+@media screen and (max-width: 768px) {
+  .mnc-list-weitere-stories .mnc-item-weitere-stories > a {
+    display: block;
+  }
+}
 .mnc-list-weitere-stories .mnc-item-weitere-stories > a:hover {
   background-color: white;
 }
@@ -710,6 +823,55 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   color: var(--color-mnc-blau);
   font-size: 1.1rem;
   line-height: 1.1rem;
+}
+
+.mnc-terms {
+  margin-bottom: 0.5rem;
+}
+.mnc-terms a {
+  color: var(--color-mnc-text);
+}
+.mnc-terms a:hover {
+  color: var(--color-mnc-gruen);
+  text-decoration: underline;
+}
+
+.mnc-list-categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  .mnc-list-categories {
+    display: block;
+  }
+  .mnc-list-categories li {
+    margin-top: 1rem;
+  }
+}
+.mnc-list-categories li a {
+  transition: none;
+  display: block;
+  width: 100%;
+  color: var(--color-mnc-text);
+  border: 1px solid var(--color-mnc-text);
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+@media screen and (min-width: 1024px) {
+  .mnc-list-categories li a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+.mnc-list-categories li a:hover {
+  background-color: var(--color-mnc-blau);
+  color: white;
+  border: 1px solid var(--color-mnc-blau);
+  text-decoration: none;
 }
 
 ul.page-numbers li {
@@ -731,125 +893,37 @@ ul.page-numbers li span.page-numbers {
   background-color: white;
 }
 
-.mnc-errortext {
-  margin: 0.5rem 0;
-  font-size: 0.75rem;
-  background-color: var(--color-mnc-error-bg);
-  border: 2px solid var(--color-mnc-error-border);
-  color: var(--color-mnc-text);
-  font-size: 0.9rem;
-  background-color: var(--color-mnc-error-bg) !important;
-  padding: 1rem;
-}
-.mnc-errortext ul {
-  margin-top: 1rem !important;
-  list-style: none;
-  margin: 0;
-}
-.mnc-errortext ul li {
-  margin-top: 0.5rem !important;
-}
-.mnc-errortext ul li {
-  margin-left: 1.5rem;
-  position: relative;
-}
-.mnc-errortext ul li:before {
-  content: "🤓";
-  font-size: 1rem;
+a.skip-main {
+  left: -999px;
   position: absolute;
-  width: 1rem;
-  line-height: 1rem;
-  left: -0.5rem;
-  top: 4px;
-  display: inline-block;
-  margin-left: -1rem;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+a.skip-main:focus, a.skip-main:active {
+  color: #000;
+  background-color: #FFF;
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow: auto;
+  margin: 10px 35%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 3px solid red;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
 }
 
-.mnc-checkitem {
-  margin-top: 0.25rem;
+.fl-rich-text ol {
+  margin-left: 1rem;
 }
-
-.mnc-form-anfrage fieldset {
+.fl-rich-text ol li {
   margin-top: 1rem;
-}
-.mnc-form-anfrage label {
-  font-size: 1rem;
-}
-.mnc-form-anfrage input[type=text], .mnc-form-anfrage input[type=email], .mnc-form-anfrage input[type=url] {
-  transition: none;
-}
-.mnc-form-anfrage input[type=text]:focus, .mnc-form-anfrage input[type=email]:focus, .mnc-form-anfrage input[type=url]:focus {
-  outline: 2px solid var(--color-mnc-gruen);
-  background-color: var(--color-mnc-bg_blassblau) !important;
-}
-.mnc-form-anfrage .mnc-has-error input[type=text], .mnc-form-anfrage .mnc-has-error input[type=email], .mnc-form-anfrage .mnc-has-error input[type=url] {
-  outline: 2px solid var(--color-mnc-error-border);
-  background-color: var(--color-mnc-error-bg) !important;
-}
-.mnc-form-anfrage .mnc-has-error .mnc-errormsg {
-  display: block;
-  font-size: 1rem;
-  color: var(--color-mnc-error-border);
-}
-.mnc-form-anfrage .mnc-form-input {
-  margin-top: 1rem;
-}
-.mnc-form-anfrage .mnc-form-input label {
-  display: block;
-}
-.mnc-form-anfrage .mnc-form-input input[type=text], .mnc-form-anfrage .mnc-form-input input[type=email], .mnc-form-anfrage .mnc-form-input input[type=url] {
-  width: 100%;
-  padding: 0.5rem;
-}
-.mnc-form-anfrage .hlptext {
-  display: block;
-  font-size: 0.75rem;
-  color: #575757;
-}
-
-#MncSliderHome .bx-wrapper .bx-pager {
-  color: var(--color-mnc-gruen);
-}
-#MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a.active, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:focus, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:hover {
-  background: var(--color-mnc-gruen);
-}
-@media screen and (min-width: 1024px) {
-  #MncSliderHome .fl-content-slider .fl-slide-bg-link {
-    z-index: 3;
-  }
-  #MncSliderHome .fl-slide-bg-photo {
-    border: 1px solid #EEE;
-  }
-  #MncSliderHome .fl-slide-foreground {
-    display: block;
-    position: absolute;
-    height: 100%;
-  }
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
-    margin: 0;
-    width: 100% !important;
-    height: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
-    padding: 0;
-    margin: 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
-    width: 100%;
-    margin: 0 !important;
-    line-height: 1rem;
-    display: block;
-    font-size: 1rem;
-    padding: 1rem !important;
-    background-color: rgba(14, 44, 64, 0.9);
-  }
 }
 
 .mnc-nolist {
@@ -863,8 +937,25 @@ ul.page-numbers li span.page-numbers {
   padding: 0;
 }
 
-.uabb-subheading.uabb-text-editor {
-  margin-left: 3px;
+#primary-menu > li > a > .menu-text {
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em;
+}
+
+.mnc-bg-green a, .mnc-bg-green p, .mnc-bg-green div, .mnc-bg-green h5, .mnc-bg-green h3, .mnc-bg-green h2, .mnc-bg-green h1 {
+  color: white !important;
+}
+.mnc-bg-green a:hover {
+  color: white !important;
+  text-decoration: underline;
+}
+.mnc-bg-green input[type=text], .mnc-bg-green input[type=email], .mnc-bg-green input[type=password] {
+  color: var(--color-mnc-text);
+}
+
+.mnc-upper {
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {

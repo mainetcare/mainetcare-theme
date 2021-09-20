@@ -20,7 +20,7 @@ $icon_default_height: 20px;
     padding: 3px 0 3px 40px;
     list-style: none;
     margin: 0;
-    @include bp(mobile) {
+    @include mobile {
       background-size:0.8em;
       background-position: 0 10px;
       padding: 3px 0 3px 20px;

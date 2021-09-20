@@ -1,0 +1,69 @@
+.mnc-stretch-infoboxes {
+  .fl-module-callout {
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    .fl-module-content {
+      display:flex;
+      flex-direction: column;
+      flex:1;
+      .fl-callout {
+        display:flex;
+        flex-direction: column;
+        flex:1;
+      }
+      .fl-callout-content {
+        display:flex;
+        flex-direction: column;
+        flex: 1;
+        .fl-callout-title {
+          padding:0 1rem;
+        }
+        .fl-callout-text-wrap {
+          padding:0 1rem;
+          flex:1;
+          display:flex;
+          flex-direction: column;
+          .fl-callout-button {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+  .mnc-infobox-leistung {
+    h3 {
+      margin:1rem 0;
+      a {
+        color:var(--color-mnc-text) !important;
+      }
+      font-size:1.2rem;
+      font-weight:600;
+    }
+
+  }
+  .mnc-infobox-icon-top {
+    .fl-module-content {
+      overflow:visible;
+      .fl-callout-content {
+        position:relative;
+        .fl-icon, .fl-photo {
+          position: absolute;
+          left: 50%;
+          top: -60px;
+          margin-left: -50px;
+          z-index: 10;
+          i, img {
+            background-color: white;
+            border:3px solid var(--color-mnc-gruen) !important;
+            border-radius: 50% !important;
+          }
+        }
+        .fl-callout-title {
+          padding-top:2.25rem;
+        }
+      }
+    }
+
+  }
+}

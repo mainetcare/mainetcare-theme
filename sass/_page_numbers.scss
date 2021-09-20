@@ -1,0 +1,20 @@
+ul.page-numbers {
+  li {
+    border:none !important;
+    a.page-numbers {
+      border:1px solid var(--color-mnc-gruen);
+      color:var(--color-mnc-gruen);
+      background-color:transparent;
+      &:hover {
+        background-color:var(--color-mnc-blau);
+        border:1px solid var(--color-mnc-blau);
+        color:white;
+      }
+    }
+    span.page-numbers {
+      border:1px solid var(--color-mnc-blau);
+      color:var(--color-mnc-blau);
+      background-color:white;
+    }
+  }
+}
