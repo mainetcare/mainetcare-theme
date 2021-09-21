@@ -194,7 +194,7 @@ class Anfrage {
 	}
 
 	public function redirect() {
-		$permalink = get_permalink( get_page_by_path( 'ihr-website-anliegen/vielen-dank-fuer-ihre-anfrage' ));
+		$permalink = get_permalink( get_page_by_path( 'website-wunsch/vielen-dank-fuer-ihre-anfrage' ));
 		wp_redirect($permalink, 303);
 		exit;
 	}
