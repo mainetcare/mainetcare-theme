@@ -19,12 +19,14 @@ class Anfrage {
 	 */
 	public $exception = null;
 
+	const HONEYPOT_FIELDNAME = 'contact_firma';
+
 	/**
 	 * @var \string[][]
 	 */
 	protected array $validate;
 
-	protected $default_labels  = [
+	protected $default_labels = [
 		'Eine neue Website',
 		'Ich will meine alte Website aufpeppen',
 		'Jemand, der meine Website pflegt',
@@ -57,7 +59,7 @@ class Anfrage {
 	 */
 	protected $post = null;
 
-	public function __construct( WP_Post  $post = null) {
+	public function __construct( WP_Post $post = null ) {
 		$this->post = $post;
 		$this->initCheckitems();
 		$this->initRequest();
@@ -66,10 +68,10 @@ class Anfrage {
 	protected function initCheckitems() {
 		$this->map = [];
 
-		if(have_rows('anliegen_liste', $this->post)) {
-			while(have_rows('anliegen_liste', $this->post)) {
+		if ( have_rows( 'anliegen_liste', $this->post ) ) {
+			while ( have_rows( 'anliegen_liste', $this->post ) ) {
 				the_row();
-				$label = get_sub_field('anliegen');
+				$label       = get_sub_field( 'anliegen' );
 				$this->map[] = new Checkitem( $label );
 			}
 		} else {
@@ -93,12 +95,15 @@ class Anfrage {
 		if ( $this->isSubmitted() ) {
 			$nonce = $_REQUEST['_wpnonce'] ?? '';
 			if ( ! wp_verify_nonce( $nonce, 'submit_anfrage' ) ) {
-				throw new RequestException('Die Sitzung ist abgelaufen.');
+				throw new RequestException( 'Die Sitzung ist abgelaufen.' );
 			}
 			$this->request   = $_POST;
 			$this->errortext = null;
 			$this->errors    = [];
 			$bError          = false;
+
+			$this->redirectIfSpam();
+
 			foreach ( $this->validate as $fieldname => $validation ) {
 				foreach ( $validation as $method => $errormessage ) {
 					if ( ! $this->{$method}( $fieldname ) ) {
@@ -114,9 +119,15 @@ class Anfrage {
 		}
 	}
 
-	public function setErrors($errortext, $arrErrors) {
+	protected function redirectIfSpam() {
+		if ( isset( $this->request[self::HONEYPOT_FIELDNAME] ) && strlen( $this->request[self::HONEYPOT_FIELDNAME] ) ) {
+			$this->redirect();
+		}
+	}
+
+	public function setErrors( $errortext, $arrErrors ) {
 		$this->errortext = $errortext;
-		$this->errors = $arrErrors;
+		$this->errors    = $arrErrors;
 	}
 
 	public function isSubmitted() {
@@ -159,8 +170,8 @@ class Anfrage {
 		$message = $this->buildMessage();
 		// throw new AnfrageException('Beim Versand der E-Mail ist ein Fehler aufgetreten.');
 		$return = wp_mail( 'info@mainetcare.com', 'Anfrage von der Website. Interessent schickt Anliegen', $message );
-		if (! $return ) {
-			throw new AnfrageException('Beim Versand der E-Mail ist ein Fehler aufgetreten.');
+		if ( ! $return ) {
+			throw new AnfrageException( 'Beim Versand der E-Mail ist ein Fehler aufgetreten.' );
 		}
 	}
 
@@ -177,6 +188,7 @@ class Anfrage {
 		$message[] = 'Email: ' . $this->request['contact_email'];
 		$message[] = 'Telefon: ' . $this->request['contact_tel'];
 		$message[] = 'Website: ' . $this->request['contact_web'];
+
 		return implode( "\n", $message );
 	}
 
@@ -194,8 +206,8 @@ class Anfrage {
 	}
 
 	public function redirect() {
-		$permalink = get_permalink( get_page_by_path( 'website-wunsch/vielen-dank-fuer-ihre-anfrage' ));
-		wp_redirect($permalink, 303);
+		$permalink = get_permalink( get_page_by_path( 'website-wunsch/vielen-dank-fuer-ihre-anfrage' ) );
+		wp_redirect( $permalink, 303 );
 		exit;
 	}
 
@@ -255,9 +267,10 @@ class Anfrage {
 	 * @return bool
 	 */
 	public function hasAnfrageException() {
-		if(!$this->exception) {
+		if ( ! $this->exception ) {
 			return false;
 		}
+
 		return $this->exception instanceof AnfrageException;
 	}
 
@@ -265,9 +278,10 @@ class Anfrage {
 	 * @return bool
 	 */
 	public function hasRequestException() {
-		if(!$this->exception) {
+		if ( ! $this->exception ) {
 			return false;
 		}
+
 		return $this->exception instanceof RequestException;
 	}
 

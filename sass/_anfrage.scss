@@ -25,6 +25,16 @@
     font-size:1rem;
   }
 
+  // Honeypot Field:
+  div[aria-hidden="true"] {
+    display:none;
+    visibility: hidden;
+    * {
+      display:none;
+      visibility: hidden;
+    }
+  }
+
   input[type="text"], input[type="email"], input[type="url"] {
     transition: none;
     &:focus {

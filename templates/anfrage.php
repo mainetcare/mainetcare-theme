@@ -60,6 +60,11 @@ if(! $anfrage instanceof \Mnc\Anfrage) {
                 <input type="text" id="contact_name" name="contact_name" value="<?= $anfrage->getRequest('contact_name') ?>"/>
                 <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'contact_name' ) ?></span>
             </div>
+            <div aria-hidden="true" class="mnc-form-input <?= $anfrage->getErrorClass( 'contact_firma' ) ?>">
+                <label for="contact_firma">Firma / Organisation:</label>
+                <input type="text" id="contact_firma" name="contact_firma" value="<?= $anfrage->getRequest('contact_firma') ?>"/>
+                <span class="mnc-errormsg"><?= $anfrage->getErrorMsg( 'contact_firma' ) ?></span>
+            </div>
             <div class="mnc-form-input <?= $anfrage->getErrorClass( 'contact_email' ) ?>">
                 <label for="contact_email">E-Mail:</label>
                 <input type="email" id="contact_email" name="contact_email" value="<?= $anfrage->getRequest('contact_email') ?>"/>
