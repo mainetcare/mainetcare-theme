@@ -111,10 +111,10 @@
   & > li:before {
     content: '';
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: var(--color-mnc-blau);
-    border-radius: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--color-mnc-text);
+    border-radius: 8px;
     left: 0;
     top: 10px;
   }

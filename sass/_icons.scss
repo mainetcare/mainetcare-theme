@@ -29,13 +29,11 @@ $icon_default_height: 20px;
 }
 
 .mnc-scarelist {
-  @include nicer-list("🙀", 1rem, 0.5rem);
   ul {
-    margin-bottom:1rem;
-  }
-  li {
-    margin-top:0.5rem;
-    margin-bottom:0.5rem;
+    @include list-square;
+    li:last-child {
+      margin-bottom:1rem;
+    }
   }
 }
 

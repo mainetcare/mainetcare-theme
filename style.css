@@ -60,31 +60,28 @@ a.skip-main:focus, a.skip-main:active {
   width: 26px;
 }
 
-.mnc-scarelist {
-  list-style: none;
-  margin: 0;
-}
-.mnc-scarelist li {
-  margin-left: 1.5rem;
+.mnc-scarelist ul {
+  list-style-position: inside;
   position: relative;
 }
-.mnc-scarelist li:before {
-  content: "🙀";
-  font-size: 1rem;
-  position: absolute;
-  width: 1rem;
-  line-height: 1rem;
-  left: -0.5rem;
-  top: 4px;
-  display: inline-block;
-  margin-left: -1rem;
-}
-.mnc-scarelist ul {
-  margin-bottom: 1rem;
-}
-.mnc-scarelist li {
+.mnc-scarelist ul > li {
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  position: relative;
+  list-style: none;
+  padding-left: 1rem;
+}
+.mnc-scarelist ul > li:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--color-mnc-text);
+  border-radius: 8px;
+  left: 0;
+  top: 10px;
+}
+.mnc-scarelist ul li:last-child {
+  margin-bottom: 1rem;
 }
 
 .mnc-checklist li, .mnc-infolist li {
@@ -937,9 +934,8 @@ a.skip-main:focus, a.skip-main:active {
   padding: 0;
 }
 
-#primary-menu > li > a > .menu-text {
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em;
+.main-navigation li.current-page-ancestor, .main-navigation li.current-page-ancestor a, .main-navigation li.current-page-ancestor span {
+  color: var(--color-mnc-gruen) !important;
 }
 
 .mnc-bg-green a, .mnc-bg-green p, .mnc-bg-green div, .mnc-bg-green h5, .mnc-bg-green h3, .mnc-bg-green h2, .mnc-bg-green h1 {

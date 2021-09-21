@@ -33,7 +33,7 @@ Template: astra
 @import "slider";
 
 @import "mnc_col_row";
-@import "mnc_headline_animation";
+@import "mnc_animation";
 @import "mnc_stretch_infobox";
 
 // Blog Roll:
@@ -61,10 +61,12 @@ a.skip-main {
   }
 }
 
-#primary-menu > li > a > .menu-text {
-  text-transform:uppercase !important;
-  letter-spacing:0.1em;
+.main-navigation {
+  li.current-page-ancestor, li.current-page-ancestor a, li.current-page-ancestor span {
+    color:var(--color-mnc-gruen) !important;
+  }
 }
+
 
 .mnc-bg-green {
   a, p, div,h5,h3,h2,h1, {
