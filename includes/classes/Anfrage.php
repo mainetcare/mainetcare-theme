@@ -68,17 +68,20 @@ class Anfrage {
 	protected function initCheckitems() {
 		$this->map = [];
 
-		if ( have_rows( 'anliegen_liste', $this->post ) ) {
-			while ( have_rows( 'anliegen_liste', $this->post ) ) {
-				the_row();
-				$label       = get_sub_field( 'anliegen' );
-				$this->map[] = new Checkitem( $label );
-			}
-		} else {
-			foreach ( $this->default_labels as $label ) {
-				$this->map[] = new Checkitem( $label );
-			}
-		}
+		if(function_exists('have_rows')) {
+            if ( have_rows( 'anliegen_liste', $this->post ) ) {
+                while ( have_rows( 'anliegen_liste', $this->post ) ) {
+                    the_row();
+                    $label       = get_sub_field( 'anliegen' );
+                    $this->map[] = new Checkitem( $label );
+                }
+            } else {
+                foreach ( $this->default_labels as $label ) {
+                    $this->map[] = new Checkitem( $label );
+                }
+            }
+
+        }
 
 	}
 
