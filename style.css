@@ -217,78 +217,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   margin: 1rem auto;
 }
 
-.mnc-button-greenblue a[role=button], .mnc-button-greenblue input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
-  color: #FFFFFF !important;
-}
-.mnc-button-greenblue a[role=button]:hover, .mnc-button-greenblue input[type=submit]:hover {
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
-}
-.mnc-button-greenblue a[role=button] span, .mnc-button-greenblue input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
-}
-
-.mnc-button-greenlightgreen a[role=button], .mnc-button-greenlightgreen input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
-  color: #FFFFFF !important;
-}
-.mnc-button-greenlightgreen a[role=button]:hover, .mnc-button-greenlightgreen input[type=submit]:hover {
-  background-color: #a8be5d !important;
-  border-color: #a8be5d !important;
-}
-.mnc-button-greenlightgreen a[role=button] span, .mnc-button-greenlightgreen input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
-}
-
-.mnc-button-bluegreen a[role=button], .mnc-button-bluegreen input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
-  color: #FFFFFF !important;
-}
-.mnc-button-bluegreen a[role=button]:hover, .mnc-button-bluegreen input[type=submit]:hover {
-  background-color: #87a133 !important;
-  border-color: #87a133 !important;
-}
-.mnc-button-bluegreen a[role=button] span, .mnc-button-bluegreen input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
-}
-
-.mnc-button-bluelightblue a[role=button], .mnc-button-bluelightblue input[type=submit] {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 200ms ease-in;
-  background-color: #0e2c40 !important;
-  border-color: #0e2c40 !important;
-  color: #FFFFFF !important;
-}
-.mnc-button-bluelightblue a[role=button]:hover, .mnc-button-bluelightblue input[type=submit]:hover {
-  background-color: #133b59 !important;
-  border-color: #133b59 !important;
-}
-.mnc-button-bluelightblue a[role=button] span, .mnc-button-bluelightblue input[type=submit] span {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF !important;
-}
-
 .mnc-errortext {
   margin: 0.5rem 0;
   font-size: 0.75rem;
@@ -869,7 +797,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 @media screen and (min-width: 1024px) {
   .mnc-list-categories li a {
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
   }
 }
 .mnc-list-categories li a:hover {
@@ -959,7 +887,7 @@ a.skip-main:focus, a.skip-main:active {
 
 .mnc-upper {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .main_menu li.current-menu-item a, .main_menu li.current-menu-ancestor a {
