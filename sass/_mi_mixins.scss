@@ -128,7 +128,7 @@
 
 @mixin uppercase {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 @mixin hide_from_dom {
