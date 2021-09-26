@@ -1,17 +1,5 @@
 
 
-.mnc-button-greenblue {
-  @include button($color_mnc_gruen, $color_mnc_blau, $color_text_white);
-}
-
-.mnc-button-greenlightgreen {
-  @include button($color_mnc_gruen, $color_mnc_gruenheller, $color_text_white);
-}
-
-.mnc-button-bluegreen {
-  @include button($color_mnc_blau, $color_mnc_gruen, $color_text_white);
-}
-
-.mnc-button-bluelightblue {
-  @include button($color_mnc_blau, $color_mnc_blauheller, $color_text_white);
+.mnc-button-primary {
+  @include button($color_mnc_hellblau, $color_mnc_hellblau_hover, $color_mnc_blau);
 }

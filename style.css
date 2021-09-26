@@ -217,6 +217,24 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   margin: 1rem auto;
 }
 
+.mnc-button-primary a[role=button], .mnc-button-primary input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 200ms ease-in;
+  background-color: #A6D0CB !important;
+  border-color: #A6D0CB !important;
+  color: #0e2c40 !important;
+}
+.mnc-button-primary a[role=button]:hover, .mnc-button-primary input[type=submit]:hover {
+  background-color: #94c7c1 !important;
+  border-color: #94c7c1 !important;
+}
+.mnc-button-primary a[role=button] span, .mnc-button-primary input[type=submit] span {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #0e2c40 !important;
+}
+
 .mnc-errortext {
   margin: 0.5rem 0;
   font-size: 0.75rem;
@@ -883,6 +901,10 @@ a.skip-main:focus, a.skip-main:active {
 }
 .mnc-bg-green input[type=text], .mnc-bg-green input[type=email], .mnc-bg-green input[type=password] {
   color: var(--color-mnc-text);
+}
+
+.mnc-links-underline nav a:hover, .mnc-links-underline .fl-list a:hover {
+  text-decoration: underline;
 }
 
 .mnc-upper {
