@@ -42,6 +42,9 @@ Template: astra
 @import "mnc_terms_categories";
 @import "page_numbers";
 
+// Content:
+@import "content";
+
 a.skip-main {
   @include skip_main;
 }
@@ -81,13 +84,7 @@ a.skip-main {
   }
 }
 
-.mnc-links-underline {
-  nav a, .fl-list a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+
 
 
 

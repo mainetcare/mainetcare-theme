@@ -844,6 +844,17 @@ ul.page-numbers li span.page-numbers {
   background-color: white;
 }
 
+.mnc-links-underline nav a:hover, .mnc-links-underline .fl-list a:hover {
+  text-decoration: underline;
+}
+
+.fl-rich-text h2, .fl-rich-text h3, .fl-rich-text h4 {
+  margin-top: 1.5rem;
+}
+.fl-rich-text h2 + p, .fl-rich-text h3 + p, .fl-rich-text h4 + p {
+  margin-top: 0.25rem;
+}
+
 a.skip-main {
   left: -999px;
   position: absolute;
@@ -901,10 +912,6 @@ a.skip-main:focus, a.skip-main:active {
 }
 .mnc-bg-green input[type=text], .mnc-bg-green input[type=email], .mnc-bg-green input[type=password] {
   color: var(--color-mnc-text);
-}
-
-.mnc-links-underline nav a:hover, .mnc-links-underline .fl-list a:hover {
-  text-decoration: underline;
 }
 
 .mnc-upper {
