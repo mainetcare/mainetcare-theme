@@ -1,6 +1,11 @@
 // Archive Section
 .fl-post-feed-post {
   border: 0;
+
+  // Float left not working because frontend.min.css from astra defines a clear:both on all h1-h6 headlines
+  h3, h4, h5, h6 {
+    clear: none;
+  }
 }
 
 .fl-post-feed > .fl-post-feed-post:first-child {
@@ -14,10 +19,11 @@
     max-width: initial;
   }
 }
+
 /* Layout  */
 .fl-row-content-wrap {
   @include mobile {
-    padding-top:0;
+    padding-top: 0;
   }
 }
 

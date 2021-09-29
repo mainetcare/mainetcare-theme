@@ -142,6 +142,9 @@ div.wpcf7 .screen-reader-response {
 .fl-post-feed-post {
   border: 0;
 }
+.fl-post-feed-post h3, .fl-post-feed-post h4, .fl-post-feed-post h5, .fl-post-feed-post h6 {
+  clear: none;
+}
 
 .fl-post-feed > .fl-post-feed-post:first-child article:first-of-type {
   margin-top: 0 !important;
