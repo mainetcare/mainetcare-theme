@@ -37,10 +37,11 @@ Template: astra
 @import "mnc_stretch_infobox";
 
 // Blog Roll:
-@import "mnc_post_item_list";
-@import "mnc_list_weitere_stories";
-@import "mnc_terms_categories";
-@import "page_numbers";
+@import "custom_post";
+//@import "mnc_post_item_list";
+//@import "mnc_list_weitere_stories";
+//@import "mnc_terms_categories";
+//@import "page_numbers";
 
 // Content:
 @import "content";

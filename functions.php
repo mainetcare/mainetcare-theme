@@ -18,6 +18,8 @@ require_once CHILD_THEME_DIR . '/vendor/autoload.php';
 include_once CHILD_THEME_DIR . '/includes/register_image_sizes.php';
 include_once CHILD_THEME_DIR . '/includes/register_shortcodes.php';
 include_once CHILD_THEME_DIR . '/includes/misc.php';
+include_once CHILD_THEME_DIR . '/includes/menu_highlight_correction.php';
+include_once CHILD_THEME_DIR . '/includes/excerpt_length.php';
 include_once CHILD_THEME_DIR . '/includes/register_anfrage.php';
 
 

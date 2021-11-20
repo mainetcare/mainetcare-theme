@@ -51,8 +51,8 @@ add_shortcode( 'check', function ( $atts ) {
 	return mnc_icon_check();
 } );
 
-add_shortcode( 'mnc_post_item', function () {
-	$template = CHILD_THEME_DIR . '/templates/post_item.php';
+add_shortcode( 'mnc_custom_post', function () {
+	$template = CHILD_THEME_DIR . '/templates/custom_post.php';
 	ob_start();
 	require $template;
 	$html = ob_get_contents();
@@ -109,4 +109,44 @@ add_shortcode( 'mnc_custom_post', function () {
 	ob_end_clean();
 
 	return $html;
+} );
+
+add_shortcode( 'mnc_list_categories', function ($atts = [], $tag = '') {
+
+	$list_category_atts = shortcode_atts(
+		[
+			'cat' => 'category',
+		], $atts, $tag
+	);
+
+	$template = CHILD_THEME_DIR . '/templates/list_categories.php';
+	ob_start();
+	require $template;
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
+} );
+
+add_shortcode( 'mnc_list_archives', function () {
+	$template = CHILD_THEME_DIR . '/templates/list_archives.php';
+	ob_start();
+	require $template;
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
+} );
+
+add_shortcode( 'mnc_archive_intro', function () {
+	if(is_home()) {
+		return '';
+	}
+	$arrMap = [
+		'aus Kategorie' => 'aus der Kategorie',
+		'aus Jahr:'     => 'aus dem Jahr'
+	];
+	$mnc_title = 'Beiträge aus ' . get_the_archive_title();
+	$mnc_title = str_replace(array_keys($arrMap), array_values($arrMap), $mnc_title);
+	return $mnc_title;
 } );
