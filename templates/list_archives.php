@@ -5,7 +5,7 @@ global $post;
 	<?= wp_get_archives( [
 		'type'      => 'yearly',
 		'order'     => 'DESC',
-		'post_type' => 'post'
+		'post_type' => $list_archive_atts['cpt']
 	], true ); ?>
 </ul>
 

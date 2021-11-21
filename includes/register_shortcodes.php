@@ -128,7 +128,14 @@ add_shortcode( 'mnc_list_categories', function ($atts = [], $tag = '') {
 	return $html;
 } );
 
-add_shortcode( 'mnc_list_archives', function () {
+add_shortcode( 'mnc_list_archives', function ($atts = [], $tag = '') {
+
+	$list_archive_atts = shortcode_atts(
+		[
+			'cpt' => 'post',
+		], $atts, $tag
+	);
+
 	$template = CHILD_THEME_DIR . '/templates/list_archives.php';
 	ob_start();
 	require $template;
