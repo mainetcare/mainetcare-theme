@@ -3,7 +3,7 @@
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_MAINETCARE_THEME_VERSION', '1.0.0' );
+define( 'CHILD_THEME_MAINETCARE_THEME_VERSION', '2.1.1' );
 define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
 define( 'CHILD_THEME_URL', get_stylesheet_directory_uri() );
 
@@ -21,9 +21,3 @@ include_once CHILD_THEME_DIR . '/includes/misc.php';
 include_once CHILD_THEME_DIR . '/includes/menu_highlight_correction.php';
 include_once CHILD_THEME_DIR . '/includes/excerpt_length.php';
 include_once CHILD_THEME_DIR . '/includes/register_anfrage.php';
-
-
-
-
-
-

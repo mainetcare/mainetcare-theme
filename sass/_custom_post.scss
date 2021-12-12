@@ -126,74 +126,7 @@
 }
 
 
-// Grid Display for Rezepte
 
-.mnc-list-grid .fl-post-feed {
-
-  --item-height: 250px;
-  --img-height: 190px;
-  --title-height: 60px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--item-height), 1fr));
-  @include mobile {
-    grid-template-columns: repeat(auto-fill, 1fr);
-  }
-  grid-gap: 2rem;
-  object-fit: cover;
-
-  .fl-post-feed-post {
-    display: flex;
-
-    & > a {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none !important;
-    }
-  }
-
-  .mnc-item-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: var(--img-height) auto;
-
-    figure {
-      border-radius: 1rem;
-      background-color: white;
-      overflow: hidden;
-    }
-
-    img {
-      background-color: grey;
-      height: 100%;
-      transition: all 300ms ease-in;
-      object-fit: cover;
-    }
-
-    h3 {
-      text-decoration: none !important;
-      color: var(--color-mnc-text);
-      line-height: 1.2rem;
-      margin: 0 auto;
-      display: inline-block;
-      padding: 0.5rem;
-      font-size: 1.1rem;
-      text-align: center;
-    }
-
-    &:hover {
-      h3 {
-        text-decoration: underline !important;
-      }
-
-      img {
-        transform: scale(1.15);
-      }
-    }
-  }
-
-}
 
 .mnc-list-categories {
   @include no-list;

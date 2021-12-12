@@ -111,6 +111,16 @@ add_shortcode( 'mnc_custom_post', function () {
 	return $html;
 } );
 
+add_shortcode( 'mnc_custom_post_referenz', function () {
+	$template = CHILD_THEME_DIR . '/templates/custom_post_referenz.php';
+	ob_start();
+	require $template;
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	return $html;
+} );
+
 add_shortcode( 'mnc_list_categories', function ($atts = [], $tag = '') {
 
 	$list_category_atts = shortcode_atts(
