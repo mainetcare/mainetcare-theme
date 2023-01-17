@@ -11,7 +11,7 @@
       background-repeat: no-repeat;
       position: absolute;
       content: " ";
-      transform: rotate(-10deg);
+      transform: rotate(-7deg);
       z-index: 1000;
     }
 
@@ -27,12 +27,12 @@
       -webkit-animation-duration: 0.5s;
       animation-duration: 0.5s;
       -webkit-animation-delay: .2s;
-      animation-delay: .2s;
+      animation-delay: 1s;
 
       background-image: url("/wp-content/themes/mainetcare-theme/assets/hut_gerry.png");
       @include hutgroesse(22px);
-      top: 5px;
-      left: -3px;
+      top: 0px;
+      left: -11px;
       @include tablet {
         @include hutgroesse(16px);
         top: 6px;
@@ -91,6 +91,10 @@
   animation-duration: 0.5s;
 }
 
+.delay-200 {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s; }
+
 @keyframes swoopInTop {
   0% {
     opacity: 0;
@@ -116,7 +120,7 @@
     -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
     animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
     -webkit-transform: scaleY(1) translate3d(0, 0, 0);
-    transform: scaleY(1) translate3d(0, 0, 0);
+    transform: scaleY(1) translate3d(0, 0, 0) rotate(-7deg);
   }
 }
 

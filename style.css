@@ -112,24 +112,6 @@ a.skip-main:focus, a.skip-main:active {
   letter-spacing: 0.9px;
 }
 
-div.wpcf7 .screen-reader-response {
-  position: relative;
-  overflow: visible;
-  height: auto;
-  width: auto;
-  margin: 0;
-  padding: 10px;
-  border: 0;
-  color: #8b9c4e;
-}
-
-.wpcf7-form .screen-reader-response {
-  padding: 10px;
-  border-left: 5px solid #f6dca7;
-  color: #c09853;
-  background-color: #fcf8e3;
-}
-
 .ast-author-box {
   display: none;
   visibility: hidden;
@@ -238,156 +220,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   color: #0e2c40 !important;
 }
 
-.mnc-errortext {
-  margin: 0.5rem 0;
-  font-size: 0.75rem;
-  background-color: var(--color-mnc-error-bg);
-  border: 2px solid var(--color-mnc-error-border);
-  color: var(--color-mnc-text);
-  font-size: 0.9rem;
-  background-color: var(--color-mnc-error-bg) !important;
-  padding: 1rem;
-}
-.mnc-errortext ul {
-  margin-top: 1rem !important;
-  list-style: none;
-  margin: 0;
-}
-.mnc-errortext ul li {
-  margin-top: 0.5rem !important;
-}
-.mnc-errortext ul li {
-  margin-left: 1.5rem;
-  position: relative;
-}
-.mnc-errortext ul li:before {
-  content: "🤓";
-  font-size: 1rem;
-  position: absolute;
-  width: 1rem;
-  line-height: 1rem;
-  left: -0.5rem;
-  top: 4px;
-  display: inline-block;
-  margin-left: -1rem;
-}
-
-.mnc-checkitem {
-  margin-top: 0.25rem;
-}
-
-.mnc-form-anfrage fieldset {
-  margin-top: 1rem;
-}
-.mnc-form-anfrage label {
-  font-size: 1rem;
-}
-.mnc-form-anfrage div[aria-hidden=true] {
-  display: none;
-  visibility: hidden;
-}
-.mnc-form-anfrage div[aria-hidden=true] * {
-  display: none;
-  visibility: hidden;
-}
-.mnc-form-anfrage input[type=text], .mnc-form-anfrage input[type=email], .mnc-form-anfrage input[type=url] {
-  transition: none;
-}
-.mnc-form-anfrage input[type=text]:focus, .mnc-form-anfrage input[type=email]:focus, .mnc-form-anfrage input[type=url]:focus {
-  outline: 2px solid var(--color-mnc-gruen);
-  background-color: var(--color-mnc-bg_blassblau) !important;
-}
-.mnc-form-anfrage .mnc-has-error input[type=text], .mnc-form-anfrage .mnc-has-error input[type=email], .mnc-form-anfrage .mnc-has-error input[type=url] {
-  outline: 2px solid var(--color-mnc-error-border);
-  background-color: var(--color-mnc-error-bg) !important;
-}
-.mnc-form-anfrage .mnc-has-error .mnc-errormsg {
-  display: block;
-  font-size: 1rem;
-  color: var(--color-mnc-error-border);
-}
-.mnc-form-anfrage .mnc-form-input {
-  margin-top: 1rem;
-}
-.mnc-form-anfrage .mnc-form-input label {
-  display: block;
-}
-.mnc-form-anfrage .mnc-form-input input[type=text], .mnc-form-anfrage .mnc-form-input input[type=email], .mnc-form-anfrage .mnc-form-input input[type=url] {
-  width: 100%;
-  padding: 0.5rem;
-}
-.mnc-form-anfrage .hlptext {
-  display: block;
-  font-size: 0.75rem;
-  color: #575757;
-}
-
-#MncSliderHome .bx-wrapper .bx-pager {
-  color: var(--color-mnc-gruen);
-}
-#MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a.active, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:focus, #MncSliderHome .bx-wrapper .bx-pager.bx-default-pager a:hover {
-  background: var(--color-mnc-gruen);
-}
-#MncSliderHome .fl-content-slider .fl-slide-bg-link {
-  z-index: 3;
-}
-#MncSliderHome .fl-slide-bg-photo {
-  border: 1px solid #EEE;
-}
-#MncSliderHome .fl-slide-foreground {
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
-  #MncSliderHome .fl-slide-foreground {
-    position: relative;
-    height: auto;
-  }
-}
-#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
-  margin: 0;
-  width: 100% !important;
-  height: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (max-width: 768px) {
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap {
-    display: block;
-  }
-}
-#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
-  padding: 0;
-  margin: 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-@media screen and (max-width: 768px) {
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content {
-    display: block;
-  }
-}
-#MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
-  width: 100%;
-  margin: 0 !important;
-  line-height: 1rem;
-  display: block;
-  font-size: 1rem;
-  padding: 1rem !important;
-  background-color: rgba(14, 44, 64, 0.9);
-}
-@media screen and (max-width: 768px) {
-  #MncSliderHome .fl-slide-foreground .fl-slide-content-wrap .fl-slide-content .fl-slide-title {
-    font-size: 0.8rem !important;
-    padding: 0.5rem !important;
-  }
-}
-
 .mnc-row {
   display: flex;
   flex-direction: row;
@@ -424,7 +256,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   background-repeat: no-repeat;
   position: absolute;
   content: " ";
-  transform: rotate(-10deg);
+  transform: rotate(-7deg);
   z-index: 1000;
 }
 .mnc-headline .fl-heading-text > span:first-of-type:before {
@@ -435,12 +267,12 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
+  animation-delay: 1s;
   background-image: url("/wp-content/themes/mainetcare-theme/assets/hut_gerry.png");
   height: 22px;
   width: 57.2px;
-  top: 5px;
-  left: -3px;
+  top: 0px;
+  left: -11px;
 }
 @media screen and (max-width: 1023px) {
   .mnc-headline .fl-heading-text > span:first-of-type:before {
@@ -501,6 +333,11 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   animation-duration: 0.5s;
 }
 
+.delay-200 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
 @keyframes swoopInTop {
   0% {
     opacity: 0;
@@ -526,7 +363,7 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
     -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
     animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
     -webkit-transform: scaleY(1) translate3d(0, 0, 0);
-    transform: scaleY(1) translate3d(0, 0, 0);
+    transform: scaleY(1) translate3d(0, 0, 0) rotate(-7deg);
   }
 }
 .popIn {
