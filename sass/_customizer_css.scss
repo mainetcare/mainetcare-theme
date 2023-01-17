@@ -1,29 +1,7 @@
-// Sammeln von Stilangaben, die man zunächst im Customizer in der "Custom CSS" Sektion hinterlegt hat.
-
 
 .site-description {
   letter-spacing:0.9px;
 }
-
-div.wpcf7 .screen-reader-response {
-  position: relative;
-  overflow: visible;
-  height: auto;
-  width: auto;
-  margin: 0;
-  padding: 10px;
-  border: 0;
-  color:#8b9c4e;
-}
-
-.wpcf7-form .screen-reader-response {
-  padding:10px;
-  border-left: 5px solid #f6dca7;
-  color: #c09853;
-  background-color: #fcf8e3;
-}
-
-
 
 .ast-author-box {
   display:none;

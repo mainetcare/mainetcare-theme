@@ -749,62 +749,6 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
   }
 }
 
-.mnc-list-grid .fl-post-feed {
-  --item-height: 250px;
-  --img-height: 190px;
-  --title-height: 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--item-height), 1fr));
-  grid-gap: 2rem;
-  object-fit: cover;
-}
-@media screen and (max-width: 768px) {
-  .mnc-list-grid .fl-post-feed {
-    grid-template-columns: repeat(auto-fill, 1fr);
-  }
-}
-.mnc-list-grid .fl-post-feed .fl-post-feed-post {
-  display: flex;
-}
-.mnc-list-grid .fl-post-feed .fl-post-feed-post > a {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none !important;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: var(--img-height) auto;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid figure {
-  border-radius: 1rem;
-  background-color: white;
-  overflow: hidden;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid img {
-  background-color: grey;
-  height: 100%;
-  transition: all 300ms ease-in;
-  object-fit: cover;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid h3 {
-  text-decoration: none !important;
-  color: var(--color-mnc-text);
-  line-height: 1.2rem;
-  margin: 0 auto;
-  display: inline-block;
-  padding: 0.5rem;
-  font-size: 1.1rem;
-  text-align: center;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid:hover h3 {
-  text-decoration: underline !important;
-}
-.mnc-list-grid .fl-post-feed .mnc-item-grid:hover img {
-  transform: scale(1.15);
-}
-
 .mnc-list-categories {
   list-style-type: none;
   margin: 0;
@@ -818,6 +762,43 @@ input[type=email], input[type=number], input[type=password], input[type=reset], 
 }
 .mnc-list-categories a:hover {
   text-decoration: underline;
+}
+
+#ListCustomPostReferenz ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+}
+@media screen and (max-width: 1023px) {
+  #ListCustomPostReferenz ul {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+#ListCustomPostReferenz ul li {
+  transition: all 200ms linear;
+  border: 3px solid #e8e8e8;
+  border-radius: 1rem;
+  color: white;
+}
+#ListCustomPostReferenz ul li a {
+  color: white;
+}
+#ListCustomPostReferenz ul li a:hover {
+  color: white;
+}
+#ListCustomPostReferenz ul li:hover {
+  border-color: var(--color-mnc-gruen);
+}
+#ListCustomPostReferenz ul li .mnc-post-excerpt-referenz {
+  background-color: var(--color-mnc-blau);
+  border-top: 2px solid var(--color-mnc-gruen);
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .mnc-links-underline nav a:hover, .mnc-links-underline .fl-list a:hover {
