@@ -9,7 +9,8 @@ add_filter( 'fl_builder_color_presets', function ( $colors ) {
 		'color-mnc-hellblau'     => '#D1E7E5',
 		'color-mnc-bg_blassblau' => '#F6FAFA',
 		'color-mnc-infoblau'     => '#427adc',
-		'color-mnc-bg_orange'    => '#FEFBF7',
+		'color-mnc-bg_orange'    => '#ECBE6F',
+		'color-mnc-rasengruen'   => '#458227',
 		'color-mnc-error-border' => '#bf4d4d',
 		'color-mnc-error-bg'     => '#fccfcc',
 	];
